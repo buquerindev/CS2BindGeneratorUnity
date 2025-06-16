@@ -19,9 +19,17 @@ public class Command
 
     public List<string> options;
     public List<string> optionsNames;
+
+    public object selectedValue;
 }
 
 public class CommandList
 {
     public List<Command> commands;
+
+    // Constructor
+    public CommandList()
+    {
+        commands = new List<Command>();
+    }
 }
