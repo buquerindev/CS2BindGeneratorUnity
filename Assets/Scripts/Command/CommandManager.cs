@@ -4,8 +4,10 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using static System.Net.WebRequestMethods;
 
@@ -16,7 +18,10 @@ public class CommandManager : MonoBehaviour
     private CommandList commandList = new CommandList();
 
     private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/commands.json";
-    //public string jsonContent;
+
+    [SerializeField] private GameObject commandPanelPrefab;
+    [SerializeField] private Transform commandPanelContainer;
+    
 
     private void Start()
     {
@@ -38,6 +43,7 @@ public class CommandManager : MonoBehaviour
             cmd.description = command.Value<string>("description");
             cmd.category = command.Value<string>("category");
             cmd.subcategory = command.Value<string>("subcategory");
+            cmd.type = type;
 
             if (type == "bool")
             {
@@ -116,9 +122,20 @@ public class CommandManager : MonoBehaviour
                 continue;
             }
         }
-        foreach(Command cmd in commandList.commands)
+        InitializeCommandPanels();
+    }
+
+    private void InitializeCommandPanels()
+    {
+        var orderedCommands = commandList.commands
+        .OrderBy(cmd => cmd.category)
+        .ThenBy(cmd => cmd.subcategory)
+        .ToList();
+
+        foreach (Command cmd in orderedCommands)
         {
-            Debug.Log(cmd.name);
+            CommandPanel cmdPanel = Instantiate(commandPanelPrefab, commandPanelContainer).GetComponent<CommandPanel>();
+            cmdPanel.SetCommand(cmd);
         }
     }
 }

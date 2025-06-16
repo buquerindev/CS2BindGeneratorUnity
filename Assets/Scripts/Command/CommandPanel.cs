@@ -21,16 +21,79 @@ public class CommandPanel : MonoBehaviour
     [SerializeField] private TMP_InputField intInputField;
     [SerializeField] private TMP_InputField floatInputField;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void SetCommand(Command command)
     {
-        
+        this.command = command;
+        InitializePanel();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void InitializePanel()
     {
-        
+        commandName.text = command.ingameName;
+
+        switch (command.type)
+        {
+            case "bool":
+                boolToggle.gameObject.SetActive(true);
+                InitializeBoolPanel();
+                break;
+
+            case "enum":
+                enumDropdown.gameObject.SetActive(true);
+                InitializeEnumPanel();
+                break;
+
+            case "string":
+                stringDropdown.gameObject.SetActive(true);
+                InitializeStringPanel();
+                break;
+
+            case "int":
+                intInputField.gameObject.SetActive(true);
+                InitializeIntPanel();
+                break;
+
+            case "float":
+                floatInputField.gameObject.SetActive(true);
+                InitializeFloatPanel();
+                break;
+
+            default:
+                break;
+        }
+
     }
+
+    private void InitializeBoolPanel()
+    {
+        if ((bool)command.defaultValue == true)
+            boolToggle.isOn = true;
+        else
+            boolToggle.isOn = false;
+    }
+
+    private void InitializeEnumPanel()
+    {
+        enumDropdown.ClearOptions();
+        enumDropdown.AddOptions(command.enumNames);
+    }
+
+    private void InitializeStringPanel()
+    {
+        enumDropdown.ClearOptions();
+        enumDropdown.AddOptions(command.optionsNames);
+    }
+
+    private void InitializeIntPanel()
+    {
+        int value = (int)command.defaultValue;
+        intInputField.text = value.ToString();
+    }
+
+    private void InitializeFloatPanel()
+    {
+        float value = (float)command.defaultValue;
+        floatInputField.text = value.ToString();
+    }
+
 }

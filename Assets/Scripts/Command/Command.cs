@@ -10,6 +10,8 @@ public class Command
     public object defaultValue;
     public string category;
     public string subcategory;
+
+    public string type;
     
     public object min;
     public object max;
