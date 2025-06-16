@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class Command
 {
-    private string name;
-    private string ingameName;
-    private string description;
-    private object defaultValue;
-    private string category;
-    private string subCategory;
+    public string name;
+    public string ingameName;
+    public string description;
+    public object defaultValue;
+    public string category;
+    public string subcategory;
     
-    private object min;
-    private object max;
+    public object min;
+    public object max;
 
-    private List<int> enumValues;
-    private List<string> enumNames;
+    public List<int> enumValues;
+    public List<string> enumNames;
+
+    public List<string> options;
+    public List<string> optionsNames;
+}
+
+public class CommandList
+{
+    public List<Command> commands;
 }

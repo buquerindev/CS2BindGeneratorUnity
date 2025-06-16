@@ -1959,6 +1959,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141502347}
   m_Mesh: {fileID: 954089538567804473, guid: 20b5e287de6024e4bbf08dbab49b1bae, type: 3}
+--- !u!1 &160031625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160031627}
+  - component: {fileID: 160031626}
+  m_Layer: 0
+  m_Name: JSONDownloader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &160031626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160031625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33738f7811df91f47a025900aac446c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &160031627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160031625}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 449.93796, y: 482.12244, z: -1.7227001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 759865483}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181611557
 GameObject:
   m_ObjectHideFlags: 0
@@ -7465,6 +7509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 759865483}
+  - component: {fileID: 759865484}
   m_Layer: 0
   m_Name: CommandManager
   m_TagString: Untagged
@@ -7484,9 +7529,23 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 160031627}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &759865484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759865482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6363f8de8ef9e0c48b2f7379d28ef942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JSONLoader: {fileID: 160031626}
 --- !u!1 &789019972
 GameObject:
   m_ObjectHideFlags: 0
@@ -15351,6 +15410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ebd37d651cc8d4e8e50d96e1e78f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commandName: {fileID: 0}
   enumDropdown: {fileID: 1509165953}
   stringDropdown: {fileID: 2133395900}
   boolToggle: {fileID: 1914737670}

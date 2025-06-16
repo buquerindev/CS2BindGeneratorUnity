@@ -6,7 +6,8 @@
             "description": "During the active portion of the round, replace player avatars with team player count in the mini-scoreboard.",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Hud"
+            "subcategory": "Hud",
+            "type": "bool"
         },
         {
             "name": "cl_weapon_selection_rarity_color",
@@ -14,7 +15,8 @@
             "description": "Weapons glow with their rarity color in the HUD",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Hud"
+            "subcategory": "Hud",
+            "type": "bool"
         },
         {
             "name": "cl_teamid_overhead_colors_show",
@@ -22,7 +24,8 @@
             "description": "Use player colors on the name above teammates' heads",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Team"
+            "subcategory": "Team",
+            "type": "bool"
         },
         {
             "name": "cl_mute_enemy_team",
@@ -30,7 +33,8 @@
             "description": "Mutes the enemy team (COMPROBAR EN QUE)",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Communication"
+            "subcategory": "Communication",
+            "type": "bool"
         },
         {
             "name": "cl_mute_all_but_friends_and_party",
@@ -38,7 +42,8 @@
             "description": "Mutes all players except friends and party members",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Communication"
+            "subcategory": "Communication",
+            "type": "bool"
         },
         {
             "name": "cl_allow_animated_avatars",
@@ -46,7 +51,8 @@
             "description": "Allow animated avatars in the HUD",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Communication"
+            "subcategory": "Communication",
+            "type": "bool"
         },
         {
             "name": "cl_sanitize_player_names",
@@ -54,7 +60,8 @@
             "description": "Change name of players not in your friends list to something neutral",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Communication"
+            "subcategory": "Communication",
+            "type": "bool"
         },
         {
             "name": "cl_scoreboard_survivors_always_on",
@@ -62,7 +69,8 @@
             "description": "Nobody knows what this does (maybe dangerzone stuff)",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Spectator/Scoreboard"
+            "subcategory": "Spectator/Scoreboard",
+            "type": "bool"
         },
         {
             "name": "cl_obs_interp_enable",
@@ -70,7 +78,8 @@
             "description": "Smooth the camera transition between players in spectator mode",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Spectator"
+            "subcategory": "Spectator",
+            "type": "bool"
         },
         {
             "name": "cl_sniper_delay_unscope",
@@ -78,7 +87,8 @@
             "description": "Adds a delay after firing a shot before you can un-scope (only animation-wise and it's kinda awful)",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Item"
+            "subcategory": "Item",
+            "type": "bool"
         },
         {
             "name": "cl_sniper_auto_rezoom",
@@ -86,7 +96,8 @@
             "description": "Automatically re-zoom the sniper rifle after firing a shot",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Item"
+            "subcategory": "Item",
+            "type": "bool"
         },
         {
             "name": "cl_showloadout",
@@ -94,7 +105,8 @@
             "description": "Determines whether the Primary, Secondary and Knife are always shown in the HUD, if they are hidden, they will show for a short time if you switch weapon",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Item"
+            "subcategory": "Item",
+            "type": "bool"
         },
         {
             "name": "cl_use_opens_buy_menu",
@@ -102,7 +114,8 @@
             "description": "Open the buy menu with the use key",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Item"
+            "subcategory": "Item",
+            "type": "bool"
         },
         {
             "name": "cl_quickinventory_lastinv",
@@ -110,7 +123,8 @@
             "description": "This option is locked to true ingame, it currently doesn't work, and nobody uses the radial weapon menu",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Item"
+            "subcategory": "Item",
+            "type": "bool"
         },
         {
             "name": "cl_radar_always_centered",
@@ -118,7 +132,8 @@
             "description": "Centers the radar on the player",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Radar/Tablet"
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
         },
         {
             "name": "cl_radar_rotate",
@@ -126,7 +141,8 @@
             "description": "Rotates the radar to match the player's view direction",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Radar/Tablet"
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
         },
         {
             "name": "cl_hud_radar_map_additive",
@@ -134,7 +150,8 @@
             "description": "Blends the radar layout with the background",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Radar/Tablet"
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
         },
         {
             "name": "cl_radar_square_with_scoreboard",
@@ -142,7 +159,8 @@
             "description": "Changes the shape of the radar to a square when the scoreboard is open",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Radar/Tablet"
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
         },
         {
             "name": "cl_radar_scale_dynamic",
@@ -150,7 +168,8 @@
             "description": "Changes the zoom level of the radar based on the map information",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Radar/Tablet"
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
         },
         {
             "name": "cl_grenadecrosshair_keepusercrosshair",
@@ -158,7 +177,8 @@
             "description": "Keep the regular crosshair when holding grenades",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Grenade Line-Up Reticle"
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
         },
         {
             "name": "cl_grenadecrosshair_flash",
@@ -166,7 +186,8 @@
             "description": "Show the grenade line-up crosshair for flashbangs",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Grenade Line-Up Reticle"
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
         },
         {
             "name": "cl_grenadecrosshair_explosive",
@@ -174,7 +195,8 @@
             "description": "Show the grenade line-up crosshair for HE grenades",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Grenade Line-Up Reticle"
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
         },
         {
             "name": "cl_grenadecrosshair_fire",
@@ -182,7 +204,8 @@
             "description": "Show the grenade line-up crosshair for Molotov cocktails and incendiary grenades",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Grenade Line-Up Reticle"
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
         },
         {
             "name": "cl_grenadecrosshair_smoke",
@@ -190,7 +213,8 @@
             "description": "Show the grenade line-up crosshair for smoke grenades",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Grenade Line-Up Reticle"
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
         },
         {
             "name": "cl_grenadecrosshair_decoy",
@@ -198,7 +222,8 @@
             "description": "Show the grenade line-up crosshair for decoy grenades",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Grenade Line-Up Reticle"
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
         },
         {
             "name": "cl_predict_body_shot_fx",
@@ -206,7 +231,8 @@
             "description": "Predict the body shot effects (blood and sound effects)",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Damage Prediction"
+            "subcategory": "Damage Prediction",
+            "type": "bool"
         },
         {
             "name": "cl_predict_head_shot_fx",
@@ -214,7 +240,8 @@
             "description": "Predict the head shot effects (blood, sparks and sound effects)",
             "defaultValue": "0",
             "category": "GAME",
-            "subcategory": "Damage Prediction"
+            "subcategory": "Damage Prediction",
+            "type": "bool"
         },
         {
             "name": "cl_predict_kill_ragdolls",
@@ -222,7 +249,8 @@
             "description": "Transforms the player model into a ragdoll if a kill is predicted, could get reverted if the prediction was wrong",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Damage Prediction"
+            "subcategory": "Damage Prediction",
+            "type": "bool"
         },
         {
             "name": "snd_steamaudio_enable_perspective_correction",
@@ -230,7 +258,8 @@
             "description": "*Yes:* Sound sources will be rendered accurately with respect to your field of view as you look at the PC screen. Sound emitters that are on the edge of your field of view will sound slightly in front of you. Sound emitters that are off-screen and directly to your side will sound fully panned to either L or R respectively. \\n *No:* Sound emitters at the edge of your field of view will sound strongly panned to either L or R respectively. Ideal for those who play very close to the screen, or use wearable screen, or players that prefer legacy sound engines. Can be positionally misleading at certain angles to the listener.",
             "defaultValue": "1",
             "category": "AUDIO",
-            "subcategory": "Audio"
+            "subcategory": "Audio",
+            "type": "bool"
         },
         {
             "name": "snd_mute_losefocus",
@@ -238,7 +267,8 @@
             "description": "Determines whether the game will play audio when you tabbed out",
             "defaultValue": "0",
             "category": "AUDIO",
-            "subcategory": "Audio"
+            "subcategory": "Audio",
+            "type": "bool"
         },
         {
             "name": "voice_loopback",
@@ -246,7 +276,8 @@
             "description": "Determines whether the game will play your own voice in the speakers",
             "defaultValue": "0",
             "category": "AUDIO",
-            "subcategory": "Voice"
+            "subcategory": "Voice",
+            "type": "bool"
         },
         {
             "name": "voice_always_sample_mic",
@@ -254,7 +285,8 @@
             "description": "Setups the mic when you open the game instead of the first time you press Push To Talk",
             "defaultValue": "0",
             "category": "AUDIO",
-            "subcategory": "Voice"
+            "subcategory": "Voice",
+            "type": "bool"
         },
         {
             "name": "snd_mute_mvp_music_live_players",
@@ -262,7 +294,8 @@
             "description": "Determines whether to mute the MVP music when some players on both teams are alive",
             "defaultValue": "0",
             "category": "AUDIO",
-            "subcategory": "Music"
+            "subcategory": "Music",
+            "type": "bool"
         },
         {
             "name": "cl_hud_color",
@@ -272,7 +305,8 @@
             "category": "GAME",
             "subcategory": "Hud",
             "enumValues": "0/1/2/3/4/5/6/7/8/9/10/11/12",
-            "enumNames": "Team Color/Teammate Color/White/Bright White/Light Blue/Blue/Purple/Red/Orange/Yellow/Green/Aqua/Pink"
+            "enumNames": "Team Color/Teammate Color/White/Bright White/Light Blue/Blue/Purple/Red/Orange/Yellow/Green/Aqua/Pink",
+            "type": "enum"
         },
         {
             "name": "cl_teamid_overhead_mode",
@@ -282,7 +316,8 @@
             "category": "GAME",
             "subcategory": "Team",
             "enumValues": "0/1/2/3",
-            "enumNames": "Off/Pips/Pips, Names, and Health/Pips, Names, Health, and Equipment"
+            "enumNames": "Off/Pips/Pips, Names, and Health/Pips, Names, Health, and Equipment",
+            "type": "enum"
         },
         {
             "name": "cl_teammate_colors_show",
@@ -292,7 +327,8 @@
             "category": "GAME",
             "subcategory": "Team",
             "enumValues": "0/1/2",
-            "enumNames": "No/Show Colors/Colors and Letters"
+            "enumNames": "No/Show Colors/Colors and Letters",
+            "type": "enum"
         },
         {
             "name": "lobby_default_privacy_bits2",
@@ -302,7 +338,8 @@
             "category": "GAME",
             "subcategory": "Team",
             "enumValues": "0/1",
-            "enumNames": "Friends Need Invites/All Friends Can Join"
+            "enumNames": "Friends Need Invites/All Friends Can Join",
+            "type": "enum"
         },
         {
             "name": "ui_setting_advertiseforhire_auto",
@@ -312,7 +349,8 @@
             "category": "GAME",
             "subcategory": "Team",
             "enumValues": "0/1/2",
-            "enumNames": "Disabled/Remember Last State/Automatic"
+            "enumNames": "Disabled/Remember Last State/Automatic",
+            "type": "enum"
         },
         {
             "name": "cl_player_ping_mute",
@@ -322,7 +360,8 @@
             "category": "GAME",
             "subcategory": "Communication",
             "enumValues": "0/1/2",
-            "enumNames": "Display and Play Sound/Display Without Sound/Disabled"
+            "enumNames": "Display and Play Sound/Display Without Sound/Disabled",
+            "type": "enum"
         },
         {
             "name": "cl_hide_avatar_images",
@@ -332,7 +371,8 @@
             "category": "GAME",
             "subcategory": "Communication",
             "enumValues": "0/1/2",
-            "enumNames": "Show All/Hide All/Show Only Friends"
+            "enumNames": "Show All/Hide All/Show Only Friends",
+            "type": "enum"
         },
         {
             "name": "spec_usenumberkeys_nobinds",
@@ -342,7 +382,8 @@
             "category": "GAME",
             "subcategory": "Spectator/Scoreboard",
             "enumValues": "0/1",
-            "enumNames": "Use Weapon Slots/Use Number Keys"
+            "enumNames": "Use Weapon Slots/Use Number Keys",
+            "type": "enum"
         },
         {
             "name": "eom_local_player_defeat_anim_enabled",
@@ -352,7 +393,8 @@
             "category": "GAME",
             "subcategory": "Spectator/Scoreboard",
             "enumValues": "0/1",
-            "enumNames": "Disabled/Enabled"
+            "enumNames": "Disabled/Enabled",
+            "type": "enum"
         },
         {
             "name": "cl_silencer_mode",
@@ -362,7 +404,8 @@
             "category": "GAME",
             "subcategory": "Item",
             "enumValues": "0/1",
-            "enumNames": "Disabled/Secondary Fire"
+            "enumNames": "Disabled/Secondary Fire",
+            "type": "enum"
         },
         {
             "name": "viewmodel_presetpos",
@@ -372,7 +415,8 @@
             "category": "GAME",
             "subcategory": "Item",
             "enumValues": "1/2",
-            "enumNames": "Desktop/Classic"
+            "enumNames": "Desktop/Classic",
+            "type": "enum"
         },
         {
             "name": "cl_prefer_lefthanded",
@@ -382,7 +426,8 @@
             "category": "GAME",
             "subcategory": "Item",
             "enumValues": "0/1",
-            "enumNames": "Right/Left"
+            "enumNames": "Right/Left",
+            "type": "enum"
         },
         {
             "name": "r_drawtracers_firstperson",
@@ -392,7 +437,8 @@
             "category": "GAME",
             "subcategory": "Item",
             "enumValues": "0/1",
-            "enumNames": "Disabled/Enabled"
+            "enumNames": "Disabled/Enabled",
+            "type": "enum"
         },
         {
             "name": "cl_buywheel_nonumberpurchasing",
@@ -402,7 +448,8 @@
             "category": "GAME",
             "subcategory": "Item",
             "enumValues": "0/1",
-            "enumNames": "Number Keys Buy Items/Ignored, Handled by Game"
+            "enumNames": "Number Keys Buy Items/Ignored, Handled by Game",
+            "type": "enum"
         },
         {
             "name": "cl_buywheel_donate_key",
@@ -412,7 +459,8 @@
             "category": "GAME",
             "subcategory": "Item",
             "enumValues": "0/1/2",
-            "enumNames": "Left Control/Left Alt/Left Shift"
+            "enumNames": "Left Control/Left Alt/Left Shift",
+            "type": "enum"
         },
         {
             "name": "cl_hud_telemetry_frametime_show",
@@ -422,7 +470,8 @@
             "category": "GAME",
             "subcategory": "Telemetry",
             "enumValues": "0/1/2",
-            "enumNames": "Never/If conditions are poor/Always"
+            "enumNames": "Never/If conditions are poor/Always",
+            "type": "enum"
         },
         {
             "name": "cl_hud_telemetry_ping_show",
@@ -432,7 +481,8 @@
             "category": "GAME",
             "subcategory": "Telemetry",
             "enumValues": "0/1/2",
-            "enumNames": "Never/If conditions are poor/Always"
+            "enumNames": "Never/If conditions are poor/Always",
+            "type": "enum"
         },
         {
             "name": "cl_hud_telemetry_net_misdelivery_show",
@@ -442,7 +492,8 @@
             "category": "GAME",
             "subcategory": "Telemetry",
             "enumValues": "0/1/2",
-            "enumNames": "Never/If conditions are poor/Always"
+            "enumNames": "Never/If conditions are poor/Always",
+            "type": "enum"
         },
         {
             "name": "cl_hud_telemetry_net_quality_graph_show",
@@ -452,7 +503,8 @@
             "category": "GAME",
             "subcategory": "Telemetry",
             "enumValues": "0/1/2",
-            "enumNames": "Never/If conditions are poor/Always"
+            "enumNames": "Never/If conditions are poor/Always",
+            "type": "enum"
         },
         {
             "name": "cl_hud_telemetry_net_detailed",
@@ -462,7 +514,8 @@
             "category": "GAME",
             "subcategory": "Telemetry",
             "enumValues": "0/1/2",
-            "enumNames": "Never/If conditions are poor/Always"
+            "enumNames": "Never/If conditions are poor/Always",
+            "type": "enum"
         },
         {
             "name": "snd_headphone_eq_active",
@@ -472,7 +525,8 @@
             "category": "AUDIO",
             "subcategory": "Audio",
             "enumValues": "0/1/2",
-            "enumNames": "Natural/Crisp/Smooth"
+            "enumNames": "Natural/Crisp/Smooth",
+            "type": "enum"
         },
         {
             "name": "voice_vox",
@@ -482,7 +536,8 @@
             "category": "AUDIO",
             "subcategory": "Voice",
             "enumValues": "0/0/1",
-            "enumNames": "Disabled/Push To Talk/Open Microphone"
+            "enumNames": "Disabled/Push To Talk/Open Microphone",
+            "type": "enum"
         },
         {
             "name": "hud_scaling",
@@ -492,7 +547,8 @@
             "category": "GAME",
             "subcategory": "Hud",
             "min": "0.9",
-            "max": "1.10"
+            "max": "1.10",
+            "type": "float"
         },
         {
             "name": "cl_obs_interp_pos_rate",
@@ -502,7 +558,8 @@
             "category": "GAME",
             "subcategory": "Spectator",
             "min": "0.05",
-            "max": "0.4"
+            "max": "0.4",
+            "type": "float"
         },
         {
             "name": "cl_hud_radar_background_alpha",
@@ -512,7 +569,8 @@
             "category": "GAME",
             "subcategory": "Radar/Tablet",
             "min": "0.0",
-            "max": "1.0"
+            "max": "1.0",
+            "type": "float"
         },
         {
             "name": "cl_hud_radar_scale",
@@ -522,7 +580,8 @@
             "category": "GAME",
             "subcategory": "Radar/Tablet",
             "min": "0.8",
-            "max": "1.3"
+            "max": "1.3",
+            "type": "float"
         },
         {
             "name": "cl_radar_scale",
@@ -532,7 +591,8 @@
             "category": "GAME",
             "subcategory": "Radar/Tablet",
             "min": "0.25",
-            "max": "1.0"
+            "max": "1.0",
+            "type": "float"
         },
         {
             "name": "cl_radar_scale_alternate",
@@ -542,7 +602,8 @@
             "category": "GAME",
             "subcategory": "Radar/Tablet",
             "min": "0.25",
-            "max": "1.0"
+            "max": "1.0",
+            "type": "float"
         },
         {
             "name": "cl_grenadecrosshairdelay_flash",
@@ -552,7 +613,8 @@
             "category": "GAME",
             "subcategory": "Grenade Line-Up Reticle",
             "min": "0.0",
-            "max": "5.0"
+            "max": "5.0",
+            "type": "float"
         },
         {
             "name": "cl_grenadecrosshairdelay_explosive",
@@ -562,7 +624,8 @@
             "category": "GAME",
             "subcategory": "Grenade Line-Up Reticle",
             "min": "0.0",
-            "max": "5.0"
+            "max": "5.0",
+            "type": "float"
         },
         {
             "name": "cl_grenadecrosshairdelay_fire",
@@ -572,7 +635,8 @@
             "category": "GAME",
             "subcategory": "Grenade Line-Up Reticle",
             "min": "0.0",
-            "max": "5.0"
+            "max": "5.0",
+            "type": "float"
         },
         {
             "name": "cl_grenadecrosshairdelay_smoke",
@@ -582,7 +646,8 @@
             "category": "GAME",
             "subcategory": "Grenade Line-Up Reticle",
             "min": "0.0",
-            "max": "5.0"
+            "max": "5.0",
+            "type": "float"
         },
         {
             "name": "cl_grenadecrosshairdelay_decoy",
@@ -592,7 +657,8 @@
             "category": "GAME",
             "subcategory": "Grenade Line-Up Reticle",
             "min": "0.0",
-            "max": "5.0"
+            "max": "5.0",
+            "type": "float"
         },
         {
             "name": "cl_hud_telemetry_frametime_poor",
@@ -602,7 +668,8 @@
             "category": "GAME",
             "subcategory": "Telemetry",
             "min": "1",
-            "max": "100"
+            "max": "100",
+            "type": "float"
         },
         {
             "name": "cl_hud_telemetry_net_misdelivery_poor",
@@ -612,7 +679,8 @@
             "category": "GAME",
             "subcategory": "Telemetry",
             "min": "0.0",
-            "max": "2.0"
+            "max": "2.0",
+            "type": "float"
         },
         {
             "name": "ui_steam_overlay_notification_position_horz",
@@ -622,7 +690,8 @@
             "category": "GAME",
             "subcategory": "Hud",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "ui_steam_overlay_notification_position_vert",
@@ -632,7 +701,8 @@
             "category": "GAME",
             "subcategory": "Hud",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "volume",
@@ -642,7 +712,8 @@
             "category": "AUDIO",
             "subcategory": "Audio",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "snd_menumap_volume",
@@ -652,7 +723,8 @@
             "category": "AUDIO",
             "subcategory": "Audio",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "snd_spatialize_lerp",
@@ -662,7 +734,8 @@
             "category": "AUDIO",
             "subcategory": "Audio",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "snd_voipvolume",
@@ -672,7 +745,8 @@
             "category": "AUDIO",
             "subcategory": "Voice",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "voice_threshold",
@@ -682,7 +756,8 @@
             "category": "AUDIO",
             "subcategory": "Voice",
             "min": "-120",
-            "max": "0"
+            "max": "0",
+            "type": "int"
         },
         {
             "name": "snd_menumusic_volume",
@@ -692,7 +767,8 @@
             "category": "AUDIO",
             "subcategory": "Music",
             "min": "0",
-            "max": "20"
+            "max": "20",
+            "type": "int"
         },
         {
             "name": "snd_roundstart_volume",
@@ -702,7 +778,8 @@
             "category": "AUDIO",
             "subcategory": "Music",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "snd_roundaction_volume",
@@ -712,7 +789,8 @@
             "category": "AUDIO",
             "subcategory": "Music",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "snd_roundend_volume",
@@ -722,7 +800,8 @@
             "category": "AUDIO",
             "subcategory": "Music",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "snd_mvp_volume",
@@ -732,7 +811,8 @@
             "category": "AUDIO",
             "subcategory": "Music",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "snd_mapobjective_volume",
@@ -742,7 +822,8 @@
             "category": "AUDIO",
             "subcategory": "Music",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "snd_tensecondwarning_volume",
@@ -752,7 +833,8 @@
             "category": "AUDIO",
             "subcategory": "Music",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "snd_deathcamera_volume",
@@ -762,7 +844,8 @@
             "category": "AUDIO",
             "subcategory": "Music",
             "min": "0",
-            "max": "100"
+            "max": "100",
+            "type": "int"
         },
         {
             "name": "ui_steam_overlay_notification_position",
@@ -772,7 +855,8 @@
             "category": "GAME",
             "subcategory": "Hud",
             "options": "topleft/bottomleft/bottomright/topright",
-            "optionsNames": "Top Left/Bottom Left/Bottom Right/Top Right"
+            "optionsNames": "Top Left/Bottom Left/Bottom Right/Top Right",
+            "type": "string"
         },
         {
             "name": "cl_scoreboard_mouse_enable_binding",
@@ -782,7 +866,8 @@
             "category": "GAME",
             "subcategory": "Spectator/Scoreboard",
             "options": "+attack2/+duck/+jump/drop/lastinv/radio/+use",
-            "optionsNames": "Secondary Fire/Duck/Jump/Drop Weapon/Last Weapon Used/Radio Message/Use"
+            "optionsNames": "Secondary Fire/Duck/Jump/Drop Weapon/Last Weapon Used/Radio Message/Use",
+            "type": "string"
         }
     ]
 }

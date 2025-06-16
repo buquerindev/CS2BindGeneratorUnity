@@ -22,31 +22,20 @@ json_data = {
     "commands": []
 }
 
-# Read each CSV file and append its data to the JSON structure
-with open(bool_csv_path, newline="", encoding="utf-8") as f:
-    reader = csv.DictReader(f, delimiter=';')
-    for row in reader:
-        json_data["commands"].append(row)
+# Helper function to load a CSV and add a type field
+def load_csv_with_type(path, type_name):
+    with open(path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter=';')
+        for row in reader:
+            row["type"] = type_name
+            json_data["commands"].append(row)
 
-with open(enum_csv_path, newline="", encoding="utf-8") as f:
-    reader = csv.DictReader(f, delimiter=';')
-    for row in reader:
-        json_data["commands"].append(row)
-
-with open(float_csv_path, newline="", encoding="utf-8") as f:
-    reader = csv.DictReader(f, delimiter=';')
-    for row in reader:
-        json_data["commands"].append(row)
-
-with open(int_csv_path, newline="", encoding="utf-8") as f:
-    reader = csv.DictReader(f, delimiter=';')
-    for row in reader:
-        json_data["commands"].append(row)
-
-with open(string_csv_path, newline="", encoding="utf-8") as f:
-    reader = csv.DictReader(f, delimiter=';')
-    for row in reader:
-        json_data["commands"].append(row)
+# Load each CSV file with its corresponding type
+load_csv_with_type(bool_csv_path, "bool")
+load_csv_with_type(enum_csv_path, "enum")
+load_csv_with_type(float_csv_path, "float")
+load_csv_with_type(int_csv_path, "int")
+load_csv_with_type(string_csv_path, "string")
 
 # Create a JSON file from the CSV data
 with open(json_data_path, mode='w', encoding='utf-8') as json_file:
