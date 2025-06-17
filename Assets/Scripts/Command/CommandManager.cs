@@ -21,17 +21,34 @@ public class CommandManager : MonoBehaviour
 
     private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/commands.json";
 
+    [SerializeField] private ScrollRect scrollRect;
+
     [SerializeField] private GameObject commandSeparatorPrefab;
     [SerializeField] private GameObject commandPanelPrefab;
-    [SerializeField] private Transform commandPanelContainer;
+
+    [SerializeField] private Transform audioPanelContainer;
+    [SerializeField] private Transform gamePanelContainer;
+    private Transform currentContainer;
 
     [SerializeField] private Button exportSettingsButton;
-    
+    [SerializeField] private Button audioButton;
+    [SerializeField] private Button gameButton;
+
+    private Dictionary<string, Transform> categoryContainers;
+
 
     private void Start()
     {
+        currentContainer = audioPanelContainer;
+        scrollRect.content = currentContainer as RectTransform;
+        InitializeContainerDictionary();
+
         JSONLoader.LoadJSON(jsonURL, OnJSONReceived);
+
+        // Buttons
         exportSettingsButton.onClick.AddListener(ExportSettings);
+        audioButton.onClick.AddListener(() => SwitchContainer(audioPanelContainer));
+        gameButton.onClick.AddListener(() => SwitchContainer(gamePanelContainer));
     }
 
     private void OnJSONReceived(string jsonText)
@@ -153,15 +170,18 @@ public class CommandManager : MonoBehaviour
 
         foreach (var category in groupedCommands)
         {
+            Transform targetTransform = categoryContainers.ContainsKey(category.Key.ToLower())
+                ? categoryContainers[category.Key.ToLower()]
+                : null;
             var subcategories = category.Value;
             foreach (var subcategory in subcategories)
             {
                 var commands = subcategory.Value;
-                CommandSeparator commandSeparator = Instantiate(commandSeparatorPrefab, commandPanelContainer).GetComponent<CommandSeparator>();
+                CommandSeparator commandSeparator = Instantiate(commandSeparatorPrefab, targetTransform).GetComponent<CommandSeparator>();
                 commandSeparator.SetName($"{category.Key.ToUpper()} - {subcategory.Key}");
                 foreach(var cmd in commands)
                 {
-                    CommandPanel cmdPanel = Instantiate(commandPanelPrefab, commandPanelContainer).GetComponent<CommandPanel>();
+                    CommandPanel cmdPanel = Instantiate(commandPanelPrefab, targetTransform).GetComponent<CommandPanel>();
                     cmdPanel.SetCommand(cmd);
                 }
             }
@@ -210,5 +230,24 @@ public class CommandManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void SwitchContainer(Transform newContainer)
+    {
+        currentContainer.gameObject.SetActive(false);
+        newContainer.gameObject.SetActive(true);
+
+        scrollRect.content = newContainer as RectTransform;
+        currentContainer = newContainer;
+    }
+
+    private void InitializeContainerDictionary()
+    {
+        categoryContainers = new Dictionary<string, Transform>
+            {
+                { "game", gamePanelContainer },
+                { "audio", audioPanelContainer },
+            };
+
     }
 }
