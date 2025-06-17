@@ -6,7 +6,9 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private Button settingsMenuButton;
 
+    [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject settingsMenu;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +23,12 @@ public class MenuManager : MonoBehaviour
 
     void OpenSettingsMenuButton()
     {
+        CloseMainMenu();
         settingsMenu.SetActive(true);
-        settingsMenuButton.gameObject.SetActive(false);
+    }
+
+    void CloseMainMenu()
+    {
+        mainMenu.SetActive(false);
     }
 }

@@ -2,6 +2,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using static System.Net.WebRequestMethods;
+using UnityEngine.UI;
 
 public class CommandManager : MonoBehaviour
 {
@@ -21,11 +23,14 @@ public class CommandManager : MonoBehaviour
 
     [SerializeField] private GameObject commandPanelPrefab;
     [SerializeField] private Transform commandPanelContainer;
+
+    [SerializeField] private Button exportSettingsButton;
     
 
     private void Start()
     {
         JSONLoader.LoadJSON(jsonURL, OnJSONReceived);
+        exportSettingsButton.onClick.AddListener(ExportSettings);
     }
 
     private void OnJSONReceived(string jsonText)
@@ -61,6 +66,7 @@ public class CommandManager : MonoBehaviour
                 cmd.enumValues = new List<int>();
                 cmd.enumNames = new List<string>();
                 cmd.defaultValue = command.Value<int>("defaultValue");
+                cmd.selectedValue = cmd.defaultValue;
 
                 // The values are like 0/1/2/3/4 -> Put them into a string and Split("/")
                 string enumValuesString = command.Value<string>("enumValues");
@@ -86,6 +92,7 @@ public class CommandManager : MonoBehaviour
                 cmd.options = new List<string>();
                 cmd.optionsNames = new List<string>();
                 cmd.defaultValue = command.Value<string>("defaultValue");
+                cmd.selectedValue = cmd.defaultValue;
 
                 // The values are like +attack/+jump/drop... -> Put them into a string and Split("/")
                 string optionsString = command.Value<string>("options");
@@ -110,6 +117,7 @@ public class CommandManager : MonoBehaviour
                 cmd.min = command.Value<int>("min");
                 cmd.max = command.Value<int>("max");
                 cmd.defaultValue = command.Value<int>("defaultValue");
+                cmd.selectedValue = cmd.defaultValue;
                 commandList.commands.Add(cmd);
                 continue;
             }
@@ -118,6 +126,7 @@ public class CommandManager : MonoBehaviour
                 cmd.min = command.Value<float>("min");
                 cmd.max = command.Value<float>("max");
                 cmd.defaultValue = command.Value<float>("defaultValue");
+                cmd.selectedValue = cmd.defaultValue;
                 commandList.commands.Add(cmd);
                 continue;
             }
@@ -127,15 +136,69 @@ public class CommandManager : MonoBehaviour
 
     private void InitializeCommandPanels()
     {
-        var orderedCommands = commandList.commands
+        commandList.commands = commandList.commands
         .OrderBy(cmd => cmd.category)
         .ThenBy(cmd => cmd.subcategory)
         .ToList();
 
-        foreach (Command cmd in orderedCommands)
+        var groupedCommands = commandList.commands
+            .GroupBy(cmd => cmd.category)
+            .ToDictionary(
+                group => group.Key,
+                group => group
+                    .GroupBy(cmd => cmd.subcategory)
+                    .ToDictionary(subgroup => subgroup.Key, subgroup => subgroup.ToList())
+            );
+
+
+        foreach (Command cmd in commandList.commands)
         {
             CommandPanel cmdPanel = Instantiate(commandPanelPrefab, commandPanelContainer).GetComponent<CommandPanel>();
             cmdPanel.SetCommand(cmd);
+        }
+    }
+
+    private void ExportSettings()
+    {
+        // Create a .cfg file
+        string filePath = Path.Combine(Application.dataPath, "settings.cfg");
+
+        // Get the biggest command to align the comments
+        int maxLeftWidth = commandList.commands
+            .Select(cmd => $"{cmd.name} {cmd.defaultValue}".Length)
+            .Max();
+
+        var groupedCommands = commandList.commands
+            .GroupBy(cmd => cmd.category)
+            .ToDictionary(
+                group => group.Key,
+                group => group
+                    .GroupBy(cmd => cmd.subcategory)
+                    .ToDictionary(subgroup => subgroup.Key, subgroup => subgroup.ToList())
+            );
+
+
+        //CommandList audioCommands = (CommandList)commandList.commands.GroupBy(cmd => cmd.category);
+
+        using (StreamWriter writer = new StreamWriter(filePath))
+        {
+            foreach (var categoryPair in groupedCommands)
+            {
+                var subcategories = categoryPair.Value;
+                foreach (var subcategory in subcategories)
+                {
+                    writer.WriteLine();
+                    writer.WriteLine($"========== {categoryPair.Key.ToUpper()} - {subcategory.Key} ==========");
+
+                    var commands = subcategory.Value;
+                    foreach (var cmd in commands)
+                    {
+                        string left = $"{cmd.name} {cmd.selectedValue.ToString()}".PadRight(maxLeftWidth + 4);
+                        string line = left + $"// {cmd.ingameName}";
+                        writer.WriteLine(line);
+                    }
+                }
+            }
         }
     }
 }
