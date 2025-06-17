@@ -21,6 +21,7 @@ public class CommandManager : MonoBehaviour
 
     private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/commands.json";
 
+    [SerializeField] private GameObject commandSeparatorPrefab;
     [SerializeField] private GameObject commandPanelPrefab;
     [SerializeField] private Transform commandPanelContainer;
 
@@ -150,11 +151,20 @@ public class CommandManager : MonoBehaviour
                     .ToDictionary(subgroup => subgroup.Key, subgroup => subgroup.ToList())
             );
 
-
-        foreach (Command cmd in commandList.commands)
+        foreach (var category in groupedCommands)
         {
-            CommandPanel cmdPanel = Instantiate(commandPanelPrefab, commandPanelContainer).GetComponent<CommandPanel>();
-            cmdPanel.SetCommand(cmd);
+            var subcategories = category.Value;
+            foreach (var subcategory in subcategories)
+            {
+                var commands = subcategory.Value;
+                CommandSeparator commandSeparator = Instantiate(commandSeparatorPrefab, commandPanelContainer).GetComponent<CommandSeparator>();
+                commandSeparator.SetName($"{category.Key.ToUpper()} - {subcategory.Key}");
+                foreach(var cmd in commands)
+                {
+                    CommandPanel cmdPanel = Instantiate(commandPanelPrefab, commandPanelContainer).GetComponent<CommandPanel>();
+                    cmdPanel.SetCommand(cmd);
+                }
+            }
         }
     }
 

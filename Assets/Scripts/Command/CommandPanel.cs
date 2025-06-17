@@ -80,8 +80,8 @@ public class CommandPanel : MonoBehaviour
 
     private void InitializeStringPanel()
     {
-        enumDropdown.ClearOptions();
-        enumDropdown.AddOptions(command.optionsNames);
+        stringDropdown.ClearOptions();
+        stringDropdown.AddOptions(command.optionsNames);
     }
 
     private void InitializeIntPanel()
