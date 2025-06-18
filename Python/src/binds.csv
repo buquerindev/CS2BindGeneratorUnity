@@ -1,0 +1,71 @@
+name;ingameName;description;Category;subcategory
+show_loadout_toggle;Toggle Inventory Display;Toggles the option Always Show Inventory (cl_showloadout [bool]);CONTROLS;Movement
++forward;Move Forward;Moves the player forward;CONTROLS;Movement
++back;Move Backward;Moves the player backward;CONTROLS;Movement
++left;Move Left (strafe);Moves the player left;CONTROLS;Movement
++right;Move Right (strafe);Moves the player right;CONTROLS;Movement
++sprint;Walk;Toggle walking speed;CONTROLS;Movement
++duck;Duck (Crouch);Toggle crouching;CONTROLS;Movement
++jump;Jump;Makes the player jump;CONTROLS;Movement
++use;Use;Interact with objects;CONTROLS;Weapon
++attack;Fire;Primary weapon fire;CONTROLS;Weapon
++attack2;Secondary Fire;Weapon Scope / Burst mode / Detach Silencer on M4A1-S and USP-S / Adjust grenade trajectory;CONTROLS;Weapon
++reload;Reload;Reloads the current weapon;CONTROLS;Weapon
++quickinv;Radial Weapon Menu;Open radial weapon menu, nobody uses this;CONTROLS;Weapon
+invprev;Select Previous Weapon;Scrolls to the previous weapon (you shouldn't use this with the mousewheel);CONTROLS;Weapon
+invnext;Select Next Weapon;Scrolls to the next weapon (you shouldn't use this with the mousewheel);CONTROLS;Weapon
+lastinv;Last Weapon Used;Switches to the last used weapon;CONTROLS;Weapon
+drop;Drop Weapon;Drops your current equipped item;CONTROLS;Weapon
++lookatweapon;Inspect Weapon;Inspects weapon;CONTROLS;Weapon
+switchhands;Switch Viewmodel Left/Right Hand;Toggle your viewmodel from left to right;CONTROLS;Weapon
+buymenu;Buy Menu;Opens buy menu;CONTROLS;Weapon
+autobuy;Autobuy;Autobuys (don't use this please LOL);CONTROLS;Weapon
+rebuy;Rebuy;Rebuys the things you bought last round;CONTROLS;Weapon
+slot1;Primary Weapon;Primary weapon;CONTROLS;Weapon
+slot2;Secondary Weapon;Secondary weapon;CONTROLS;Weapon
+slot3;Melee Weapons;Knife & Zeus;CONTROLS;Weapon
+slot4;CycleGrenades;You should not use this, you can cycle through grenades, but direct binds are faster;CONTROLS;Weapon
+slot5;Explosives & Traps;C4 and old Danger Zone stuff;CONTROLS;Weapon
+slot6;HE Grenade;HE Grenade;CONTROLS;Weapon
+slot7;Flashbang;Flashbang;CONTROLS;Weapon
+slot8;Smoke Grenade;Smoke Grenade;CONTROLS;Weapon
+slot9;Decoy Grenade;Decoy grenade;CONTROLS;Weapon
+slot10;Molotov Cocktail/Incendiary Grenade;Molotov/Incendiary grenade;CONTROLS;Weapon
+slot11;Zeus x27;Zeus x27, but you can cycle through melee weapons;CONTROLS;Weapon
+slot12;Healthshot;Healthshot for deathmatch mode;CONTROLS;Weapon
+slot13;Utility Items;This bind doesn't work, it was used for Danger Zone items;CONTROLS;Weapon
++spray_menu;Graffiti Menu;Graffiti menu;CONTROLS;Weapon
++showscores;Scoreboard;Opens scoreboard;CONTROLS;UI
++cl_show_team_equipment;Show Team Equipment;Show the equipment over the head of your team mates, doesn't work if you already got "Show Team ID Through Walls: Pips, Names, Health, and Equipment";CONTROLS;UI
+toggleradarscale;Toggle Radar Zoom;Toggle the radar zoom level, it's like toggle cl_radar_scale value1 value2;CONTROLS;UI
+callvote;Call Vote;Call a vote, not sure if it works right now;CONTROLS;UI
+teammenu;Choose Team;Open the team selection menu;CONTROLS;UI
+toggleconsole;Toggle Console;Open and close the console;CONTROLS;UI
+player_ping;Player Ping;Ping a location;CONTROLS;Communication
+radio;Radio Message;Send a radio message;CONTROLS;Communication
+radio1;Command Radio Message;Send a command radio message;CONTROLS;Communication
+radio2;Standard Radio Message;Send a standard radio message;CONTROLS;Communication
+radio3;Report Radio Message;Send a report radio message;CONTROLS;Communication
+messagemode2;Team Message;Send a team message;CONTROLS;Communication
+messagemode;Chat Message;Send a general message;CONTROLS;Communication
++voicerecord;Use Microphone;Use microphone;CONTROLS;Communication
+clutch_mode_toggle;Temporarily Disable Incoming Chat;It's called Clutch Mode, you can mute any incoming message, works as a toggle;CONTROLS;Communication
++radialradio;Chat Wheel 1;Chat wheel 1, no one uses this (1);CONTROLS;ChatWheel
++radialradio2;Chat Wheel 2;Chat wheel 2, no one uses this (2);CONTROLS;ChatWheel
++radialradio3;Chat Wheel 3;Chat wheel 3, no one uses this (3);CONTROLS;ChatWheel
+sellbackall;Sell All Equipment;Sells all the bought items that are returnable;HIDDEN;Action
+cs_quit_prompt;Quit Game;Quit the game with a confirmation prompt;HIDDEN;Action
+disconnect;Disconnect;Disconnects from the current server;HIDDEN;Action
+quit;Instantly Quit Game;Quits the game without any confirmation;HIDDEN;Action
+holdpos;Bot Hold Position;It's the classic Z+4 bind (radio + 4), it makes the bots hold their position so they don't rush and die;HIDDEN;Action
+sv_rethrow_last_grenade;Re-throw Last Grenade;Re-throws the last thrown grenade;HIDDEN;sv_cheats
+noclip;No Clip;Toggle no clipping mode, you can fly through walls;HIDDEN;sv_cheats
+bot_add_t;Add T Bot;Adds a bot to the Terrorist team;HIDDEN;Bot
+bot_add_ct;Add CT Bot;Adds a bot to the Counter-Terrorist team;HIDDEN;Bot
+bot_place;Place Bot;Places a bot at the crosshair position;HIDDEN;Bot
+toggle bot_stop 1 0;Toggle bot stop;Stops all bots from doing any action;HIDDEN;Bot
+toggle bot_mimic 1 0;Toggle bot mimic;Makes the bot mimic the player's movements;HIDDEN;Bot
+toggle bot_crouch 1 0;Toggle bot crouch;Makes the bot crouch;HIDDEN;Bot
+yaw;Mouse Yaw;Don't change this option;HIDDEN;Hidden
+pitch;Mouse Pitch;Don't change this option;HIDDEN;Hidden
+cancelselect;Escape;Don't change this option;HIDDEN;Hidden

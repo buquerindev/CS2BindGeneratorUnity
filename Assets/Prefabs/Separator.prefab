@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 7695713639933583098}
   - component: {fileID: 2578390928446295543}
   m_Layer: 5
-  m_Name: CommandSeparator
+  m_Name: Separator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

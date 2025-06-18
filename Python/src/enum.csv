@@ -1,0 +1,23 @@
+name;ingameName;description;defaultValue;category;subcategory;enumValues;enumNames
+cl_hud_color;HUD Color;Change the color of the HUD elements;0;GAME;Hud;0/1/2/3/4/5/6/7/8/9/10/11/12;Team Color/Teammate Color/White/Bright White/Light Blue/Blue/Purple/Red/Orange/Yellow/Green/Aqua/Pink
+cl_teamid_overhead_mode;Show Team ID Through Walls;Select the info that shows above the head of your teammates;3;GAME;Team;0/1/2/3;Off/Pips/Pips, Names, and Health/Pips, Names, Health, and Equipment
+cl_teammate_colors_show;Show Player Colors in Competitive;Shows the color of your teammates in the mini-scoreboard, and radar;1;GAME;Team;0/1/2;No/Show Colors/Colors and Letters
+lobby_default_privacy_bits2;Friends Lobby Default Permissions;Default permissions for friends joining your lobby;1;GAME;Team;0/1;Friends Need Invites/All Friends Can Join
+ui_setting_advertiseforhire_auto;Looking to Play when Counter-Strike Starts;Set the looking to play status when Counter-Strike starts;1;GAME;Team;0/1/2;Disabled/Remember Last State/Automatic
+cl_player_ping_mute;Player Pings;Determine whether to show pings from teammates;0;GAME;Communication;0/1/2;Display and Play Sound/Display Without Sound/Disabled
+cl_hide_avatar_images;Hide Avatar Images and Customized Items;Hide avatar images and replace them with the default ones;0;GAME;Communication;0/1/2;Show All/Hide All/Show Only Friends
+spec_usenumberkeys_nobinds;Spectator/Map Vote Number Selection Method;Select the method for number key selection in spectator/map vote;1;GAME;Spectator/Scoreboard;0/1;Use Weapon Slots/Use Number Keys
+eom_local_player_defeat_anim_enabled;End of Match Local Player Defeat Animation;Enable the local player defeat animation at the end of the match;1;GAME;Spectator/Scoreboard;0/1;Disabled/Enabled
+cl_silencer_mode;Detach Silencer on M4A1-S and USP-S;Select the mode for detaching the silencer on M4A1-S and USP-S;0;GAME;Item;0/1;Disabled/Secondary Fire
+viewmodel_presetpos;Viewmodel Position;Select the viewmodel position preset;1;GAME;Item;1/2;Desktop/Classic
+cl_prefer_lefthanded;Preferred Viewmodel Left/Right Handedness;Select the preferred viewmodel handedness;0;GAME;Item;0/1;Right/Left
+r_drawtracers_firstperson;First Person Tracers;Enable or disable first person tracers;1;GAME;Item;0/1;Disabled/Enabled
+cl_buywheel_nonumberpurchasing;Buy Menu Number Keys;Choose whether to use number keys for purchasing in the buy menu;0;GAME;Item;0/1;Number Keys Buy Items/Ignored, Handled by Game
+cl_buywheel_donate_key;Buy Menu Donation Key;Select the key for donating a weapon in the buy menu;0;GAME;Item;0/1/2;Left Control/Left Alt/Left Shift
+cl_hud_telemetry_frametime_show;Show frame time and FPS;Show a graph of frame time and FPS in the HUD;1;GAME;Telemetry;0/1/2;Never/If conditions are poor/Always
+cl_hud_telemetry_ping_show;Show ping;Show a graph of ping in the HUD;1;GAME;Telemetry;0/1/2;Never/If conditions are poor/Always
+cl_hud_telemetry_net_misdelivery_show;Show network problems (ticks missed due to loss/jitter);Show a graph of network problems in the HUD;1;GAME;Telemetry;0/1/2;Never/If conditions are poor/Always
+cl_hud_telemetry_net_quality_graph_show;Show network jitter / misdelivery graph;Show a graph of network jitter and misdelivery in the HUD;1;GAME;Telemetry;0/1/2;Never/If conditions are poor/Always
+cl_hud_telemetry_net_detailed;Use the detailed network quality display;Show detailed network quality information in the HUD;1;GAME;Telemetry;0/1/2;Never/If conditions are poor/Always
+snd_headphone_eq_active;EQ Profile;Selects the equalizer profile for headphones;0;AUDIO;Audio;0/1/2;Natural/Crisp/Smooth
+voice_vox;Voice/Microphone Mode;Select the voice/microphone mode;0;AUDIO;Voice;0/0/1;Disabled/Push To Talk/Open Microphone

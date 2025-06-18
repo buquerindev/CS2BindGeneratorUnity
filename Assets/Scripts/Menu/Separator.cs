@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class CommandSeparator : MonoBehaviour
+public class Separator : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI nameTMP;
     public void SetName(string name)

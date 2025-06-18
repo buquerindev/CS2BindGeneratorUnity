@@ -1,0 +1,35 @@
+name;ingameName;description;defaultValue;category;subcategory
+cl_teamcounter_playercount_instead_of_avatars;Large Player Count;"During the active portion of the round, replace player avatars with team player count in the mini-scoreboard.";0;GAME;Hud
+cl_weapon_selection_rarity_color;Glow Weapon with Rarity Color;Weapons glow with their rarity color in the HUD;0;GAME;Hud
+cl_teamid_overhead_colors_show;Use Player Colors on Team ID;Use player colors on the name above teammates' heads;1;GAME;Team
+cl_mute_enemy_team;Mute Enemy Team;Mutes the enemy team (COMPROBAR EN QUE);0;GAME;Communication
+cl_mute_all_but_friends_and_party;Mute All But Friends;Mutes all players except friends and party members;0;GAME;Communication
+cl_allow_animated_avatars;Allow Animated Avatars;Allow animated avatars in the HUD;1;GAME;Communication
+cl_sanitize_player_names;Clean Player Names;Change name of players not in your friends list to something neutral;0;GAME;Communication
+cl_scoreboard_survivors_always_on;Survivors Always On;Nobody knows what this does (maybe dangerzone stuff);0;GAME;Spectator/Scoreboard
+cl_obs_interp_enable;Smooth Spectator Camera;Smooth the camera transition between players in spectator mode;1;GAME;Spectator
+cl_sniper_delay_unscope;Delay Sniper Rifle Un-Scope after Shot;Adds a delay after firing a shot before you can un-scope (only animation-wise and it's kinda awful);0;GAME;Item
+cl_sniper_auto_rezoom;Auto Re-Zoom Sniper Rifle After Shot;Automatically re-zoom the sniper rifle after firing a shot;1;GAME;Item
+cl_showloadout;Always Show Inventory;Determines whether the Primary, Secondary and Knife are always shown in the HUD, if they are hidden, they will show for a short time if you switch weapon;1;GAME;Item
+cl_use_opens_buy_menu;Open Buy Menu with Use Key;Open the buy menu with the use key;0;GAME;Item
+cl_quickinventory_lastinv;Last Weapon on Radial Weapon Trap;This option is locked to true ingame, it currently doesn't work, and nobody uses the radial weapon menu;1;GAME;Item
+cl_radar_always_centered;Radar Centers The Player;Centers the radar on the player;1;GAME;Radar/Tablet
+cl_radar_rotate;Radar Is Rotating;Rotates the radar to match the player's view direction;1;GAME;Radar/Tablet
+cl_hud_radar_map_additive;Radar HUD Map Blends With Background;Blends the radar layout with the background;1;GAME;Radar/Tablet
+cl_radar_square_with_scoreboard;Toggle Shape With Scoreboard;Changes the shape of the radar to a square when the scoreboard is open;1;GAME;Radar/Tablet
+cl_radar_scale_dynamic;Radar Is Zooming Dynamically;Changes the zoom level of the radar based on the map information;0;GAME;Radar/Tablet
+cl_grenadecrosshair_keepusercrosshair;Keep Regular Crosshair;Keep the regular crosshair when holding grenades;1;GAME;Grenade Line-Up Reticle
+cl_grenadecrosshair_flash;Flashbangs;Show the grenade line-up crosshair for flashbangs;1;GAME;Grenade Line-Up Reticle
+cl_grenadecrosshair_explosive;HE Grenades;Show the grenade line-up crosshair for HE grenades;1;GAME;Grenade Line-Up Reticle
+cl_grenadecrosshair_fire;Molotov cocktails / Incendiary Grenades;Show the grenade line-up crosshair for Molotov cocktails and incendiary grenades;1;GAME;Grenade Line-Up Reticle
+cl_grenadecrosshair_smoke;Smoke Grenades;Show the grenade line-up crosshair for smoke grenades;1;GAME;Grenade Line-Up Reticle
+cl_grenadecrosshair_decoy;Decoy Grenades;Show the grenade line-up crosshair for decoy grenades;1;GAME;Grenade Line-Up Reticle
+cl_predict_body_shot_fx;Predict Body Shot Effects;Predict the body shot effects (blood and sound effects);0;GAME;Damage Prediction
+cl_predict_head_shot_fx;Predict Head Shot Effects;Predict the head shot effects (blood, sparks and sound effects);0;GAME;Damage Prediction
+cl_predict_kill_ragdolls;Predict Kill Ragdolls;Transforms the player model into a ragdoll if a kill is predicted, could get reverted if the prediction was wrong;1;GAME;Damage Prediction
+snd_steamaudio_enable_perspective_correction;Perspective Correction;*Yes:* Sound sources will be rendered accurately with respect to your field of view as you look at the PC screen. Sound emitters that are on the edge of your field of view will sound slightly in front of you. Sound emitters that are off-screen and directly to your side will sound fully panned to either L or R respectively. \n *No:* Sound emitters at the edge of your field of view will sound strongly panned to either L or R respectively. Ideal for those who play very close to the screen, or use wearable screen, or players that prefer legacy sound engines. Can be positionally misleading at certain angles to the listener.;1;AUDIO;Audio
+snd_mute_losefocus;Play Audio When Game In Background;Determines whether the game will play audio when you tabbed out;0;AUDIO;Audio
+voice_loopback;Loopback Voice;Determines whether the game will play your own voice in the speakers;0;AUDIO;Voice
+voice_always_sample_mic;Streamlined Push To Talk;Setups the mic when you open the game instead of the first time you press Push To Talk;0;AUDIO;Voice
+snd_mute_mvp_music_live_players;Mute MVP Music when players on both teams are alive;Determines whether to mute the MVP music when some players on both teams are alive;0;AUDIO;Music
+cl_show_equipped_character_for_player_avatars false;Show Equipped Character for Player Avatars;Determines whether to show the equipped character for player avatars in the HUD instead of Steam profile pricture;0;GAME;Hidden

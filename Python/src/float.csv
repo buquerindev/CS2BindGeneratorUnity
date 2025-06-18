@@ -1,0 +1,14 @@
+name;ingameName;description;defaultValue;category;subcategory;min;max
+hud_scaling;HUD Scale;Scale the size of the HUD elements;1.0;GAME;Hud;0.9;1.10
+cl_obs_interp_pos_rate;Smooth Spectator Camera Speed;Adjust the speed of the camera transition between players;0.27;GAME;Spectator;0.05;0.4
+cl_hud_radar_background_alpha;Radar HUD Background Opacity;Set the opacity of the radar background;0.63;GAME;Radar/Tablet;0.0;1.0
+cl_hud_radar_scale;Radar HUD Size;Set the size of the radar in the HUD;1.0;GAME;Radar/Tablet;0.8;1.3
+cl_radar_scale;Radar Map Zoom;Set the zoom level of the radar;0.7;GAME;Radar/Tablet;0.25;1.0
+cl_radar_scale_alternate;Radar Map Alternate Zoom;Set the alternate zoom level of the radar;0.7;GAME;Radar/Tablet;0.25;1.0
+cl_grenadecrosshairdelay_flash;Flashbang Line-Up Crosshair Delay;Set the delay for the flashbang line-up crosshair;2.0;GAME;Grenade Line-Up Reticle;0.0;5.0
+cl_grenadecrosshairdelay_explosive;HE Grenade Line-Up Crosshair Delay;Set the delay for the HE grenade line-up crosshair;2.0;GAME;Grenade Line-Up Reticle;0.0;5.0
+cl_grenadecrosshairdelay_fire;Molotov/Incendiary Grenade Line-Up Crosshair Delay;Set the delay for the Molotov/incendiary grenade line-up crosshair;2.0;GAME;Grenade Line-Up Reticle;0.0;5.0
+cl_grenadecrosshairdelay_smoke;Smoke Grenade Line-Up Crosshair Delay;Set the delay for the smoke grenade line-up crosshair;2.0;GAME;Grenade Line-Up Reticle;0.0;5.0
+cl_grenadecrosshairdelay_decoy;Decoy Grenade Line-Up Crosshair Delay;Set the delay for the decoy grenade line-up crosshair;2.0;GAME;Grenade Line-Up Reticle;0.0;5.0
+cl_hud_telemetry_frametime_poor;Frame time warning threshold;Set the threshold for poor frame time conditions, write the minimum FPS value here;14;GAME;Telemetry;1;100
+cl_hud_telemetry_net_misdelivery_poor;Network tick miss rate warning threshold;Set the threshold for poor network conditions, write the maximum tick miss rate here;0.1;GAME;Telemetry;0.0;2.0

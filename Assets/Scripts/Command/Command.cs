@@ -29,6 +29,11 @@ public class CommandList
 {
     public List<Command> commands;
 
+    public void Add(Command command)
+    {
+        commands.Add(command);
+    }
+
     // Constructor
     public CommandList()
     {

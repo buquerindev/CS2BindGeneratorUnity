@@ -1,0 +1,3 @@
+name;ingameName;description;defaultValue;category;subcategory;options;optionsNames
+ui_steam_overlay_notification_position;Community Notification Location;Sets the position of the Steam Community notification in the HUD;bottomleft;GAME;Hud;topleft/bottomleft/bottomright/topright;Top Left/Bottom Left/Bottom Right/Top Right
+cl_scoreboard_mouse_enable_binding;Scoreboard Mouse Enable / End of Match Scoreboard Toggle;Enables mouse interaction with the scoreboard;+attack2;GAME;Spectator/Scoreboard;+attack2/+duck/+jump/drop/lastinv/radio/+use;Secondary Fire/Duck/Jump/Drop Weapon/Last Weapon Used/Radio Message/Use

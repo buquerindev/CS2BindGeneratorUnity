@@ -1,0 +1,17 @@
+name;ingameName;description;defaultValue;category;subcategory;min;max
+ui_steam_overlay_notification_position_horz;Community Notification Horizontal Offset;Sets the horizontal offset of the Steam Community notification in the HUD;0;GAME;Hud;0;100
+ui_steam_overlay_notification_position_vert;Community Notification Vertical Offset;Sets the vertical offset of the Steam Community notification in the HUD;0;GAME;Hud;0;100
+volume;Master Volume;Sets the master volume of the game;100;AUDIO;Audio;0;100
+snd_menumap_volume;Main Menu Ambience Volume;Sets the volume of the main menu ambiance;100;AUDIO;Audio;0;100
+snd_spatialize_lerp;L/R Isolation;*0% - Physically Accurate:* Physically modeled sound panning behavior most accurately reflecting the emitter position. \n *100% - Isolated L/R:* Sound emitters that are directly to the side of the player will be hard panned with minimal blending into the opposite L/R channel. This provides a strong sense of left vs right but can be positionally misleading at certain angles to the listener. For players who prefer legacy sound panning behavior.;0;AUDIO;Audio;0;100
+snd_voipvolume;Other Player Voice Volume;Sets the volume of other players' voice chat;100;AUDIO;Voice;0;100
+voice_threshold;Microphone Trigger Threshold;Sets the microphone trigger threshold for voice chat;-120;AUDIO;Voice;-120;0
+snd_menumusic_volume;Main Menu Volume;Sets the volume of the main menu music;100;AUDIO;Music;0;20
+snd_roundstart_volume;Round Start Volume;Sets the volume of the round start sound;0;AUDIO;Music;0;100
+snd_roundaction_volume;Round Action Volume;Sets the volume of the round action sound;0;AUDIO;Music;0;100
+snd_roundend_volume;Round End Volume;Sets the volume of the round end sound;40;AUDIO;Music;0;100
+snd_mvp_volume;MVP Volume;Sets the volume of the MVP song;40;AUDIO;Music;0;100
+snd_mapobjective_volume;Bomb/Hostage Volume;Sets the volume of the map objective sound;20;AUDIO;Music;0;100
+snd_tensecondwarning_volume;Ten Second Warning Volume;Sets the volume of the 10 second warning sound;20;AUDIO;Music;0;100
+snd_deathcamera_volume;Death Camera Volume;Sets the volume of the death camera sound;40;AUDIO;Music;0;100
+

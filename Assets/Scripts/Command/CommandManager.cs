@@ -75,7 +75,7 @@ public class CommandManager : MonoBehaviour
                 if (boolString == "0") defaultValue = false; else defaultValue = true;
                 cmd.defaultValue = defaultValue;
                 cmd.selectedValue = cmd.defaultValue;
-                commandList.commands.Add(cmd);
+                commandList.Add(cmd);
                 continue;
             }
 
@@ -101,7 +101,7 @@ public class CommandManager : MonoBehaviour
                 {
                     cmd.enumNames.Add(enumName);
                 }
-                commandList.commands.Add(cmd);
+                commandList.Add(cmd);
                 continue;
             }
 
@@ -127,7 +127,7 @@ public class CommandManager : MonoBehaviour
                 {
                     cmd.optionsNames.Add(option);
                 }
-                commandList.commands.Add(cmd);
+                commandList.Add(cmd);
                 continue;
             }
             if (type == "int")
@@ -136,7 +136,7 @@ public class CommandManager : MonoBehaviour
                 cmd.max = command.Value<int>("max");
                 cmd.defaultValue = command.Value<int>("defaultValue");
                 cmd.selectedValue = cmd.defaultValue;
-                commandList.commands.Add(cmd);
+                commandList.Add(cmd);
                 continue;
             }
             if (type == "float")
@@ -145,7 +145,7 @@ public class CommandManager : MonoBehaviour
                 cmd.max = command.Value<float>("max");
                 cmd.defaultValue = command.Value<float>("defaultValue");
                 cmd.selectedValue = cmd.defaultValue;
-                commandList.commands.Add(cmd);
+                commandList.Add(cmd);
                 continue;
             }
         }
@@ -154,11 +154,6 @@ public class CommandManager : MonoBehaviour
 
     private void InitializeCommandPanels()
     {
-        commandList.commands = commandList.commands
-        .OrderBy(cmd => cmd.category)
-        .ThenBy(cmd => cmd.subcategory)
-        .ToList();
-
         var groupedCommands = commandList.commands
             .GroupBy(cmd => cmd.category)
             .ToDictionary(
@@ -177,7 +172,7 @@ public class CommandManager : MonoBehaviour
             foreach (var subcategory in subcategories)
             {
                 var commands = subcategory.Value;
-                CommandSeparator commandSeparator = Instantiate(commandSeparatorPrefab, targetTransform).GetComponent<CommandSeparator>();
+                Separator commandSeparator = Instantiate(commandSeparatorPrefab, targetTransform).GetComponent<Separator>();
                 commandSeparator.SetName($"{category.Key.ToUpper()} - {subcategory.Key}");
                 foreach(var cmd in commands)
                 {

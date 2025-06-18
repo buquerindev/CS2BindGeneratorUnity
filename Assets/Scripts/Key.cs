@@ -11,6 +11,8 @@ public class Key : MonoBehaviour
     [SerializeField] private Material defaultMaterial;
     [SerializeField] private Material selectedMaterial;
 
+    private BindList bindList;
+
     private MeshRenderer meshRenderer;
 
     private void OnEnable()
