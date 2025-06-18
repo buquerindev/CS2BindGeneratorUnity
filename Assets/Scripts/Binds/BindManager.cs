@@ -80,8 +80,8 @@ public class BindManager : MonoBehaviour
                 commandSeparator.SetName($"{category.Key.ToUpper()} - {subcategory.Key}");
                 foreach (var bind in binds)
                 {
-                    //BindPanel bindPanel = Instantiate(bindPanelPrefab, targetTransform).GetComponent<BindPanel>();
-                    //bindPanel.SetCommand(bind);
+                    BindPanel bindPanel = Instantiate(bindPanelPrefab, targetTransform).GetComponent<BindPanel>();
+                    bindPanel.SetBind(bind.ingameName);
                 }
             }
         }

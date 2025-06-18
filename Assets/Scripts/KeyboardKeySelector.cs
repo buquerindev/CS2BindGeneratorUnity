@@ -40,25 +40,3 @@ public class KeyboardKeySelector : MonoBehaviour
     }
 }
 
-public class InputDebugger : MonoBehaviour
-{
-    void Update()
-    {
-        foreach (var device in InputSystem.devices)
-        {
-            foreach (var control in device.allControls)
-            {
-                if (control is ButtonControl btn && btn.isPressed)
-                {
-                    Debug.Log($"[Button] {device.displayName}: {control.name} PRESSED");
-                }
-
-                if (control is AxisControl axis && Mathf.Abs(axis.ReadValue()) > 0.1f)
-                {
-                    Debug.Log($"[Axis] {device.displayName}: {control.name} = {axis.ReadValue()}");
-                }
-            }
-        }
-    }
-}
-

@@ -59,7 +59,7 @@ disconnect;Disconnect;Disconnects from the current server;HIDDEN;Action
 quit;Instantly Quit Game;Quits the game without any confirmation;HIDDEN;Action
 holdpos;Bot Hold Position;It's the classic Z+4 bind (radio + 4), it makes the bots hold their position so they don't rush and die;HIDDEN;Action
 sv_rethrow_last_grenade;Re-throw Last Grenade;Re-throws the last thrown grenade;HIDDEN;sv_cheats
-noclip;No Clip;Toggle no clipping mode, you can fly through walls;HIDDEN;sv_cheats
+noclip;Noclip;Toggle no clipping mode, you can fly through walls;HIDDEN;sv_cheats
 bot_add_t;Add T Bot;Adds a bot to the Terrorist team;HIDDEN;Bot
 bot_add_ct;Add CT Bot;Adds a bot to the Counter-Terrorist team;HIDDEN;Bot
 bot_place;Place Bot;Places a bot at the crosshair position;HIDDEN;Bot
