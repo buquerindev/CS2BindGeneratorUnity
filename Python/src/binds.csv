@@ -1,4 +1,4 @@
-name;ingameName;description;Category;subcategory
+name;ingameName;description;category;subcategory
 show_loadout_toggle;Toggle Inventory Display;Toggles the option Always Show Inventory (cl_showloadout [bool]);CONTROLS;Movement
 +forward;Move Forward;Moves the player forward;CONTROLS;Movement
 +back;Move Backward;Moves the player backward;CONTROLS;Movement

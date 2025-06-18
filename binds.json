@@ -4,490 +4,490 @@
             "name": "show_loadout_toggle",
             "ingameName": "Toggle Inventory Display",
             "description": "Toggles the option Always Show Inventory (cl_showloadout [bool])",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Movement"
         },
         {
             "name": "+forward",
             "ingameName": "Move Forward",
             "description": "Moves the player forward",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Movement"
         },
         {
             "name": "+back",
             "ingameName": "Move Backward",
             "description": "Moves the player backward",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Movement"
         },
         {
             "name": "+left",
             "ingameName": "Move Left (strafe)",
             "description": "Moves the player left",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Movement"
         },
         {
             "name": "+right",
             "ingameName": "Move Right (strafe)",
             "description": "Moves the player right",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Movement"
         },
         {
             "name": "+sprint",
             "ingameName": "Walk",
             "description": "Toggle walking speed",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Movement"
         },
         {
             "name": "+duck",
             "ingameName": "Duck (Crouch)",
             "description": "Toggle crouching",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Movement"
         },
         {
             "name": "+jump",
             "ingameName": "Jump",
             "description": "Makes the player jump",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Movement"
         },
         {
             "name": "+use",
             "ingameName": "Use",
             "description": "Interact with objects",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "+attack",
             "ingameName": "Fire",
             "description": "Primary weapon fire",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "+attack2",
             "ingameName": "Secondary Fire",
             "description": "Weapon Scope / Burst mode / Detach Silencer on M4A1-S and USP-S / Adjust grenade trajectory",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "+reload",
             "ingameName": "Reload",
             "description": "Reloads the current weapon",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "+quickinv",
             "ingameName": "Radial Weapon Menu",
             "description": "Open radial weapon menu, nobody uses this",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "invprev",
             "ingameName": "Select Previous Weapon",
             "description": "Scrolls to the previous weapon (you shouldn't use this with the mousewheel)",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "invnext",
             "ingameName": "Select Next Weapon",
             "description": "Scrolls to the next weapon (you shouldn't use this with the mousewheel)",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "lastinv",
             "ingameName": "Last Weapon Used",
             "description": "Switches to the last used weapon",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "drop",
             "ingameName": "Drop Weapon",
             "description": "Drops your current equipped item",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "+lookatweapon",
             "ingameName": "Inspect Weapon",
             "description": "Inspects weapon",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "switchhands",
             "ingameName": "Switch Viewmodel Left/Right Hand",
             "description": "Toggle your viewmodel from left to right",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "buymenu",
             "ingameName": "Buy Menu",
             "description": "Opens buy menu",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "autobuy",
             "ingameName": "Autobuy",
             "description": "Autobuys (don't use this please LOL)",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "rebuy",
             "ingameName": "Rebuy",
             "description": "Rebuys the things you bought last round",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot1",
             "ingameName": "Primary Weapon",
             "description": "Primary weapon",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot2",
             "ingameName": "Secondary Weapon",
             "description": "Secondary weapon",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot3",
             "ingameName": "Melee Weapons",
             "description": "Knife & Zeus",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot4",
             "ingameName": "CycleGrenades",
             "description": "You should not use this, you can cycle through grenades, but direct binds are faster",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot5",
             "ingameName": "Explosives & Traps",
             "description": "C4 and old Danger Zone stuff",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot6",
             "ingameName": "HE Grenade",
             "description": "HE Grenade",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot7",
             "ingameName": "Flashbang",
             "description": "Flashbang",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot8",
             "ingameName": "Smoke Grenade",
             "description": "Smoke Grenade",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot9",
             "ingameName": "Decoy Grenade",
             "description": "Decoy grenade",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot10",
             "ingameName": "Molotov Cocktail/Incendiary Grenade",
             "description": "Molotov/Incendiary grenade",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot11",
             "ingameName": "Zeus x27",
             "description": "Zeus x27, but you can cycle through melee weapons",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot12",
             "ingameName": "Healthshot",
             "description": "Healthshot for deathmatch mode",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "slot13",
             "ingameName": "Utility Items",
             "description": "This bind doesn't work, it was used for Danger Zone items",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "+spray_menu",
             "ingameName": "Graffiti Menu",
             "description": "Graffiti menu",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Weapon"
         },
         {
             "name": "+showscores",
             "ingameName": "Scoreboard",
             "description": "Opens scoreboard",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "UI"
         },
         {
             "name": "+cl_show_team_equipment",
             "ingameName": "Show Team Equipment",
             "description": "Show the equipment over the head of your team mates, doesn't work if you already got \"Show Team ID Through Walls: Pips, Names, Health, and Equipment\"",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "UI"
         },
         {
             "name": "toggleradarscale",
             "ingameName": "Toggle Radar Zoom",
             "description": "Toggle the radar zoom level, it's like toggle cl_radar_scale value1 value2",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "UI"
         },
         {
             "name": "callvote",
             "ingameName": "Call Vote",
             "description": "Call a vote, not sure if it works right now",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "UI"
         },
         {
             "name": "teammenu",
             "ingameName": "Choose Team",
             "description": "Open the team selection menu",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "UI"
         },
         {
             "name": "toggleconsole",
             "ingameName": "Toggle Console",
             "description": "Open and close the console",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "UI"
         },
         {
             "name": "player_ping",
             "ingameName": "Player Ping",
             "description": "Ping a location",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Communication"
         },
         {
             "name": "radio",
             "ingameName": "Radio Message",
             "description": "Send a radio message",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Communication"
         },
         {
             "name": "radio1",
             "ingameName": "Command Radio Message",
             "description": "Send a command radio message",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Communication"
         },
         {
             "name": "radio2",
             "ingameName": "Standard Radio Message",
             "description": "Send a standard radio message",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Communication"
         },
         {
             "name": "radio3",
             "ingameName": "Report Radio Message",
             "description": "Send a report radio message",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Communication"
         },
         {
             "name": "messagemode2",
             "ingameName": "Team Message",
             "description": "Send a team message",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Communication"
         },
         {
             "name": "messagemode",
             "ingameName": "Chat Message",
             "description": "Send a general message",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Communication"
         },
         {
             "name": "+voicerecord",
             "ingameName": "Use Microphone",
             "description": "Use microphone",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Communication"
         },
         {
             "name": "clutch_mode_toggle",
             "ingameName": "Temporarily Disable Incoming Chat",
             "description": "It's called Clutch Mode, you can mute any incoming message, works as a toggle",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "Communication"
         },
         {
             "name": "+radialradio",
             "ingameName": "Chat Wheel 1",
             "description": "Chat wheel 1, no one uses this (1)",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "ChatWheel"
         },
         {
             "name": "+radialradio2",
             "ingameName": "Chat Wheel 2",
             "description": "Chat wheel 2, no one uses this (2)",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "ChatWheel"
         },
         {
             "name": "+radialradio3",
             "ingameName": "Chat Wheel 3",
             "description": "Chat wheel 3, no one uses this (3)",
-            "Category": "CONTROLS",
+            "category": "CONTROLS",
             "subcategory": "ChatWheel"
         },
         {
             "name": "sellbackall",
             "ingameName": "Sell All Equipment",
             "description": "Sells all the bought items that are returnable",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Action"
         },
         {
             "name": "cs_quit_prompt",
             "ingameName": "Quit Game",
             "description": "Quit the game with a confirmation prompt",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Action"
         },
         {
             "name": "disconnect",
             "ingameName": "Disconnect",
             "description": "Disconnects from the current server",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Action"
         },
         {
             "name": "quit",
             "ingameName": "Instantly Quit Game",
             "description": "Quits the game without any confirmation",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Action"
         },
         {
             "name": "holdpos",
             "ingameName": "Bot Hold Position",
             "description": "It's the classic Z+4 bind (radio + 4), it makes the bots hold their position so they don't rush and die",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Action"
         },
         {
             "name": "sv_rethrow_last_grenade",
             "ingameName": "Re-throw Last Grenade",
             "description": "Re-throws the last thrown grenade",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "sv_cheats"
         },
         {
             "name": "noclip",
             "ingameName": "No Clip",
             "description": "Toggle no clipping mode, you can fly through walls",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "sv_cheats"
         },
         {
             "name": "bot_add_t",
             "ingameName": "Add T Bot",
             "description": "Adds a bot to the Terrorist team",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Bot"
         },
         {
             "name": "bot_add_ct",
             "ingameName": "Add CT Bot",
             "description": "Adds a bot to the Counter-Terrorist team",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Bot"
         },
         {
             "name": "bot_place",
             "ingameName": "Place Bot",
             "description": "Places a bot at the crosshair position",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Bot"
         },
         {
             "name": "toggle bot_stop 1 0",
             "ingameName": "Toggle bot stop",
             "description": "Stops all bots from doing any action",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Bot"
         },
         {
             "name": "toggle bot_mimic 1 0",
             "ingameName": "Toggle bot mimic",
             "description": "Makes the bot mimic the player's movements",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Bot"
         },
         {
             "name": "toggle bot_crouch 1 0",
             "ingameName": "Toggle bot crouch",
             "description": "Makes the bot crouch",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Bot"
         },
         {
             "name": "yaw",
             "ingameName": "Mouse Yaw",
             "description": "Don't change this option",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Hidden"
         },
         {
             "name": "pitch",
             "ingameName": "Mouse Pitch",
             "description": "Don't change this option",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Hidden"
         },
         {
             "name": "cancelselect",
             "ingameName": "Escape",
             "description": "Don't change this option",
-            "Category": "HIDDEN",
+            "category": "HIDDEN",
             "subcategory": "Hidden"
         }
     ]

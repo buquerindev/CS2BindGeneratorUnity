@@ -130,6 +130,7 @@ public class CommandManager : MonoBehaviour
                 commandList.Add(cmd);
                 continue;
             }
+
             if (type == "int")
             {
                 cmd.min = command.Value<int>("min");
@@ -139,6 +140,7 @@ public class CommandManager : MonoBehaviour
                 commandList.Add(cmd);
                 continue;
             }
+
             if (type == "float")
             {
                 cmd.min = command.Value<float>("min");

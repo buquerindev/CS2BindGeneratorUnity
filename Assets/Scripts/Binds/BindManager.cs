@@ -53,9 +53,10 @@ public class BindManager : MonoBehaviour
 
             bindList.Add(bind);
         }
+        InitializeBindPanels();
     }
 
-    private void InitializeCommandPanels()
+    private void InitializeBindPanels()
     {
         var groupedBinds = bindList.binds
             .GroupBy(bind => bind.category)

@@ -21,4 +21,9 @@ public class BindList
     {
         binds.Add(bind);
     }
+
+    public BindList()
+    {
+        binds = new List<Bind>();
+    }
 }

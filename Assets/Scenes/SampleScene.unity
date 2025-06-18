@@ -5609,6 +5609,8 @@ MonoBehaviour:
   bindPanelPrefab: {fileID: 3802677681140702283, guid: cb54a2a392a377049bbe8a6dd8fc1982, type: 3}
   controlsPanelContainer: {fileID: 1898170620}
   hiddenPanelContainer: {fileID: 1410945716}
+  controlsButton: {fileID: 1917728018}
+  hiddenButton: {fileID: 551304307}
 --- !u!4 &480631046
 Transform:
   m_ObjectHideFlags: 0
@@ -7390,7 +7392,7 @@ GameObject:
   - component: {fileID: 752955333}
   - component: {fileID: 752955334}
   m_Layer: 5
-  m_Name: Categories
+  m_Name: CategoriesButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12303,7 +12305,7 @@ GameObject:
   - component: {fileID: 1572530241}
   - component: {fileID: 1572530242}
   m_Layer: 5
-  m_Name: Categories
+  m_Name: CategoriesButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
