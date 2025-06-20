@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -7,35 +8,29 @@ public class KeyboardKeySelector : MonoBehaviour
 {
     public delegate void KeyDownDelegate(KeyControl key);
     public static event KeyDownDelegate OnKeyPressed;
+    public static event KeyDownDelegate OnKeyReleased;
+    private KeyControl pressedKey;
+    private KeyControl unreleasedKey;
 
     private bool canSelect = false;
 
+    
+
     private void Update()
     {
-        if (Keyboard.current.upArrowKey.isPressed)
+        var pressedKeys = Keyboard.current.allKeys.Where(k => k.wasPressedThisFrame);
+        var unreleasedKeys = Keyboard.current.allKeys.Where(key => key.wasReleasedThisFrame);
+
+        foreach (var key in pressedKeys)
         {
-            Debug.Log("Se está presionando la flecha hacia arriba");
+            Debug.Log("Tecla pulsada: " + key.displayName);
+            OnKeyPressed?.Invoke(key);
         }
 
-        
-        if (Mouse.current.middleButton.wasReleasedThisFrame)
+        foreach (var key in unreleasedKeys)
         {
-            canSelect = true;
-            Debug.Log("Activado: presiona una tecla física");
-        }
-
-        if (canSelect)
-        {
-            foreach (var key in Keyboard.current.allKeys)
-            {
-                if (key.wasPressedThisFrame)
-                {
-                    Debug.Log("Tecla física detectada: " + key.name);
-                    OnKeyPressed?.Invoke(key);
-                    //canSelect = false;
-                    break;
-                }
-            }
+            Debug.Log("Tecla soltada: " + key.displayName);
+            OnKeyReleased?.Invoke(key);
         }
     }
 }

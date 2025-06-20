@@ -10,6 +10,7 @@ public class Bind
     public string category;
     public string subcategory;
 
+    public string americanKey;
     public string scancode;
 }
 

@@ -81,7 +81,7 @@ public class BindManager : MonoBehaviour
                 foreach (var bind in binds)
                 {
                     BindPanel bindPanel = Instantiate(bindPanelPrefab, targetTransform).GetComponent<BindPanel>();
-                    bindPanel.SetBind(bind.ingameName);
+                    bindPanel.SetBind(bind);
                 }
             }
         }
