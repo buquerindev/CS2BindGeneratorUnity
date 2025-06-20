@@ -5768,6 +5768,7 @@ MonoBehaviour:
   hiddenPanelContainer: {fileID: 1410945716}
   controlsButton: {fileID: 1917728018}
   hiddenButton: {fileID: 551304307}
+  exportBindsButton: {fileID: 32870229}
 --- !u!4 &480631046
 Transform:
   m_ObjectHideFlags: 0

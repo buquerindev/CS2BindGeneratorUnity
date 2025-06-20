@@ -1,5 +1,6 @@
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class BindManager : MonoBehaviour
 
     [SerializeField] private Button controlsButton;
     [SerializeField] private Button hiddenButton;
+    [SerializeField] private Button exportBindsButton;
 
     private Dictionary<string, Transform> categoryContainers;
 
@@ -35,6 +37,7 @@ public class BindManager : MonoBehaviour
 
         controlsButton.onClick.AddListener(() => SwitchContainer(controlsPanelContainer));
         hiddenButton.onClick.AddListener(() => SwitchContainer(hiddenPanelContainer));
+        exportBindsButton.onClick.AddListener(ExportBinds);
     }
 
     private void OnJSONReceived(string jsonText)
@@ -106,5 +109,49 @@ public class BindManager : MonoBehaviour
 
     }
 
+    private void ExportBinds()
+    {
+        // Create a .cfg file
+        string filePath = Path.Combine(Application.dataPath, "binds.cfg");
 
+        // Get the biggest command to align the comments
+        int maxLeftWidth = bindList.binds
+            .Select(bind => $"bind {bind.name} {bind.scancode}".Length)
+            .Max();
+
+        var groupedBinds = bindList.binds
+            .GroupBy(bind => bind.category)
+            .ToDictionary(
+                group => group.Key,
+                group => group
+                    .GroupBy(bind => bind.subcategory)
+                    .ToDictionary(subgroup => subgroup.Key, subgroup => subgroup.ToList())
+            );
+
+
+        //CommandList audioCommands = (CommandList)commandList.commands.GroupBy(cmd => cmd.category);
+
+        using (StreamWriter writer = new StreamWriter(filePath))
+        {
+            foreach (var categoryPair in groupedBinds)
+            {
+                var subcategories = categoryPair.Value;
+                foreach (var subcategory in subcategories)
+                {
+                    writer.WriteLine();
+                    writer.WriteLine($"========== {categoryPair.Key.ToUpper()} - {subcategory.Key} ==========");
+
+                    var binds = subcategory.Value;
+                    foreach (var bind in binds)
+                    {
+                        if (bind.scancode == null)
+                            continue;
+                        string left = $"bind {bind.name} {bind.scancode}".PadRight(maxLeftWidth + 4);
+                        string line = left + $"// {bind.americanKey} -> {bind.ingameName}";
+                        writer.WriteLine(line);
+                    }
+                }
+            }
+        }
+    }
 }

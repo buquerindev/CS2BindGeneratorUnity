@@ -36,6 +36,8 @@ public class Key : MonoBehaviour
                 return;
             Select();
             this.bind = bind;
+            bind.scancode = scanCode;
+            bind.americanKey = keyName;
             Debug.Log($"Asignado {bind.ingameName} a la tecla {key.displayName} ({key.name})");
         }
     }

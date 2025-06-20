@@ -11,7 +11,7 @@ public class Bind
     public string subcategory;
 
     public string americanKey;
-    public string scancode;
+    public string scancode = null;
 }
 
 public class BindList
