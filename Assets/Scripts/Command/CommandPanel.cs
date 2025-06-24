@@ -25,6 +25,36 @@ public class CommandPanel : MonoBehaviour
     {
         this.command = command;
         InitializePanel();
+        enumDropdown.onValueChanged.AddListener(DropdownUpdateValue);
+        stringDropdown.onValueChanged.AddListener(DropdownUpdateValue);
+        boolToggle.onValueChanged.AddListener(ToggleUpdateValue);
+        intInputField.onEndEdit.AddListener(InputFieldUpdateValue);
+        floatInputField.onEndEdit.AddListener(InputFieldUpdateValue);
+    }
+
+    private void DropdownUpdateValue(int value)
+    {
+        if(command.type == "string")
+            command.selectedValue = command.options[value];
+        else command.selectedValue = command.enumValues[value];
+    }
+
+    private void ToggleUpdateValue(bool value)
+    {
+        command.selectedValue = value;
+    }
+
+    private void InputFieldUpdateValue(string value)
+    {
+        if (command.type == "int")
+            command.selectedValue = int.Parse(value);
+        else
+        {
+            if (value.StartsWith("."))
+                value = "0" + value;
+            command.selectedValue = value;
+        }
+            
     }
 
     private void InitializePanel()
@@ -95,5 +125,4 @@ public class CommandPanel : MonoBehaviour
         float value = (float)command.defaultValue;
         floatInputField.text = value.ToString();
     }
-
 }

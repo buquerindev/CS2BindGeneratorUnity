@@ -11,7 +11,15 @@ public class Bind
     public string subcategory;
 
     public string americanKey;
+    public string localKey;
     public string scancode = null;
+
+    public void SetMouseKey(string key)
+    {
+        americanKey = key;
+        localKey = key;
+        scancode = key;
+    }
 }
 
 public class BindList

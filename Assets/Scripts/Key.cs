@@ -2,10 +2,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using Unity.Collections;
+using System.Collections.Generic;
 
 public class Key : MonoBehaviour
 {
-    private Bind bind;
+    private List<Bind> binds;
 
     [SerializeField] private string scanCode;
     [SerializeField] private string keyName;
@@ -25,6 +26,7 @@ public class Key : MonoBehaviour
         KeyboardKeySelector.OnKeyReleased += OnKeyReleased;
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
         meshRenderer.material = defaultMaterial;
+        binds = new List<Bind>();
     }
 
     private void OnBind(KeyControl key, Bind bind)
@@ -35,9 +37,10 @@ public class Key : MonoBehaviour
             if (meshRenderer.material.name == "UnusableKey (Instance)")
                 return;
             Select();
-            this.bind = bind;
+            binds.Add(bind);
             bind.scancode = scanCode;
             bind.americanKey = keyName;
+            bind.localKey = key.displayName;
             Debug.Log($"Asignado {bind.ingameName} a la tecla {key.displayName} ({key.name})");
         }
     }

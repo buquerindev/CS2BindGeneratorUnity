@@ -188,7 +188,7 @@ public class CommandManager : MonoBehaviour
     private void ExportSettings()
     {
         // Create a .cfg file
-        string filePath = Path.Combine(Application.dataPath, "settings.cfg");
+        string filePath = Path.Combine(Application.dataPath, "ExportFiles/settings.cfg");
 
         // Get the biggest command to align the comments
         int maxLeftWidth = commandList.commands
@@ -215,7 +215,7 @@ public class CommandManager : MonoBehaviour
                 foreach (var subcategory in subcategories)
                 {
                     writer.WriteLine();
-                    writer.WriteLine($"========== {categoryPair.Key.ToUpper()} - {subcategory.Key} ==========");
+                    writer.WriteLine($"//========== {categoryPair.Key.ToUpper()} - {subcategory.Key} ==========");
 
                     var commands = subcategory.Value;
                     foreach (var cmd in commands)

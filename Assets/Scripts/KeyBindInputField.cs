@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -9,6 +11,9 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     public delegate void KeyDownDelegate(KeyControl key, Bind bind);
     public static event KeyDownDelegate OnKeyPressed;
+
+    public delegate void MouseKeyDownDelegate(string mouseKey, Bind bind);
+    public static event MouseKeyDownDelegate OnMouseKeyPressed;
 
     [SerializeField] private BindPanel bindPanel;
     [SerializeField] private TMP_InputField inputField;
@@ -26,9 +31,6 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
         {
             if (key.wasPressedThisFrame)
             {
-                // Key name
-                rawKey = key.name;
-
                 // Key display (it depends of keyboard layout)
                 inputField.text = $"{key.displayName} <color=#88888888>({key.name})</color>";
 
@@ -60,6 +62,25 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     }
 
+    public void LoadBind(string localKey, string americanKey, string scancode)
+    {
+        if (localKey.StartsWith("MOUSE"))
+        {
+            inputField.text = $"{localKey}";
+            bindPanel.GetBind().SetMouseKey(localKey);
+            return;
+        }
+
+        inputField.text = $"{localKey} <color=#88888888>({americanKey})</color>";
+
+        KeyControl key = Keyboard.current.allKeys.FirstOrDefault(k => k.name == americanKey);
+
+        if (key != null)
+        {
+            OnKeyPressed?.Invoke(key, bindPanel.GetBind());
+        }
+    }
+
     public void StartListening()
     {
         StartCoroutine(ListenNextFrame());
@@ -76,6 +97,7 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
         Debug.Log("Tecla física detectada: " + key);
         inputField.text = key;
         isListening = false;
+        bindPanel.GetBind().SetMouseKey(key);
         EventSystem.current.SetSelectedGameObject(null);
     }
 
