@@ -53,6 +53,50 @@ clutch_mode_toggle;Temporarily Disable Incoming Chat;It's called Clutch Mode, yo
 +radialradio;Chat Wheel 1;Chat wheel 1, no one uses this (1);CONTROLS;ChatWheel
 +radialradio2;Chat Wheel 2;Chat wheel 2, no one uses this (2);CONTROLS;ChatWheel
 +radialradio3;Chat Wheel 3;Chat wheel 3, no one uses this (3);CONTROLS;ChatWheel
+buy vest;Buy Kevlar;Buys Kevlar armor;BUY;Equipment
+buy vesthelm;Buy Kevlar + Helmet;Buys Kevlar armor with a helmet;BUY;Equipment
+buy defuser;Buy Defuse Kit;Buys a defuse kit, only available for Counter-Terrorists;BUY;Equipment
+buy taser;Buy Zeus-X27;Buys a taser;BUY;Equipment
+buy flashbang;Buy Flashbang;Buys a flashbang grenade;BUY;Grenades
+buy hegrenade;Buy HE Grenade;Buys a high explosive grenade;BUY;Grenades
+buy smokegrenade;Buy Smoke Grenade;Buys a smoke grenade;BUY;Grenades
+buy molotov;Buy Molotov;Buys a molotov (T side), recommended to bind same key as Buy Incendiary;BUY;Grenades
+buy incgrenade;Buy Incendiary;Buys an incendiary (CT side), recommended to bind same key as Buy Molotov;BUY;Grenades
+buy decoy;Buy Decoy;Buys a decoy grenade;BUY;Grenades
+buy famas;Buy FAMAS;Buys a FAMAS (CT only);BUY;Rifles
+buy galilar;Buy Galil AR;Buys a Galil AR (T only);BUY;Rifles
+buy m4a1;Buy M4A4;Buys an M4A4 (CT only);BUY;Rifles
+buy m4a1_silencer;Buy M4A1-S;Buys an M4A1-S (CT only);BUY;Rifles
+buy ak47;Buy AK-47;Buys an AK-47 (T only);BUY;Rifles
+buy ssg08;Buy SSG08;Buys an SSG08 sniper;BUY;Rifles
+buy aug;Buy AUG;Buys an AUG (CT only);BUY;Rifles
+buy sg556;Buy SG 553;Buys an SG 553 (T only);BUY;Rifles
+buy awp;Buy AWP;Buys an AWP sniper rifle;BUY;Rifles
+buy scar20;Buy SCAR-20;Buys a SCAR-20 auto sniper (CT only);BUY;Rifles
+buy g3sg1;Buy G3SG1;Buys a G3SG1 auto sniper (T only);BUY;Rifles
+buy mp9;Buy MP9;Buys an MP9 (CT only);BUY;SMGs
+buy mac10;Buy MAC-10;Buys a MAC-10 (T only);BUY;SMGs
+buy mp7;Buy MP7;Buys an MP7;BUY;SMGs
+buy mp5;Buy MP5-SD;Buys an MP5-SD;BUY;SMGs
+buy ump45;Buy UMP-45;Buys a UMP-45;BUY;SMGs
+buy p90;Buy P90;Buys a P90;BUY;SMGs
+buy bizon;Buy PP-Bizon;Buys a PP-Bizon;BUY;SMGs
+buy nova;Buy Nova;Buys a Nova shotgun;BUY;Heavy
+buy xm1014;Buy XM1014;Buys an XM1014 auto shotgun;BUY;Heavy
+buy mag7;Buy MAG-7;Buys a MAG-7 (CT only);BUY;Heavy
+buy sawedoff;Buy Sawed-Off;Buys a Sawed-Off (T only);BUY;Heavy
+buy m249;Buy M249;Buys an M249 machine gun;BUY;Heavy
+buy negev;Buy Negev;Buys a Negev machine gun;BUY;Heavy
+buy usp_silencer;Buy USP-S;Buys a USP-S pistol (CT default);BUY;Pistols
+buy hkp2000;Buy P2000;Buys a P2000 pistol (CT default);BUY;Pistols
+buy glock;Buy Glock-18;Buys a Glock-18 pistol (T default);BUY;Pistols
+buy elite;Buy Dual Berettas;Buys Dual Berettas pistols;BUY;Pistols
+buy p250;Buy P250;Buys a P250 pistol;BUY;Pistols
+buy fiveseven;Buy Five-SeveN;Buys a Five-SeveN pistol (CT only);BUY;Pistols
+buy tec9;Buy Tec-9;Buys a Tec-9 pistol (T only);BUY;Pistols
+buy cz75a;Buy CZ75-Auto;Buys a CZ75-Auto pistol;BUY;Pistols
+buy deagle;Buy Desert Eagle;Buys a Desert Eagle (Deagle);BUY;Pistols
+buy revolver;Buy R8 Revolver;Buys an R8 Revolver;BUY;Pistols
 sellbackall;Sell All Equipment;Sells all the bought items that are returnable;HIDDEN;Action
 cs_quit_prompt;Quit Game;Quit the game with a confirmation prompt;HIDDEN;Action
 disconnect;Disconnect;Disconnects from the current server;HIDDEN;Action

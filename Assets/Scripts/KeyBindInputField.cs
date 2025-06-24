@@ -12,8 +12,8 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
     public delegate void KeyDownDelegate(KeyControl key, Bind bind);
     public static event KeyDownDelegate OnKeyPressed;
 
-    public delegate void MouseKeyDownDelegate(string mouseKey, Bind bind);
-    public static event MouseKeyDownDelegate OnMouseKeyPressed;
+    //public delegate void MouseKeyDownDelegate(string mouseKey, Bind bind);
+    //public static event MouseKeyDownDelegate OnMouseKeyPressed;
 
     [SerializeField] private BindPanel bindPanel;
     [SerializeField] private TMP_InputField inputField;
@@ -48,10 +48,10 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
         } else if (Mouse.current.middleButton.isPressed)
         {
             SetMouseKey("MOUSE3");
-        } else if (Mouse.current.forwardButton.wasPressedThisFrame)
+        } else if (Mouse.current.backButton.wasPressedThisFrame)
         {
             SetMouseKey("MOUSE4");
-        } else if (Mouse.current.backButton.wasPressedThisFrame)
+        } else if (Mouse.current.forwardButton.wasPressedThisFrame)
         {
             SetMouseKey("MOUSE5");
         }
