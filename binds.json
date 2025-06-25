@@ -379,6 +379,314 @@
             "subcategory": "ChatWheel"
         },
         {
+            "name": "buy vest",
+            "ingameName": "Buy Kevlar",
+            "description": "Buys Kevlar armor",
+            "category": "BUY",
+            "subcategory": "Equipment"
+        },
+        {
+            "name": "buy vesthelm",
+            "ingameName": "Buy Kevlar + Helmet",
+            "description": "Buys Kevlar armor with a helmet",
+            "category": "BUY",
+            "subcategory": "Equipment"
+        },
+        {
+            "name": "buy defuser",
+            "ingameName": "Buy Defuse Kit",
+            "description": "Buys a defuse kit, only available for Counter-Terrorists",
+            "category": "BUY",
+            "subcategory": "Equipment"
+        },
+        {
+            "name": "buy taser",
+            "ingameName": "Buy Zeus-X27",
+            "description": "Buys a taser",
+            "category": "BUY",
+            "subcategory": "Equipment"
+        },
+        {
+            "name": "buy flashbang",
+            "ingameName": "Buy Flashbang",
+            "description": "Buys a flashbang grenade",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy hegrenade",
+            "ingameName": "Buy HE Grenade",
+            "description": "Buys a high explosive grenade",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy smokegrenade",
+            "ingameName": "Buy Smoke Grenade",
+            "description": "Buys a smoke grenade",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy molotov",
+            "ingameName": "Buy Molotov",
+            "description": "Buys a molotov (T side), recommended to bind same key as Buy Incendiary",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy incgrenade",
+            "ingameName": "Buy Incendiary",
+            "description": "Buys an incendiary (CT side), recommended to bind same key as Buy Molotov",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy decoy",
+            "ingameName": "Buy Decoy",
+            "description": "Buys a decoy grenade",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy famas",
+            "ingameName": "Buy FAMAS",
+            "description": "Buys a FAMAS (CT only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy galilar",
+            "ingameName": "Buy Galil AR",
+            "description": "Buys a Galil AR (T only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy m4a1",
+            "ingameName": "Buy M4A4",
+            "description": "Buys an M4A4 (CT only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy m4a1_silencer",
+            "ingameName": "Buy M4A1-S",
+            "description": "Buys an M4A1-S (CT only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy ak47",
+            "ingameName": "Buy AK-47",
+            "description": "Buys an AK-47 (T only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy ssg08",
+            "ingameName": "Buy SSG08",
+            "description": "Buys an SSG08 sniper",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy aug",
+            "ingameName": "Buy AUG",
+            "description": "Buys an AUG (CT only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy sg556",
+            "ingameName": "Buy SG 553",
+            "description": "Buys an SG 553 (T only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy awp",
+            "ingameName": "Buy AWP",
+            "description": "Buys an AWP sniper rifle",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy scar20",
+            "ingameName": "Buy SCAR-20",
+            "description": "Buys a SCAR-20 auto sniper (CT only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy g3sg1",
+            "ingameName": "Buy G3SG1",
+            "description": "Buys a G3SG1 auto sniper (T only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy mp9",
+            "ingameName": "Buy MP9",
+            "description": "Buys an MP9 (CT only)",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy mac10",
+            "ingameName": "Buy MAC-10",
+            "description": "Buys a MAC-10 (T only)",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy mp7",
+            "ingameName": "Buy MP7",
+            "description": "Buys an MP7",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy mp5",
+            "ingameName": "Buy MP5-SD",
+            "description": "Buys an MP5-SD",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy ump45",
+            "ingameName": "Buy UMP-45",
+            "description": "Buys a UMP-45",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy p90",
+            "ingameName": "Buy P90",
+            "description": "Buys a P90",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy bizon",
+            "ingameName": "Buy PP-Bizon",
+            "description": "Buys a PP-Bizon",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy nova",
+            "ingameName": "Buy Nova",
+            "description": "Buys a Nova shotgun",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy xm1014",
+            "ingameName": "Buy XM1014",
+            "description": "Buys an XM1014 auto shotgun",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy mag7",
+            "ingameName": "Buy MAG-7",
+            "description": "Buys a MAG-7 (CT only)",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy sawedoff",
+            "ingameName": "Buy Sawed-Off",
+            "description": "Buys a Sawed-Off (T only)",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy m249",
+            "ingameName": "Buy M249",
+            "description": "Buys an M249 machine gun",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy negev",
+            "ingameName": "Buy Negev",
+            "description": "Buys a Negev machine gun",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy usp_silencer",
+            "ingameName": "Buy USP-S",
+            "description": "Buys a USP-S pistol (CT default)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy hkp2000",
+            "ingameName": "Buy P2000",
+            "description": "Buys a P2000 pistol (CT default)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy glock",
+            "ingameName": "Buy Glock-18",
+            "description": "Buys a Glock-18 pistol (T default)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy elite",
+            "ingameName": "Buy Dual Berettas",
+            "description": "Buys Dual Berettas pistols",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy p250",
+            "ingameName": "Buy P250",
+            "description": "Buys a P250 pistol",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy fiveseven",
+            "ingameName": "Buy Five-SeveN",
+            "description": "Buys a Five-SeveN pistol (CT only)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy tec9",
+            "ingameName": "Buy Tec-9",
+            "description": "Buys a Tec-9 pistol (T only)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy cz75a",
+            "ingameName": "Buy CZ75-Auto",
+            "description": "Buys a CZ75-Auto pistol",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy deagle",
+            "ingameName": "Buy Desert Eagle",
+            "description": "Buys a Desert Eagle (Deagle)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy revolver",
+            "ingameName": "Buy R8 Revolver",
+            "description": "Buys an R8 Revolver",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
             "name": "sellbackall",
             "ingameName": "Sell All Equipment",
             "description": "Sells all the bought items that are returnable",
@@ -422,7 +730,7 @@
         },
         {
             "name": "noclip",
-            "ingameName": "No Clip",
+            "ingameName": "Noclip",
             "description": "Toggle no clipping mode, you can fly through walls",
             "category": "HIDDEN",
             "subcategory": "sv_cheats"

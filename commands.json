@@ -298,6 +298,15 @@
             "type": "bool"
         },
         {
+            "name": "cl_show_equipped_character_for_player_avatars false",
+            "ingameName": "Show Equipped Character for Player Avatars",
+            "description": "Determines whether to show the equipped character for player avatars in the HUD instead of Steam profile pricture",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Hidden",
+            "type": "bool"
+        },
+        {
             "name": "cl_hud_color",
             "ingameName": "HUD Color",
             "description": "Change the color of the HUD elements",
@@ -499,7 +508,7 @@
             "name": "cl_hud_telemetry_net_quality_graph_show",
             "ingameName": "Show network jitter / misdelivery graph",
             "description": "Show a graph of network jitter and misdelivery in the HUD",
-            "defaultValue": "0",
+            "defaultValue": "1",
             "category": "GAME",
             "subcategory": "Telemetry",
             "enumValues": "0/1/2",
@@ -510,7 +519,7 @@
             "name": "cl_hud_telemetry_net_detailed",
             "ingameName": "Use the detailed network quality display",
             "description": "Show detailed network quality information in the HUD",
-            "defaultValue": "0",
+            "defaultValue": "1",
             "category": "GAME",
             "subcategory": "Telemetry",
             "enumValues": "0/1/2",
