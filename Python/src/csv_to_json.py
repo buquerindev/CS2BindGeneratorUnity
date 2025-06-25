@@ -17,8 +17,6 @@ string_csv_path = path + "string.csv"
 
 binds_csv_path = path + "binds.csv"
 
-toggles_csv_path = path + "toggles.csv"
-
 # # Remove the JSON file if it exists
 # if os.path.exists(json_data_path):
 #     os.remove(json_data_path)
@@ -32,12 +30,6 @@ commands_json_data = {
 binds_json_data = {
     "binds": []
 }
-
-toggles_json_data = {
-    "toggles": []
-}
-
-
 
 # Helper function to load a CSV and add a type field
 def load_csv_with_type(path, type_name):
@@ -60,7 +52,6 @@ load_csv_with_type(float_csv_path, "float")
 load_csv_with_type(int_csv_path, "int")
 load_csv_with_type(string_csv_path, "string")
 load_csv(binds_csv_path,"binds",binds_json_data)
-load_csv(toggles_csv_path,"toggles",toggles_json_data)
 
 # Create a JSON file from the CSV data for commands
 with open(json_data_path, mode='w', encoding='utf-8') as commands_json_file:
@@ -74,8 +65,3 @@ with open(binds_data_path, mode='w', encoding='utf-8') as binds_json_file:
 
 binds_json_file.close()
 
-# Create a JSON file from the CSV data for binds
-with open(toggles_data_path, mode='w', encoding='utf-8') as toggles_json_file:
-    json.dump(toggles_json_data, toggles_json_file, ensure_ascii=False, indent = 4)
-
-toggles_json_file.close()

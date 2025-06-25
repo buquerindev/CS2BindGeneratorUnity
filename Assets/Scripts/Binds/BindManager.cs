@@ -20,10 +20,14 @@ public class BindManager : MonoBehaviour
 
     [SerializeField] private Transform controlsPanelContainer;
     [SerializeField] private Transform hiddenPanelContainer;
+    [SerializeField] private Transform buyPanelContainer;
+    [SerializeField] private Transform togglesPanelContainer;
     private Transform currentContainer;
 
     [SerializeField] private Button controlsButton;
     [SerializeField] private Button hiddenButton;
+    [SerializeField] private Button buyButton;
+    [SerializeField] private Button togglesButton;
     [SerializeField] private Button exportBindsButton;
 
     private string[] csLogoASCII = new string[]

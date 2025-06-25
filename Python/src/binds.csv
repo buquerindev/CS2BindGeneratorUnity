@@ -113,8 +113,8 @@ toggle bot_crouch 1 0;Toggle bot crouch;Makes the bot crouch;HIDDEN;Bot
 yaw;Mouse Yaw;Don't change this option;HIDDEN;Hidden
 pitch;Mouse Pitch;Don't change this option;HIDDEN;Hidden
 cancelselect;Escape;Don't change this option;HIDDEN;Hidden
-cl_hud_color;Change HUD Color;Press this key to alternate the HUD color\n0:Team Color\n1:Teammate Color\n2:White\n3:Bright White\n4:Light Blue\n5:Blue\n6:Purple\n7:Red\n8:Orange\n9:Yellow\n10:Green\n11:Aqua\n12:Pink;TOGGLE;HUD
-cl_radar_scale;Change Radar Scale;It's the same as toggleradarscale but you could add more values;TOGGLE;HUD
-cl_crosshaircolor;Change Crosshair Color;Press this key to alternate the crosshair color\n0:Red\n1:Green\n2:Yellow\n3:Blue\n4:Cyan\n5:Custom RGB color from the crosshair_[r/g/b] command;TOGGLE;HUD
-cl_crosshairsize;Change Crosshair Size;Press this key to change the crosshair size (Some players prefer this instead of the new grenade reticle);TOGGLE;HUD
-host_timescale;Change Host Time Scale;Use this while practicing, if you miss a smoke you can accelerate time, for example:\n1 = Normal time\n0.5 = Half time (slow motion)\n5 = 5x normal time (A smoke would last 4 seconds);TOGGLE;category
+cl_hud_color;Change HUD Color;Press this key to alternate the HUD color\n0:Team Color\n1:Teammate Color\n2:White\n3:Bright White\n4:Light Blue\n5:Blue\n6:Purple\n7:Red\n8:Orange\n9:Yellow\n10:Green\n11:Aqua\n12:Pink;TOGGLES;HUD
+cl_radar_scale;Change Radar Scale;It's the same as toggleradarscale but you could add more values;TOGGLES;HUD
+cl_crosshaircolor;Change Crosshair Color;Press this key to alternate the crosshair color\n0:Red\n1:Green\n2:Yellow\n3:Blue\n4:Cyan\n5:Custom RGB color from the crosshair_[r/g/b] command;TOGGLES;HUD
+cl_crosshairsize;Change Crosshair Size;Press this key to change the crosshair size (Some players prefer this instead of the new grenade reticle);TOGGLES;HUD
+host_timescale;Change Host Time Scale;Use this while practicing, if you miss a smoke you can accelerate time, for example:\n1 = Normal time\n0.5 = Half time (slow motion)\n5 = 5x normal time (A smoke would last 4 seconds);TOGGLES;category
