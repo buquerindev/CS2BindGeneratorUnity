@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +30,8 @@ public class BindManager : MonoBehaviour
     [SerializeField] private Button buyButton;
     [SerializeField] private Button togglesButton;
     [SerializeField] private Button exportBindsButton;
+
+    private List<BindPanel> bindPanels = new();
 
     private string[] csLogoASCII = new string[]
     {
@@ -243,7 +246,8 @@ public class BindManager : MonoBehaviour
             bind.description = JObject.Value<string>("description");
             bind.category = JObject.Value<string>("category");
             bind.subcategory = JObject.Value<string>("subcategory");
-
+            bind.scancode = null;
+            bind.secondScancode = null;
             bindList.Add(bind);
         }
         InitializeBindPanels();
@@ -275,8 +279,20 @@ public class BindManager : MonoBehaviour
                 {
                     BindPanel bindPanel = Instantiate(bindPanelPrefab, targetTransform).GetComponent<BindPanel>();
                     bindPanel.SetBind(bind);
+                    bindPanels.Add(bindPanel);
                 }
             }
+        }
+
+        string filePath = Path.Combine(Application.persistentDataPath, "binds.txt");
+        if (!File.Exists(filePath))
+            return;
+
+        string[] lines = File.ReadAllLines(filePath);
+
+        foreach(BindPanel bindPanel in bindPanels)
+        {
+            bindPanel.LoadBind(lines);
         }
     }
 
@@ -312,7 +328,9 @@ public class BindManager : MonoBehaviour
             foreach (Bind bind in bindList.binds)
             {
                 if(bind.scancode != null)
-                    writer.WriteLine($"{bind.name},{bind.localKey},{bind.americanKey},{bind.scancode}");
+                    writer.WriteLine($"{bind.name}|{bind.localKey}|{bind.americanKey}|{bind.scancode}");
+                if(bind.secondScancode != null)
+                    writer.WriteLine($"{bind.name}|{bind.secondLocalKey}|{bind.secondAmericanKey}|{bind.secondScancode}");
             }
         }
     }
@@ -360,7 +378,13 @@ public class BindManager : MonoBehaviour
         SaveBinds();
 
         // Create a .cfg file
-        string filePath = Path.Combine(Application.dataPath, "ExportFiles/binds.cfg");
+        string filePath;
+#if UNITY_EDITOR
+            filePath = Path.Combine(Application.dataPath, "ExportFiles/binds.cfg"); // -> G:/Programacion/CS2DemoViewer/Assets/Demos
+#else
+            filePath = Path.Combine(System.AppContext.BaseDirectory, "binds.cfg");
+#endif
+
 
         // Get the biggest command to align the comments
 
@@ -404,12 +428,13 @@ public class BindManager : MonoBehaviour
 
                     foreach (var bind in subcategory.Value)
                     {
-                        if (bind.secondScancode == null)
+                        if (string.IsNullOrEmpty(bind.secondScancode))
                         {
                             string left = $"bind \"{bind.scancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
                             writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
                         } else
                         {
+                            Debug.Log($"{bind.name} su second scancode es = {bind.secondScancode}");
                             string left = $"bind \"{bind.scancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
                             writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
                             string extraLeft = $"bind \"{bind.secondScancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);

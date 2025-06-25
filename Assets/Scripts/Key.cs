@@ -38,11 +38,19 @@ public class Key : MonoBehaviour
                 return;
             Select();
             binds.Add(bind);
-            if (bind.scancode == null)
+            if (string.IsNullOrEmpty(bind.scancode))
+            {
                 bind.scancode = scanCode;
-            else bind.secondScancode = scanCode;
                 bind.americanKey = keyName;
-            bind.localKey = key.displayName;
+                bind.localKey = key.displayName;
+            }
+            else
+            {
+                bind.secondScancode = scanCode;
+                bind.secondAmericanKey = keyName;
+                bind.secondLocalKey = key.displayName;
+            }
+            
             Debug.Log($"Asignado {bind.ingameName} a la tecla {key.displayName} ({key.name})");
         }
     }
@@ -55,11 +63,17 @@ public class Key : MonoBehaviour
                 return;
             Deselect();
             binds.RemoveAll(b => b.name == bind.name);
-            bind.scancode = null;
-            bind.americanKey = null;
-            bind.localKey = null;
-            Debug.Log($"Eliminado el bind {bind.ingameName} de la tecla {key.displayName} ({key.name})");
-            Debug.Log($"Ahora hay {binds.Count} bindeos en {this.keyName}");
+            if(bind.scancode == scanCode)
+            {
+                bind.scancode = null;
+                bind.americanKey = null;
+                bind.localKey = null;
+            } else
+            {
+                bind.secondScancode = null;
+                bind.secondAmericanKey = null;
+                bind.secondLocalKey= null;
+            }
         }
     }
 

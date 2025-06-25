@@ -76,7 +76,7 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
         }
     }
 
-    public void LoadBind(string localKey, string americanKey, string scancode)
+    public void LoadBind(string localKey, string americanKey)
     {
         if (localKey.StartsWith("MOUSE")  || localKey.StartsWith("MWHEEL"))
         {

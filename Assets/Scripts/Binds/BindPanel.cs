@@ -31,8 +31,6 @@ public class BindPanel : MonoBehaviour
             keyInputField.LockBind("MOUSE1");
         }
         bindName.text = bind.ingameName;
-
-        LoadBind();
     }
 
     // Returns the bind associated with this panel
@@ -42,21 +40,15 @@ public class BindPanel : MonoBehaviour
     }
 
     // Loads a pre-existing bind from binds.txt
-    private void LoadBind()
+    public void LoadBind(string[] lines)
     {
-        string filePath = Path.Combine(Application.persistentDataPath, "binds.txt");
-        if (!File.Exists(filePath))
-            return;
-
-        string[] lines = File.ReadAllLines(filePath);
-
         //+jump,Barra Espaciadora,space,scancode44
         foreach (string line in lines)
         {
             if (string.IsNullOrWhiteSpace(line))
                 continue;
 
-            string[] parts = line.Split(',');
+            string[] parts = line.Split('|');
             if (parts.Length != 4)
                 continue;
 
@@ -68,19 +60,14 @@ public class BindPanel : MonoBehaviour
                 string americanKey = parts[2];
                 string scancode = parts[3];
 
-                bind.localKey = localKey;
-                bind.americanKey = americanKey;
-                bind.scancode = scancode;
-
-                
-
                 if(!loadedFirstKey)
                 {
-                    keyInputField.LoadBind(localKey, americanKey, scancode);
+                    keyInputField.LoadBind(localKey, americanKey);
                     loadedFirstKey = true;
                 } else
                 {
-                    extraKeyInputField.LoadBind(localKey, americanKey, scancode);
+                    Debug.Log($"El bind {bind.name} tiene extraKeyInput con {scancode}");
+                    extraKeyInputField.LoadBind(localKey, americanKey);
                     return;
                 }   
             }
