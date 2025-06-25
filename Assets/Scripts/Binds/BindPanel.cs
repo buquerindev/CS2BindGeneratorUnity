@@ -9,15 +9,20 @@ public class BindPanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI bindName;
     [SerializeField] private KeyBindInputField keyInputField;
+    [SerializeField] private KeyBindInputField extraKeyInputField;
     [SerializeField] private Button unbindButton;
 
     private Bind bind;
 
+    private bool loadedFirstKey = false;
+
     private void Start()
     {
         unbindButton.onClick.AddListener(keyInputField.Unbind);
+        unbindButton.onClick.AddListener(extraKeyInputField.Unbind);
     }
 
+    // Assigns a bind to this panel
     public void SetBind(Bind bind)
     {
         this.bind = bind;
@@ -30,11 +35,13 @@ public class BindPanel : MonoBehaviour
         LoadBind();
     }
 
+    // Returns the bind associated with this panel
     public Bind GetBind()
     {
         return bind;
     }
 
+    // Loads a pre-existing bind from binds.txt
     private void LoadBind()
     {
         string filePath = Path.Combine(Application.persistentDataPath, "binds.txt");
@@ -65,10 +72,24 @@ public class BindPanel : MonoBehaviour
                 bind.americanKey = americanKey;
                 bind.scancode = scancode;
 
-                keyInputField.LoadBind(localKey, americanKey, scancode);
+                
 
-                return;
+                if(!loadedFirstKey)
+                {
+                    keyInputField.LoadBind(localKey, americanKey, scancode);
+                    loadedFirstKey = true;
+                } else
+                {
+                    extraKeyInputField.LoadBind(localKey, americanKey, scancode);
+                    return;
+                }   
             }
         }
+    }
+
+    public void ActivateUnbindAndExtraKey(bool state)
+    {
+        unbindButton.gameObject.SetActive(state);
+        extraKeyInputField.gameObject.SetActive(state);
     }
 }

@@ -225,6 +225,8 @@ public class BindManager : MonoBehaviour
 
         controlsButton.onClick.AddListener(() => SwitchContainer(controlsPanelContainer));
         hiddenButton.onClick.AddListener(() => SwitchContainer(hiddenPanelContainer));
+        buyButton.onClick.AddListener(() => SwitchContainer(buyPanelContainer));
+        togglesButton.onClick.AddListener(() => SwitchContainer(togglesPanelContainer));
         exportBindsButton.onClick.AddListener(ExportBinds);
     }
 
@@ -293,6 +295,8 @@ public class BindManager : MonoBehaviour
             {
                 { "controls", controlsPanelContainer },
                 { "hidden", hiddenPanelContainer },
+                { "buy", buyPanelContainer },
+                { "toggles", togglesPanelContainer }
             };
 
     }
@@ -400,8 +404,17 @@ public class BindManager : MonoBehaviour
 
                     foreach (var bind in subcategory.Value)
                     {
-                        string left = $"bind \"{bind.scancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
-                        writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
+                        if (bind.secondScancode == null)
+                        {
+                            string left = $"bind \"{bind.scancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
+                            writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
+                        } else
+                        {
+                            string left = $"bind \"{bind.scancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
+                            writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
+                            string extraLeft = $"bind \"{bind.secondScancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
+                            writer.WriteLine(extraLeft + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
+                        }
                     }
                 }
             }

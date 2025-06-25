@@ -13,12 +13,20 @@ public class Bind
     public string americanKey;
     public string localKey;
     public string scancode = null;
+    public string secondScancode = null;
 
     public void SetMouseKey(string key)
     {
         americanKey = key;
         localKey = key;
         scancode = key;
+    }
+
+    public void UnbindMouseKey(string key)
+    {
+        americanKey = null;
+        localKey = null;
+        scancode = null;
     }
 }
 

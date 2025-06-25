@@ -11,12 +11,16 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     public delegate void KeyDownDelegate(KeyControl key, Bind bind);
     public static event KeyDownDelegate OnKeyPressed;
+    public static event KeyDownDelegate OnUnbindKey;
 
     //public delegate void MouseKeyDownDelegate(string mouseKey, Bind bind);
     //public static event MouseKeyDownDelegate OnMouseKeyPressed;
 
     [SerializeField] private BindPanel bindPanel;
     [SerializeField] private TMP_InputField inputField;
+
+    private KeyControl lastKeyControl = new();
+    private string lastMouseKey;
 
     private string bindName;
 
@@ -31,11 +35,15 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
         {
             if (key.wasPressedThisFrame)
             {
+                // Save the key to unbind later
+                lastKeyControl = key;
+
                 // Key display (it depends of keyboard layout)
                 inputField.text = $"{key.displayName} <color=#88888888>({key.name})</color>";
 
                 // Invoke event so the relative key knows it's pressed
                 OnKeyPressed?.Invoke(key, bindPanel.GetBind());
+                bindPanel.ActivateUnbindAndExtraKey(true);
                 isListening = false;
                 EventSystem.current.SetSelectedGameObject(null);
                 break;
@@ -55,25 +63,36 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
         {
             SetMouseKey("MOUSE5");
         }
-    }
 
-    private void Start()
-    {
+        Vector2 scrollValue = Mouse.current.scroll.ReadValue();
 
+        if (scrollValue.y > 0f)
+        {
+            SetMouseKey("MWHEELUP");
+        }
+        else if (scrollValue.y < 0f)
+        {
+            SetMouseKey("MWHEELDOWN");
+        }
     }
 
     public void LoadBind(string localKey, string americanKey, string scancode)
     {
-        if (localKey.StartsWith("MOUSE"))
+        if (localKey.StartsWith("MOUSE")  || localKey.StartsWith("MWHEEL"))
         {
             inputField.text = $"{localKey}";
             bindPanel.GetBind().SetMouseKey(localKey);
+            bindPanel.ActivateUnbindAndExtraKey(true);
             return;
         }
+
+        bindPanel.ActivateUnbindAndExtraKey(true);
 
         inputField.text = $"{localKey} <color=#88888888>({americanKey})</color>";
 
         KeyControl key = Keyboard.current.allKeys.FirstOrDefault(k => k.name == americanKey);
+
+        lastKeyControl = key;
 
         if (key != null)
         {
@@ -94,11 +113,17 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     private void SetMouseKey(string key)
     {
-        Debug.Log("Tecla física detectada: " + key);
+        lastMouseKey = key;
         inputField.text = key;
         isListening = false;
         bindPanel.GetBind().SetMouseKey(key);
+        bindPanel.ActivateUnbindAndExtraKey(true);
         EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    private void UnbindMouseKey(string key)
+    {
+        bindPanel.GetBind().UnbindMouseKey(key);
     }
 
     public void OnSelect(BaseEventData eventData)
@@ -122,6 +147,15 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void Unbind()
     {
+        if(inputField.text.StartsWith("MOUSE") || inputField.text.StartsWith("MWHEEL"))
+        {
+            UnbindMouseKey(lastMouseKey);
+        }
         inputField.text = "";
+        if (lastKeyControl != null)
+        {
+            OnUnbindKey?.Invoke(lastKeyControl, bindPanel.GetBind());
+        }
+        bindPanel.ActivateUnbindAndExtraKey(false);
     }
 }
