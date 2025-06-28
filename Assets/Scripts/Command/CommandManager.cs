@@ -9,15 +9,15 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Networking;
-using static System.Net.WebRequestMethods;
 using UnityEngine.UI;
+using System.Globalization;
 
 public class CommandManager : MonoBehaviour
 {
     [SerializeField] private JSONLoader JSONLoader;
 
     private CommandList commandList = new CommandList();
+    private List<CommandPanel> commandPanels = new List<CommandPanel>();
 
     private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/commands.json";
 
@@ -180,13 +180,42 @@ public class CommandManager : MonoBehaviour
                 {
                     CommandPanel cmdPanel = Instantiate(commandPanelPrefab, targetTransform).GetComponent<CommandPanel>();
                     cmdPanel.SetCommand(cmd);
+                    commandPanels.Add(cmdPanel);
                 }
+            }
+        }
+
+        string filePath = Path.Combine(Application.persistentDataPath, "settings.txt");
+        if (!File.Exists(filePath))
+            return;
+
+        string[] lines = File.ReadAllLines(filePath);
+
+        foreach (CommandPanel commandPanel in commandPanels)
+        {
+            commandPanel.LoadCommand(lines);
+        }
+    }
+
+    private void SaveSettings()
+    {
+        string filePath = Path.Combine(Application.persistentDataPath, "settings.txt");
+
+        Debug.Log("Created file: " + filePath);
+
+        using (StreamWriter writer = new StreamWriter(filePath))
+        {
+            foreach (Command command in commandList.commands)
+            {
+                writer.WriteLine($"{command.name}|{command.selectedValue}");
             }
         }
     }
 
     private void ExportSettings()
     {
+        SaveSettings();
+
         // Create a .cfg file
         string filePath = Path.Combine(Application.dataPath, "ExportFiles/settings.cfg");
 
@@ -220,7 +249,11 @@ public class CommandManager : MonoBehaviour
                     var commands = subcategory.Value;
                     foreach (var cmd in commands)
                     {
-                        string left = $"{cmd.name} {cmd.selectedValue.ToString()}".PadRight(maxLeftWidth + 4);
+                        string left = (cmd.convertedValue == null ? 
+                            $"{cmd.name} {cmd.selectedValue.ToString()}" 
+                            : $"{cmd.name} {cmd.convertedValue.ToString()}");
+                        left = left.PadRight(maxLeftWidth + 4);
+                        left = left.Replace(',', '.');
                         string line = left + $"// {cmd.ingameName}";
                         writer.WriteLine(line);
                     }

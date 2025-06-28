@@ -1,9 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEngine.InputManagerEntry;
 
-public class CommandPanel : MonoBehaviour
+public class CommandPanel : MonoBehaviour, ISelectHandler
 {
+    public delegate void OnSelectHandler(Command command);
+    public static event OnSelectHandler OnPanelSelected;
 
     private Command command;
 
@@ -20,6 +24,11 @@ public class CommandPanel : MonoBehaviour
     [SerializeField] private Toggle boolToggle;
     [SerializeField] private TMP_InputField intInputField;
     [SerializeField] private TMP_InputField floatInputField;
+
+    private void Start()
+    {
+        gameObject.AddComponent<Selectable>();
+    }
 
     public void SetCommand(Command command)
     {
@@ -54,7 +63,17 @@ public class CommandPanel : MonoBehaviour
                 value = "0" + value;
             command.selectedValue = value;
         }
-            
+
+        if (command.name.StartsWith("snd_") || command.name == "volume")
+        {
+            command.ConvertSoundValue(false);
+            intInputField.text = value + "%";
+            floatInputField.text = value + "%";
+        }
+
+        if(command.name == "snd_spatialize_lerp")
+            command.ConvertSoundValue(true);
+
     }
 
     private void InitializePanel()
@@ -124,5 +143,37 @@ public class CommandPanel : MonoBehaviour
     {
         float value = (float)command.defaultValue;
         floatInputField.text = value.ToString();
+    }
+
+    public void LoadCommand(string[] lines)
+    {
+        //+jump,Barra Espaciadora,space,scancode44
+        foreach (string line in lines)
+        {
+            if (string.IsNullOrWhiteSpace(line))
+                continue;
+
+            string[] parts = line.Split('|');
+            if (parts.Length != 2)
+                continue;
+
+            string name = parts[0];
+            
+            if(name == command.name)
+            {
+                command.selectedValue = parts[1];
+                floatInputField.text = parts[1].ToString();
+                intInputField.text = parts[1].ToString();
+
+                // PONER IF SND_ CALCULAR EL CONVERTED Y AÑADIR %
+            }
+                
+        }
+    }
+
+    public void OnSelect(BaseEventData baseEventData)
+    {
+        Debug.Log("Seleccionado panel " + command.ingameName);
+        OnPanelSelected?.Invoke(command);
     }
 }

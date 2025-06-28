@@ -18,6 +18,7 @@ public class BindManager : MonoBehaviour
 
     [SerializeField] private GameObject bindSeparatorPrefab;
     [SerializeField] private GameObject bindPanelPrefab;
+    [SerializeField] private GameObject togglePanelPrefab;
 
     [SerializeField] private Transform controlsPanelContainer;
     [SerializeField] private Transform hiddenPanelContainer;
@@ -32,6 +33,7 @@ public class BindManager : MonoBehaviour
     [SerializeField] private Button exportBindsButton;
 
     private List<BindPanel> bindPanels = new();
+    private List<TogglePanel> togglePanels = new();
 
     private string[] csLogoASCII = new string[]
     {
@@ -277,9 +279,17 @@ public class BindManager : MonoBehaviour
                 commandSeparator.SetName($"{category.Key.ToUpper()} - {subcategory.Key}");
                 foreach (var bind in binds)
                 {
-                    BindPanel bindPanel = Instantiate(bindPanelPrefab, targetTransform).GetComponent<BindPanel>();
-                    bindPanel.SetBind(bind);
-                    bindPanels.Add(bindPanel);
+                    if(category.Key != "TOGGLES")
+                    {
+                        BindPanel bindPanel = Instantiate(bindPanelPrefab, targetTransform).GetComponent<BindPanel>();
+                        bindPanel.SetBind(bind);
+                        bindPanels.Add(bindPanel);
+                    } else
+                    {
+                        TogglePanel togglePanel = Instantiate(togglePanelPrefab, targetTransform).GetComponent<TogglePanel>();
+                        togglePanel.SetBind(bind);
+                        togglePanels.Add(togglePanel);
+                    }
                 }
             }
         }
@@ -293,6 +303,11 @@ public class BindManager : MonoBehaviour
         foreach(BindPanel bindPanel in bindPanels)
         {
             bindPanel.LoadBind(lines);
+        }
+
+        foreach(TogglePanel togglePanel in togglePanels)
+        {
+            togglePanel.LoadBind(lines);
         }
     }
 
@@ -328,8 +343,8 @@ public class BindManager : MonoBehaviour
             foreach (Bind bind in bindList.binds)
             {
                 if(bind.scancode != null)
-                    writer.WriteLine($"{bind.name}|{bind.localKey}|{bind.americanKey}|{bind.scancode}");
-                if(bind.secondScancode != null)
+                    writer.WriteLine($"{bind.name}|{bind.localKey}|{bind.americanKey}|{bind.scancode}" + (bind.values != null ? $"|{bind.values}" : ""));
+                if (bind.secondScancode != null)
                     writer.WriteLine($"{bind.name}|{bind.secondLocalKey}|{bind.secondAmericanKey}|{bind.secondScancode}");
             }
         }

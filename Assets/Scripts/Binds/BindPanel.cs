@@ -5,25 +5,29 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class BindPanel : MonoBehaviour
+public class BindPanel : MonoBehaviour , ISelectHandler
 {
-    [SerializeField] private TextMeshProUGUI bindName;
-    [SerializeField] private KeyBindInputField keyInputField;
+    [SerializeField] public TextMeshProUGUI bindName;
+    [SerializeField] public KeyBindInputField keyInputField;
     [SerializeField] private KeyBindInputField extraKeyInputField;
-    [SerializeField] private Button unbindButton;
+    [SerializeField] public Button unbindButton;
 
-    private Bind bind;
+    public delegate void OnSelectHandler(Bind bind);
+    public static event OnSelectHandler OnPanelSelected;
+
+    public Bind bind;
 
     private bool loadedFirstKey = false;
 
-    private void Start()
+    public virtual void Start()
     {
         unbindButton.onClick.AddListener(keyInputField.Unbind);
         unbindButton.onClick.AddListener(extraKeyInputField.Unbind);
+        gameObject.AddComponent<Selectable>();
     }
 
     // Assigns a bind to this panel
-    public void SetBind(Bind bind)
+    public virtual void SetBind(Bind bind)
     {
         this.bind = bind;
         if (bind.ingameName == "Fire")
@@ -40,7 +44,7 @@ public class BindPanel : MonoBehaviour
     }
 
     // Loads a pre-existing bind from binds.txt
-    public void LoadBind(string[] lines)
+    public virtual void LoadBind(string[] lines)
     {
         //+jump,Barra Espaciadora,space,scancode44
         foreach (string line in lines)
@@ -66,7 +70,6 @@ public class BindPanel : MonoBehaviour
                     loadedFirstKey = true;
                 } else
                 {
-                    Debug.Log($"El bind {bind.name} tiene extraKeyInput con {scancode}");
                     extraKeyInputField.LoadBind(localKey, americanKey);
                     return;
                 }   
@@ -74,9 +77,20 @@ public class BindPanel : MonoBehaviour
         }
     }
 
-    public void ActivateUnbindAndExtraKey(bool state)
+    public virtual void ActivateUnbindAndExtraKey(bool state)
     {
         unbindButton.gameObject.SetActive(state);
         extraKeyInputField.gameObject.SetActive(state);
+    }
+
+    public void OnSelect(BaseEventData baseEventData)
+    {
+        Debug.Log("Seleccionado panel " + bind.ingameName);
+        OnPanelSelected?.Invoke(bind);
+    }
+
+    public void SendSelectEvent()
+    {
+        
     }
 }

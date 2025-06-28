@@ -18,6 +18,8 @@ public class Bind
     public string secondLocalKey;
     public string secondScancode = null;
 
+    public string values; // For toggles 
+
     public void SetMouseKey(string key)
     {
         if (string.IsNullOrEmpty(scancode))

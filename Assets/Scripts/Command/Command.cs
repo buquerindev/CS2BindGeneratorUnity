@@ -1,3 +1,4 @@
+using Microsoft.Win32.SafeHandles;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,17 @@ public class Command
     public List<string> optionsNames;
 
     public object selectedValue;
+    public float? convertedValue = null;
+
+    public void ConvertSoundValue(bool type)
+    {
+        if (!type)
+            convertedValue = Mathf.Pow((float)(int)selectedValue / 100f, 2);
+        else
+            convertedValue = (float)(int)selectedValue / 100f;
+
+        Debug.Log("Converted value: " + convertedValue.ToString());
+    }
 }
 
 public class CommandList
