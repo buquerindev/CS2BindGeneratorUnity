@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static UnityEngine.InputManagerEntry;
+using static UnityEngine.Rendering.DebugUI;
 
 public class CommandPanel : MonoBehaviour, ISelectHandler
 {
@@ -166,6 +167,14 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
                 intInputField.text = parts[1].ToString();
 
                 // PONER IF SND_ CALCULAR EL CONVERTED Y AÑADIR %
+                if (command.name.StartsWith("snd_") || command.name == "volume")
+                {
+                    command.ConvertSoundValue(false);
+                    floatInputField.text += "%";
+                    intInputField.text += "%";
+                }
+                if (command.name == "snd_spatialize_lerp")
+                    command.ConvertSoundValue(true);
             }
                 
         }

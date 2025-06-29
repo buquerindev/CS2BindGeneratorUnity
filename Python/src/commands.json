@@ -1,6 +1,15 @@
 {
     "commands": [
         {
+            "name": "install_dlc_workshoptools_cvar",
+            "ingameName": "Install Counter-Strike Workshop Tools",
+            "description": "Install the Counter-Strike Workshop Tools",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Game",
+            "type": "bool"
+        },
+        {
             "name": "cl_teamcounter_playercount_instead_of_avatars",
             "ingameName": "Large Player Count",
             "description": "During the active portion of the round, replace player avatars with team player count in the mini-scoreboard.",
@@ -305,6 +314,28 @@
             "category": "GAME",
             "subcategory": "Hidden",
             "type": "bool"
+        },
+        {
+            "name": "rate",
+            "ingameName": "Max Acceptable Game Traffic Bandwith",
+            "description": "Allows to specify game traffic bandwidth that online game servers send to you during gameplay. Lower bandwidth rate setting can help avoid packet loss if your internet service provider or routers drop network packets. Insufficient bandwidth rate however can result in delayed network packets at times when game server sends updates about multiple other players over the network to your client. The values are: 98304\\n131072\\n196608\\n262144\\n327680\\n393216\\n524288\\n786432",
+            "defaultValue": "786432",
+            "category": "GAME",
+            "subcategory": "Game",
+            "enumValues": "98304/131072/196608/262144/327680/393216/524288/786432",
+            "enumNames": "Extremely restricted/Below 1.0 Mbps/Up to 1.5 Mbps/Up to 2 Mbps/Up to 2.5 Mbps/3 Mbps/4 Mbps/Unrestricted",
+            "type": "enum"
+        },
+        {
+            "name": "cl_net_buffer_ticks",
+            "ingameName": "Buffering to smooth over packet loss / Jitter",
+            "description": "Buffer snapshots from the server and commands from the client. This reduces the rate of missed ticks but increases your effective ping time",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Game",
+            "enumValues": "0/1/2",
+            "enumNames": "None/1 Tick/2 Ticks",
+            "type": "enum"
         },
         {
             "name": "cl_hud_color",
@@ -690,6 +721,17 @@
             "min": "0.0",
             "max": "2.0",
             "type": "float"
+        },
+        {
+            "name": "mm_dedicated_search_maxping",
+            "ingameName": "Max Acceptable Ping for Matchmaking",
+            "description": "Allows you to specify max acceptable matchmaking ping when searching for a game on official matchmaking servers. If there are official servers satisfying your ping setting then official matchmaking will always put you in a match hosted on those servers. If there are no official servers near you satisfying your ping setting then official matchmaking will put you in a match hosted on the next nearest official server, latency to which may exceed your ping setting.",
+            "defaultValue": "50",
+            "category": "GAME",
+            "subcategory": "Game",
+            "min": "25",
+            "max": "350",
+            "type": "int"
         },
         {
             "name": "ui_steam_overlay_notification_position_horz",

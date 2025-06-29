@@ -1,4 +1,5 @@
 name;ingameName;description;defaultValue;category;subcategory;min;max
+mm_dedicated_search_maxping;Max Acceptable Ping for Matchmaking;Allows you to specify max acceptable matchmaking ping when searching for a game on official matchmaking servers. If there are official servers satisfying your ping setting then official matchmaking will always put you in a match hosted on those servers. If there are no official servers near you satisfying your ping setting then official matchmaking will put you in a match hosted on the next nearest official server, latency to which may exceed your ping setting.;50;GAME;Game;25;350
 ui_steam_overlay_notification_position_horz;Community Notification Horizontal Offset;Sets the horizontal offset of the Steam Community notification in the HUD;0;GAME;Hud;0;100
 ui_steam_overlay_notification_position_vert;Community Notification Vertical Offset;Sets the vertical offset of the Steam Community notification in the HUD;0;GAME;Hud;0;100
 volume;Master Volume;Sets the master volume of the game;100;AUDIO;Audio;0;100

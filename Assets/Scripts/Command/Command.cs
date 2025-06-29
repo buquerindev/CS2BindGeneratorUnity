@@ -26,9 +26,12 @@ public class Command
     public object selectedValue;
     public float? convertedValue = null;
 
-    public void ConvertSoundValue(bool type)
+    public void ConvertSoundValue(bool convert)
     {
-        if (!type)
+        if (type == "bool" || type == "enum" || type == "string")
+            return;
+
+        if (!convert)
             convertedValue = Mathf.Pow((float)(int)selectedValue / 100f, 2);
         else
             convertedValue = (float)(int)selectedValue / 100f;

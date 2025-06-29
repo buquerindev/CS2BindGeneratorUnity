@@ -14,6 +14,8 @@ using System.Globalization;
 
 public class CommandManager : MonoBehaviour
 {
+    public static CommandManager Instance;
+
     [SerializeField] private JSONLoader JSONLoader;
 
     private CommandList commandList = new CommandList();
@@ -36,6 +38,16 @@ public class CommandManager : MonoBehaviour
 
     private Dictionary<string, Transform> categoryContainers;
 
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        } else
+        {
+            Destroy(this);
+        }
+    }
 
     private void Start()
     {

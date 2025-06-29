@@ -1,4 +1,5 @@
 name;ingameName;description;defaultValue;category;subcategory
+install_dlc_workshoptools_cvar;Install Counter-Strike Workshop Tools;Install the Counter-Strike Workshop Tools;0;GAME;Game
 cl_teamcounter_playercount_instead_of_avatars;Large Player Count;"During the active portion of the round, replace player avatars with team player count in the mini-scoreboard.";0;GAME;Hud
 cl_weapon_selection_rarity_color;Glow Weapon with Rarity Color;Weapons glow with their rarity color in the HUD;0;GAME;Hud
 cl_teamid_overhead_colors_show;Use Player Colors on Team ID;Use player colors on the name above teammates' heads;1;GAME;Team
