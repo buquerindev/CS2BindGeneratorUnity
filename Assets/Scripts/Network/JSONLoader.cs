@@ -7,14 +7,14 @@ using UnityEngine.Networking;
 public class JSONLoader : MonoBehaviour
 {
 
-    public void LoadJSON(string url, Action<String> onSuccess)
+    public void LoadFile(string url, Action<String> onSuccess)
     {
-        StartCoroutine(DownloadJSON(url, onSuccess));
+        StartCoroutine(DownloadFile(url, onSuccess));
     }
 
-    private IEnumerator DownloadJSON(string jsonURL, Action<string> onSuccess)
+    private IEnumerator DownloadFile(string fileURL, Action<string> onSuccess)
     {
-        UnityWebRequest request = UnityWebRequest.Get(jsonURL);
+        UnityWebRequest request = UnityWebRequest.Get(fileURL);
         yield return request.SendWebRequest();
 
         if (request.result != UnityWebRequest.Result.Success)

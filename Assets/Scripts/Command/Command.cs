@@ -1,5 +1,6 @@
 using Microsoft.Win32.SafeHandles;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,15 +29,24 @@ public class Command
 
     public void ConvertSoundValue(bool convert)
     {
-        if (type == "bool" || type == "enum" || type == "string")
+        float numericValue;
+
+        try
+        {
+            numericValue = Convert.ToSingle(selectedValue); // esto sirve para int, float, double, string numérico, etc.
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"[Command] No se pudo convertir selectedValue ({selectedValue}) a float. Error: {e.Message}");
             return;
+        }
 
         if (!convert)
-            convertedValue = Mathf.Pow((float)(int)selectedValue / 100f, 2);
+            convertedValue = Mathf.Pow(numericValue / 100f, 2);
         else
-            convertedValue = (float)(int)selectedValue / 100f;
+            convertedValue = numericValue / 100f;
 
-        Debug.Log("Converted value: " + convertedValue.ToString());
+        Debug.Log($"Converted value ({name}): {convertedValue}");
     }
 }
 

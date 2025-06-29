@@ -51,7 +51,7 @@ public class Key : MonoBehaviour
                 bind.secondLocalKey = key.displayName;
             }
             
-            Debug.Log($"Asignado {bind.ingameName} a la tecla {key.displayName} ({key.name})");
+            //Debug.Log($"Asignado {bind.ingameName} a la tecla {key.displayName} ({key.name})");
         }
     }
 

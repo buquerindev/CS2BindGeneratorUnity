@@ -22,6 +22,11 @@ public class CommandManager : MonoBehaviour
     private List<CommandPanel> commandPanels = new List<CommandPanel>();
 
     private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/commands.json";
+    private readonly string snd_formula_txt = "https://buquerindev.github.io/CS2BindGeneratorUnity/snd_formula.txt";
+    private readonly string snd_to_decimal_txt = "https://buquerindev.github.io/CS2BindGeneratorUnity/snd_to_decimal.txt";
+
+    public List<string> snd_formula_commands;
+    public List<string> snd_to_decimal_commands;
 
     [SerializeField] private ScrollRect scrollRect;
 
@@ -37,6 +42,9 @@ public class CommandManager : MonoBehaviour
     [SerializeField] private Button gameButton;
 
     private Dictionary<string, Transform> categoryContainers;
+
+    private bool sndFormulaLoaded = false;
+    private bool sndDecimalLoaded = false;
 
     private void Awake()
     {
@@ -55,7 +63,17 @@ public class CommandManager : MonoBehaviour
         scrollRect.content = currentContainer as RectTransform;
         InitializeContainerDictionary();
 
-        JSONLoader.LoadJSON(jsonURL, OnJSONReceived);
+        JSONLoader.LoadFile(snd_formula_txt, (text) => {
+            SNDFormulaList(text);
+            sndFormulaLoaded = true;
+            TryLoadJSON();
+        });
+        JSONLoader.LoadFile(snd_to_decimal_txt, (text) => {
+            SNDDecimalList(text);
+            sndDecimalLoaded = true;
+            TryLoadJSON();
+        });
+
 
         // Buttons
         exportSettingsButton.onClick.AddListener(ExportSettings);
@@ -291,5 +309,47 @@ public class CommandManager : MonoBehaviour
                 { "audio", audioPanelContainer },
             };
 
+    }
+
+    private void SNDFormulaList(string file)
+    {
+        snd_formula_commands = new List<string>();
+
+        // Divide el contenido en líneas
+        string[] lines = file.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+        // Comprueba que hay al menos dos líneas
+        if (lines.Length > 1)
+        {
+            string[] values = lines[1].Split(',');
+            snd_formula_commands.AddRange(values);
+        }
+        foreach (string line in snd_formula_commands)
+        {
+            Debug.Log(line);
+        }
+    }
+
+    private void SNDDecimalList(string file)
+    {
+        snd_to_decimal_commands = new List<string>();
+
+        // Divide el contenido en líneas
+        string[] lines = file.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+        // Comprueba que hay al menos dos líneas
+        if (lines.Length > 1)
+        {
+            string[] values = lines[1].Split(',');
+            snd_to_decimal_commands.AddRange(values);
+        }
+    }
+
+    private void TryLoadJSON()
+    {
+        if (sndFormulaLoaded && sndDecimalLoaded)
+        {
+            JSONLoader.LoadFile(jsonURL, OnJSONReceived);
+        }
     }
 }

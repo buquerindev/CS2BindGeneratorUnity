@@ -65,15 +65,19 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
             command.selectedValue = value;
         }
 
-        if (command.name.StartsWith("snd_") || command.name == "volume")
+        if (CommandManager.Instance.snd_formula_commands.Contains(command.name))
         {
             command.ConvertSoundValue(false);
             intInputField.text = value + "%";
             floatInputField.text = value + "%";
         }
 
-        if(command.name == "snd_spatialize_lerp")
+        if(CommandManager.Instance.snd_to_decimal_commands.Contains(command.name))
+        {
             command.ConvertSoundValue(true);
+            intInputField.text = value + "%";
+        }
+            
 
     }
 
@@ -162,21 +166,24 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
             
             if(name == command.name)
             {
-                command.selectedValue = parts[1];
+                //command.selectedValue = parts[1];
                 floatInputField.text = parts[1].ToString();
                 intInputField.text = parts[1].ToString();
 
-                // PONER IF SND_ CALCULAR EL CONVERTED Y AÑADIR %
-                if (command.name.StartsWith("snd_") || command.name == "volume")
+                if (CommandManager.Instance.snd_formula_commands.Contains(command.name))
                 {
                     command.ConvertSoundValue(false);
-                    floatInputField.text += "%";
-                    intInputField.text += "%";
+                    //floatInputField.text += "%";
+                    intInputField.text = parts[1].ToString() + "%";
+
+                    Debug.Log($"{name} deberia poner {parts[1].ToString()}%");
                 }
-                if (command.name == "snd_spatialize_lerp")
+                if (CommandManager.Instance.snd_to_decimal_commands.Contains(command.name))
+                {
                     command.ConvertSoundValue(true);
-            }
-                
+                    intInputField.text = parts[1].ToString() + "%";
+                } 
+            }       
         }
     }
 

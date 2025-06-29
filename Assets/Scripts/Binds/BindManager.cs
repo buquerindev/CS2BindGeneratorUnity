@@ -226,7 +226,7 @@ public class BindManager : MonoBehaviour
         scrollRect.content = currentContainer as RectTransform;
         InitializeContainerDictionary();
 
-        JSONLoader.LoadJSON(jsonURL, OnJSONReceived);
+        JSONLoader.LoadFile(jsonURL, OnJSONReceived);
 
         controlsButton.onClick.AddListener(() => SwitchContainer(controlsPanelContainer));
         hiddenButton.onClick.AddListener(() => SwitchContainer(hiddenPanelContainer));

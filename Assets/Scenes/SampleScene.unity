@@ -8400,6 +8400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JSONLoader: {fileID: 160031626}
+  snd_formula_commands: []
+  snd_to_decimal_commands: []
   scrollRect: {fileID: 1862318141}
   commandSeparatorPrefab: {fileID: 8993823935470629491, guid: c9faad168b21fa343b69a4ac87c4eb2d, type: 3}
   commandPanelPrefab: {fileID: 7770395391395280826, guid: f67b14e5523c0cd4ebe7e3ef877a5e41, type: 3}
