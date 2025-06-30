@@ -7,7 +7,7 @@ public class MouseLookSway : MonoBehaviour
     public float swayAmount = 5f;
     public float smoothSpeed = 5f;
 
-    private Vector3 initialRotation;
+    public Vector3 initialRotation;
 
     void Start()
     {

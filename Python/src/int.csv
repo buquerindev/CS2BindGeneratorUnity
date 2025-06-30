@@ -15,4 +15,3 @@ snd_mvp_volume;MVP Volume;Sets the volume of the MVP song;40;AUDIO;Music;0;100
 snd_mapobjective_volume;Bomb/Hostage Volume;Sets the volume of the map objective sound;20;AUDIO;Music;0;100
 snd_tensecondwarning_volume;Ten Second Warning Volume;Sets the volume of the 10 second warning sound;20;AUDIO;Music;0;100
 snd_deathcamera_volume;Death Camera Volume;Sets the volume of the death camera sound;40;AUDIO;Music;0;100
-

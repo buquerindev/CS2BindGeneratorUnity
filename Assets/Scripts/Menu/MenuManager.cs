@@ -18,6 +18,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject keyboardISO;
     [SerializeField] private GameObject keyboardANSI;
 
+    [SerializeField] private CameraMover cameraMover;
+    [SerializeField] private Transform cameraDefault;
+    [SerializeField] private Transform cameraCenter;
+    [SerializeField] private Transform cameraZoom;
+
     private bool whichKeyboard = false;
 
     private Vector3 keyboardPosition = new Vector3((float)1.294, (float)-0.042, (float)2.287);
@@ -30,6 +35,7 @@ public class MenuManager : MonoBehaviour
         bindsMenuButton.onClick.AddListener(OpenBindsMenuButton);
         closeMenuButton.onClick.AddListener(CloseMenu);
         switchKeyboard.onClick.AddListener(ToggleKeyboard);
+        cameraMover.MoveCameraTo(cameraCenter,2);
     }
 
     // Update is called once per frame
@@ -49,6 +55,7 @@ public class MenuManager : MonoBehaviour
     {
         CloseMainMenu();
         bindsMenu.SetActive(true);
+        cameraMover.MoveCameraTo(cameraZoom,1);
     }
 
     void OpenMainMenu()
@@ -69,6 +76,7 @@ public class MenuManager : MonoBehaviour
         settingsMenu.SetActive(false);
         bindsMenu.SetActive(false);
         informationPanel.SetActive(false);
+        cameraMover.MoveCameraTo(cameraCenter,1);
         OpenMainMenu();
     }
 
