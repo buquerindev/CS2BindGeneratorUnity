@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    public static MenuManager Instance;
 
     [SerializeField] private Button settingsMenuButton;
     [SerializeField] private Button bindsMenuButton;
@@ -23,10 +24,21 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Transform cameraCenter;
     [SerializeField] private Transform cameraZoom;
 
-    private bool whichKeyboard = false;
+    public bool isANSI = false;
 
-    private Vector3 keyboardPosition = new Vector3((float)1.294, (float)-0.042, (float)2.287);
-    private Vector3 keyboardRotation = new Vector3((float)334.473145, 0, 0);
+    private Vector3 keyboardPosition = new Vector3((float)-43.4039993, (float)7.10900021, (float)13.7150002);
+    private Vector3 keyboardRotation = new Vector3((float)357, (float)90, 0);
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        } else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,7 +47,7 @@ public class MenuManager : MonoBehaviour
         bindsMenuButton.onClick.AddListener(OpenBindsMenuButton);
         closeMenuButton.onClick.AddListener(CloseMenu);
         switchKeyboard.onClick.AddListener(ToggleKeyboard);
-        cameraMover.MoveCameraTo(cameraCenter,2);
+        //cameraMover.MoveCameraTo(cameraDefault,1);
     }
 
     // Update is called once per frame
@@ -55,7 +67,7 @@ public class MenuManager : MonoBehaviour
     {
         CloseMainMenu();
         bindsMenu.SetActive(true);
-        cameraMover.MoveCameraTo(cameraZoom,1);
+        cameraMover.MoveCameraTo(cameraZoom,2);
     }
 
     void OpenMainMenu()
@@ -76,23 +88,23 @@ public class MenuManager : MonoBehaviour
         settingsMenu.SetActive(false);
         bindsMenu.SetActive(false);
         informationPanel.SetActive(false);
-        cameraMover.MoveCameraTo(cameraCenter,1);
+        cameraMover.MoveCameraTo(cameraDefault,2);
         OpenMainMenu();
     }
 
     private void ToggleKeyboard()
     {
-        if (!whichKeyboard)
+        if (!isANSI)
         {
             keyboardISO.transform.position = new Vector3(10,0,0);
             keyboardANSI.transform.position = keyboardPosition;
-            whichKeyboard = true;
+            isANSI = true;
         }
         else
         {
             keyboardANSI.transform.position = new Vector3(10, 0, 0);
             keyboardISO.transform.position = keyboardPosition;
-            whichKeyboard = false;
+            isANSI = false;
         }
     }
 }

@@ -39,8 +39,8 @@ public class CameraMover : MonoBehaviour
         cam.rotation = endRot;
 
         // Reactiva el sway
-        mouseLookSway.initialRotation = cam.localEulerAngles;
         mouseLookSway.enabled = true;
+        mouseLookSway.SetRotation(target.rotation);
     }
 
 }

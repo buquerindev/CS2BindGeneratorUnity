@@ -35,6 +35,9 @@ public class BindManager : MonoBehaviour
     private List<BindPanel> bindPanels = new();
     private List<TogglePanel> togglePanels = new();
 
+    [SerializeField] private GameObject ANSIKeyboard;
+    [SerializeField] private GameObject ISOKeyboard;
+
     private string[] csLogoASCII = new string[]
     {
         @"                                                   $$$$$                                          ",
@@ -295,6 +298,7 @@ public class BindManager : MonoBehaviour
         }
 
         string filePath = Path.Combine(Application.persistentDataPath, "binds.txt");
+        Debug.Log(filePath);
         if (!File.Exists(filePath))
             return;
 
@@ -343,15 +347,37 @@ public class BindManager : MonoBehaviour
             foreach (Bind bind in bindList.binds)
             {
                 if(bind.scancode != null)
+                {
+                    Debug.Log($"El primer scancode de {bind.name} es {bind.scancode}");
                     writer.WriteLine($"{bind.name}|{bind.localKey}|{bind.americanKey}|{bind.scancode}" + (bind.values != null ? $"|{bind.values}" : ""));
+                }   
                 if (bind.secondScancode != null)
+                {
+                    Debug.Log($"El segundo scancode de {bind.name} es {bind.secondScancode}");
                     writer.WriteLine($"{bind.name}|{bind.secondLocalKey}|{bind.secondAmericanKey}|{bind.secondScancode}");
+                }  
             }
         }
     }
 
     private void ExportBinds()
     {
+        string filePath = null;
+        string folderPath = EditorUtility.OpenFolderPanel("Select Export Folder", "", "");
+
+        if (!string.IsNullOrEmpty(folderPath))
+        {
+            filePath = System.IO.Path.Combine(folderPath, "binds.cfg");
+
+            System.IO.File.WriteAllText(filePath, "// Tu contenido aquí...");
+            Debug.Log("Archivo exportado en: " + filePath);
+        }
+        else
+        {
+            Debug.Log("Exportación cancelada.");
+            return;
+        }
+
         // Create an scancode Dictionary:
 
         var bindsByScancode = new Dictionary<string, List<Bind>>();
@@ -392,21 +418,14 @@ public class BindManager : MonoBehaviour
         // Also save the binds
         SaveBinds();
 
-        // Create a .cfg file
-        string filePath;
-#if UNITY_EDITOR
-            filePath = Path.Combine(Application.dataPath, "ExportFiles/binds.cfg"); // -> G:/Programacion/CS2DemoViewer/Assets/Demos
-#else
-            filePath = Path.Combine(System.AppContext.BaseDirectory, "binds.cfg");
-#endif
-
-
         // Get the biggest command to align the comments
 
         int maxLeftWidthMulti = 0;
         int maxLeftWidthUnique = 0;
 
-        maxLeftWidthMulti = multiBinds
+        if(multiBinds.Count > 0)
+        {
+            maxLeftWidthMulti = multiBinds
             .Select(pair =>
             {
                 string scancode = pair.Key;
@@ -414,6 +433,7 @@ public class BindManager : MonoBehaviour
                 return $"bind {scancode} {actions}".Length;
             })
             .Max();
+        }
 
         maxLeftWidthUnique = uniqueBinds
             .Select(bind => $"bind {bind.scancode} {bind.name}".Length)

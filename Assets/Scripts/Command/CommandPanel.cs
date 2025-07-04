@@ -2,8 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static UnityEngine.InputManagerEntry;
-using static UnityEngine.Rendering.DebugUI;
 
 public class CommandPanel : MonoBehaviour, ISelectHandler
 {

@@ -36,8 +36,13 @@ public class Key : MonoBehaviour
         {
             if (meshRenderer.material.name == "UnusableKey (Instance)")
                 return;
+
             Select();
             binds.Add(bind);
+
+            if (bind.scancode == scanCode || bind.secondScancode == scanCode)
+                return;
+
             if (string.IsNullOrEmpty(bind.scancode))
             {
                 bind.scancode = scanCode;

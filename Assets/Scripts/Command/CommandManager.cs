@@ -244,10 +244,23 @@ public class CommandManager : MonoBehaviour
 
     private void ExportSettings()
     {
-        SaveSettings();
+        string filePath = null;
+        string folderPath = EditorUtility.OpenFolderPanel("Select Export Folder", "", "");
 
-        // Create a .cfg file
-        string filePath = Path.Combine(Application.dataPath, "ExportFiles/settings.cfg");
+        if (!string.IsNullOrEmpty(folderPath))
+        {
+            filePath = System.IO.Path.Combine(folderPath, "config.cfg");
+
+            System.IO.File.WriteAllText(filePath, "// Tu contenido aquí...");
+            Debug.Log("Archivo exportado en: " + filePath);
+        }
+        else
+        {
+            Debug.Log("Exportación cancelada.");
+            return;
+        }
+
+        SaveSettings();
 
         // Get the biggest command to align the comments
         int maxLeftWidth = commandList.commands
