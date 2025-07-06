@@ -1,16 +1,17 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
+using SFB;
 using System;
-using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using System.Globalization;
 
 public class CommandManager : MonoBehaviour
 {
@@ -242,23 +243,21 @@ public class CommandManager : MonoBehaviour
         }
     }
 
+    private string SelectFolder()
+    {
+        var paths = StandaloneFileBrowser.OpenFolderPanel("Select Folder", "", false);
+        if (paths.Length > 0)
+        {
+            string folderPath = paths[0];
+            Debug.Log("Selected folder: " + folderPath);
+            return folderPath;
+        }
+        return null;
+    }
+
     private void ExportSettings()
     {
-        string filePath = null;
-        string folderPath = EditorUtility.OpenFolderPanel("Select Export Folder", "", "");
-
-        if (!string.IsNullOrEmpty(folderPath))
-        {
-            filePath = System.IO.Path.Combine(folderPath, "config.cfg");
-
-            System.IO.File.WriteAllText(filePath, "// Tu contenido aquí...");
-            Debug.Log("Archivo exportado en: " + filePath);
-        }
-        else
-        {
-            Debug.Log("Exportación cancelada.");
-            return;
-        }
+        string filePath = SelectFolder();
 
         SaveSettings();
 

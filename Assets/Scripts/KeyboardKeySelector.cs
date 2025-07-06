@@ -18,8 +18,11 @@ public class KeyboardKeySelector : MonoBehaviour
 
     private void Update()
     {
-        var pressedKeys = Keyboard.current.allKeys.Where(k => k.wasPressedThisFrame);
-        var unreleasedKeys = Keyboard.current.allKeys.Where(key => key.wasReleasedThisFrame);
+
+        var pressedKeys = Keyboard.current.allKeys
+        .Where(k => k != null && k.wasPressedThisFrame);
+        var unreleasedKeys = Keyboard.current.allKeys
+            .Where(k => k != null && k.wasReleasedThisFrame);
 
         foreach (var key in pressedKeys)
         {

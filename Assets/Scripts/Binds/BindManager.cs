@@ -1,4 +1,5 @@
 using Newtonsoft.Json.Linq;
+using SFB;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -360,23 +361,21 @@ public class BindManager : MonoBehaviour
         }
     }
 
+    private string SelectFolder()
+    {
+        var paths = StandaloneFileBrowser.OpenFolderPanel("Select Folder", "", false);
+        if (paths.Length > 0)
+        {
+            string folderPath = paths[0];
+            Debug.Log("Selected folder: " + folderPath);
+            return folderPath;
+        }
+        return null;
+    }
+
     private void ExportBinds()
     {
-        string filePath = null;
-        string folderPath = EditorUtility.OpenFolderPanel("Select Export Folder", "", "");
-
-        if (!string.IsNullOrEmpty(folderPath))
-        {
-            filePath = System.IO.Path.Combine(folderPath, "binds.cfg");
-
-            System.IO.File.WriteAllText(filePath, "// Tu contenido aquí...");
-            Debug.Log("Archivo exportado en: " + filePath);
-        }
-        else
-        {
-            Debug.Log("Exportación cancelada.");
-            return;
-        }
+        string filePath = SelectFolder();
 
         // Create an scancode Dictionary:
 
