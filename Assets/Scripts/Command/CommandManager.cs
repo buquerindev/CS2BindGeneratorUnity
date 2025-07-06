@@ -258,6 +258,7 @@ public class CommandManager : MonoBehaviour
     private void ExportSettings()
     {
         string filePath = SelectFolder();
+        filePath = Path.Combine(filePath, "config.cfg");
 
         SaveSettings();
 

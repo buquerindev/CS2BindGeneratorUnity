@@ -376,6 +376,7 @@ public class BindManager : MonoBehaviour
     private void ExportBinds()
     {
         string filePath = SelectFolder();
+        filePath = Path.Combine(filePath, "binds.cfg");
 
         // Create an scancode Dictionary:
 

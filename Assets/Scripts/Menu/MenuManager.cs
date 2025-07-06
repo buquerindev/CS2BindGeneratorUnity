@@ -14,8 +14,6 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject bindsMenu;
 
-    [SerializeField] private GameObject informationPanel;
-
     [SerializeField] private GameObject keyboardISO;
     [SerializeField] private GameObject keyboardANSI;
 
@@ -60,7 +58,6 @@ public class MenuManager : MonoBehaviour
     {
         CloseMainMenu();
         settingsMenu.SetActive(true);
-        informationPanel.SetActive(true);
     }
 
     void OpenBindsMenuButton()
@@ -79,7 +76,6 @@ public class MenuManager : MonoBehaviour
     void CloseMainMenu()
     {
         mainMenu.SetActive(false);
-        informationPanel.SetActive(true);
         closeMenuButton.gameObject.SetActive(true);
     }
 
@@ -87,7 +83,6 @@ public class MenuManager : MonoBehaviour
     {
         settingsMenu.SetActive(false);
         bindsMenu.SetActive(false);
-        informationPanel.SetActive(false);
         cameraMover.MoveCameraTo(cameraDefault,2);
         OpenMainMenu();
     }
