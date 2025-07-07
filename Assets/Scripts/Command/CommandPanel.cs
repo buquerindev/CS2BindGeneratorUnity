@@ -24,6 +24,10 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
     [SerializeField] private TMP_InputField intInputField;
     [SerializeField] private TMP_InputField floatInputField;
 
+    private Transform caretTransform;
+    private RectTransform intInputFieldCaretRT;
+    [SerializeField] private RectTransform intInputFieldTextRT;
+
     private void Start()
     {
         gameObject.AddComponent<Selectable>();
@@ -54,26 +58,48 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
 
     private void InputFieldUpdateValue(string value)
     {
+        if(caretTransform == null)
+            caretTransform = intInputField.textViewport.transform.GetChild(0);
+        intInputFieldCaretRT = caretTransform.GetComponent<RectTransform>();
+
+        // We check if the command is int or float, and if the value is valid, else = 0%
         if (command.type == "int")
-            command.selectedValue = int.Parse(value);
+        {
+            if (int.TryParse(value, out int result))
+            {
+                command.selectedValue = result;
+            }   
+            else
+                command.selectedValue = 0; // o mantén el valor anterior
+        }
         else
         {
-            if (value.StartsWith("."))
-                value = "0" + value;
-            command.selectedValue = value;
+            if (float.TryParse(value, out float fresult))
+            {
+                if (value.StartsWith("."))
+                    value = "0" + value;
+                command.selectedValue = fresult;
+            }
+            else
+                command.selectedValue = 0f;
         }
 
         if (CommandManager.Instance.snd_formula_commands.Contains(command.name))
         {
             command.ConvertSoundValue(false);
-            intInputField.text = value + "%";
-            floatInputField.text = value + "%";
+            intInputField.text = command.selectedValue + "%";
+            intInputField.caretPosition = intInputField.text.Length; // Move caret to the end
+            intInputFieldTextRT.anchoredPosition = Vector2.zero; // Reset position to avoid caret issues
+            intInputFieldCaretRT.anchoredPosition = Vector2.zero; // Reset caret position to avoid issues
         }
 
         if(CommandManager.Instance.snd_to_decimal_commands.Contains(command.name))
         {
             command.ConvertSoundValue(true);
-            intInputField.text = value + "%";
+            intInputField.text = command.selectedValue + "%";
+            intInputField.caretPosition = intInputField.text.Length; // Move caret to the end
+            intInputFieldTextRT.anchoredPosition = Vector2.zero; // Reset position to avoid caret issues
+            intInputFieldCaretRT.anchoredPosition = Vector2.zero; // Reset caret position to avoid issues
         }
             
 
@@ -140,6 +166,7 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
     {
         int value = (int)command.defaultValue;
         intInputField.text = value.ToString();
+        CheckSNDCommand(value.ToString());
     }
 
     private void InitializeFloatPanel()
@@ -168,20 +195,22 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
                 floatInputField.text = parts[1].ToString();
                 intInputField.text = parts[1].ToString();
 
-                if (CommandManager.Instance.snd_formula_commands.Contains(command.name))
-                {
-                    command.ConvertSoundValue(false);
-                    //floatInputField.text += "%";
-                    intInputField.text = parts[1].ToString() + "%";
-
-                    Debug.Log($"{name} deberia poner {parts[1].ToString()}%");
-                }
-                if (CommandManager.Instance.snd_to_decimal_commands.Contains(command.name))
-                {
-                    command.ConvertSoundValue(true);
-                    intInputField.text = parts[1].ToString() + "%";
-                } 
+                CheckSNDCommand(parts[1]);
             }       
+        }
+    }
+
+    private void CheckSNDCommand(string value)
+    {
+        if (CommandManager.Instance.snd_formula_commands.Contains(command.name))
+        {
+            command.ConvertSoundValue(false);
+            intInputField.text = value + "%";
+        }
+        if (CommandManager.Instance.snd_to_decimal_commands.Contains(command.name))
+        {
+            command.ConvertSoundValue(true);
+            intInputField.text = value + "%";
         }
     }
 

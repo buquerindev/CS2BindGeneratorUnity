@@ -42,6 +42,14 @@ public class CommandManager : MonoBehaviour
     [SerializeField] private Button audioButton;
     [SerializeField] private Button gameButton;
 
+    private List<Button> menusButtons;
+
+    private Color buttonDefaultColor;
+    private Color buttonSelectedColor;
+
+    private ColorBlock selectedCB;
+    private ColorBlock cb;
+
     private Dictionary<string, Transform> categoryContainers;
 
     private bool sndFormulaLoaded = false;
@@ -60,6 +68,14 @@ public class CommandManager : MonoBehaviour
 
     private void Start()
     {
+        ColorUtility.TryParseHtmlString("#00000064", out buttonDefaultColor);
+        ColorUtility.TryParseHtmlString("#000000C8", out buttonSelectedColor);
+
+        menusButtons = new List<Button> {
+            audioButton,
+            gameButton
+        };
+
         currentContainer = audioPanelContainer;
         scrollRect.content = currentContainer as RectTransform;
         InitializeContainerDictionary();
@@ -78,8 +94,8 @@ public class CommandManager : MonoBehaviour
 
         // Buttons
         exportSettingsButton.onClick.AddListener(ExportSettings);
-        audioButton.onClick.AddListener(() => SwitchContainer(audioPanelContainer));
-        gameButton.onClick.AddListener(() => SwitchContainer(gamePanelContainer));
+        audioButton.onClick.AddListener(() => SwitchContainer(audioPanelContainer, audioButton));
+        gameButton.onClick.AddListener(() => SwitchContainer(gamePanelContainer, gameButton));
     }
 
     private void OnJSONReceived(string jsonText)
@@ -305,8 +321,32 @@ public class CommandManager : MonoBehaviour
         }
     }
 
-    private void SwitchContainer(Transform newContainer)
+    private void SwitchContainer(Transform newContainer, Button button)
     {
+        foreach (Button btn in menusButtons)
+        {
+            cb = btn.colors;
+
+            cb.normalColor = buttonDefaultColor;
+            cb.highlightedColor = buttonDefaultColor;
+            cb.pressedColor = buttonDefaultColor;
+            cb.selectedColor = buttonDefaultColor;
+            cb.disabledColor = buttonDefaultColor;
+
+            btn.colors = cb;
+        }
+
+        // Ahora aplicar los colores "activos" al botón seleccionado
+        selectedCB = button.colors;
+
+        selectedCB.normalColor = buttonSelectedColor;
+        selectedCB.highlightedColor = buttonSelectedColor;
+        selectedCB.pressedColor = buttonSelectedColor;
+        selectedCB.selectedColor = buttonSelectedColor;
+        selectedCB.disabledColor = buttonSelectedColor;
+
+        button.colors = selectedCB;
+
         currentContainer.gameObject.SetActive(false);
         newContainer.gameObject.SetActive(true);
 

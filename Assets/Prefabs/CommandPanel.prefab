@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100%
+  m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df94180bc02ad9c498e1ed81eaecbeb3, type: 2}
   m_sharedMaterial: {fileID: -4184446087714609384, guid: df94180bc02ad9c498e1ed81eaecbeb3, type: 2}
@@ -1465,7 +1465,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 4096
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2953,7 +2953,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 4096
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3251,8 +3251,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: -25}
-  m_SizeDelta: {x: 1000, y: 50}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 980, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &964056616139210003
 CanvasRenderer:
@@ -3310,6 +3310,8 @@ MonoBehaviour:
   boolToggle: {fileID: 3401259604979266303}
   intInputField: {fileID: 281859386022154212}
   floatInputField: {fileID: 4611553666297785313}
+  intInputFieldCaretRT: {fileID: 0}
+  intInputFieldTextRT: {fileID: 1142157526769541717}
 --- !u!1 &8315135022853905174
 GameObject:
   m_ObjectHideFlags: 0

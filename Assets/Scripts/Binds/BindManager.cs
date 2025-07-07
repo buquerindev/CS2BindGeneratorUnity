@@ -33,6 +33,16 @@ public class BindManager : MonoBehaviour
     [SerializeField] private Button togglesButton;
     [SerializeField] private Button exportBindsButton;
 
+    private bool addUnbindall = false;
+
+    private List<Button> menusButtons;
+
+    private Color buttonDefaultColor;
+    private Color buttonSelectedColor;
+
+    private ColorBlock selectedCB;
+    private ColorBlock cb;
+
     private List<BindPanel> bindPanels = new();
     private List<TogglePanel> togglePanels = new();
 
@@ -186,7 +196,6 @@ public class BindManager : MonoBehaviour
     "                                 :.::::::-::.......:::::.:=##=::--:::::::.::--=+**#**++=+*******%%%####*+++++                              "
 };
 
-
     string[] nerd = new string[] {
     "                     :::::::::::::::                     ",
     "                :::::::::::::::::::::::::                ",
@@ -226,16 +235,26 @@ public class BindManager : MonoBehaviour
 
     private void Start()
     {
+        ColorUtility.TryParseHtmlString("#00000064", out buttonDefaultColor);
+        ColorUtility.TryParseHtmlString("#000000C8", out buttonSelectedColor);
+
+        menusButtons = new List<Button> {
+            controlsButton,
+            hiddenButton,
+            buyButton,
+            togglesButton
+        };
+
         currentContainer = controlsPanelContainer;
         scrollRect.content = currentContainer as RectTransform;
         InitializeContainerDictionary();
 
         JSONLoader.LoadFile(jsonURL, OnJSONReceived);
 
-        controlsButton.onClick.AddListener(() => SwitchContainer(controlsPanelContainer));
-        hiddenButton.onClick.AddListener(() => SwitchContainer(hiddenPanelContainer));
-        buyButton.onClick.AddListener(() => SwitchContainer(buyPanelContainer));
-        togglesButton.onClick.AddListener(() => SwitchContainer(togglesPanelContainer));
+        controlsButton.onClick.AddListener(() => SwitchContainer(controlsPanelContainer, controlsButton));
+        hiddenButton.onClick.AddListener(() => SwitchContainer(hiddenPanelContainer, hiddenButton));
+        buyButton.onClick.AddListener(() => SwitchContainer(buyPanelContainer, buyButton));
+        togglesButton.onClick.AddListener(() => SwitchContainer(togglesPanelContainer, togglesButton));
         exportBindsButton.onClick.AddListener(ExportBinds);
     }
 
@@ -316,8 +335,33 @@ public class BindManager : MonoBehaviour
         }
     }
 
-    private void SwitchContainer(Transform newContainer)
+    // Switches the current container to a new one and updates the button colors
+    private void SwitchContainer(Transform newContainer, Button button)
     {
+        foreach (Button btn in menusButtons)
+        {
+            cb = btn.colors;
+
+            cb.normalColor = buttonDefaultColor;
+            cb.highlightedColor = buttonDefaultColor;
+            cb.pressedColor = buttonDefaultColor;
+            cb.selectedColor = buttonDefaultColor;
+            cb.disabledColor = buttonDefaultColor;
+
+            btn.colors = cb;
+        }
+
+        // Ahora aplicar los colores "activos" al botón seleccionado
+        selectedCB = button.colors;
+
+        selectedCB.normalColor = buttonSelectedColor;
+        selectedCB.highlightedColor = buttonSelectedColor;
+        selectedCB.pressedColor = buttonSelectedColor;
+        selectedCB.selectedColor = buttonSelectedColor;
+        selectedCB.disabledColor = buttonSelectedColor;
+
+        button.colors = selectedCB;
+
         currentContainer.gameObject.SetActive(false);
         newContainer.gameObject.SetActive(true);
 
@@ -325,6 +369,7 @@ public class BindManager : MonoBehaviour
         currentContainer = newContainer;
     }
 
+    // Initializes the dictionary that maps category names to their respective containers
     private void InitializeContainerDictionary()
     {
         categoryContainers = new Dictionary<string, Transform>
@@ -337,6 +382,7 @@ public class BindManager : MonoBehaviour
 
     }
 
+    // Save the binds into txt file in the persistent data path (appdata)
     private void SaveBinds()
     {
         string filePath = Path.Combine(Application.persistentDataPath, "binds.txt");
@@ -349,12 +395,10 @@ public class BindManager : MonoBehaviour
             {
                 if(bind.scancode != null)
                 {
-                    Debug.Log($"El primer scancode de {bind.name} es {bind.scancode}");
                     writer.WriteLine($"{bind.name}|{bind.localKey}|{bind.americanKey}|{bind.scancode}" + (bind.values != null ? $"|{bind.values}" : ""));
                 }   
                 if (bind.secondScancode != null)
                 {
-                    Debug.Log($"El segundo scancode de {bind.name} es {bind.secondScancode}");
                     writer.WriteLine($"{bind.name}|{bind.secondLocalKey}|{bind.secondAmericanKey}|{bind.secondScancode}");
                 }  
             }
@@ -394,7 +438,7 @@ public class BindManager : MonoBehaviour
         }
 
         // Divide binds between unique scancodes and shared scancodes
-
+        // For example bind "MWHEELUP" "+jump" and "SPACE" "+jump" would be unique binds
         var uniqueBinds = new List<Bind>();
         var multiBinds = new Dictionary<string, List<Bind>>();
 
@@ -419,7 +463,6 @@ public class BindManager : MonoBehaviour
         SaveBinds();
 
         // Get the biggest command to align the comments
-
         int maxLeftWidthMulti = 0;
         int maxLeftWidthUnique = 0;
 
@@ -430,14 +473,26 @@ public class BindManager : MonoBehaviour
             {
                 string scancode = pair.Key;
                 string actions = string.Join("; ", pair.Value.Select(b => b.name));
-                return $"bind {scancode} {actions}".Length;
+                return $"bind \"{scancode}\" \"{actions}\"".Length;
             })
             .Max();
         }
 
         maxLeftWidthUnique = uniqueBinds
-            .Select(bind => $"bind {bind.scancode} {bind.name}".Length)
+            .Select(bind =>
+            {
+                // Checks if it's a toggle command because it adds "toggle " at the beginning
+                bool usesToggle = bind.category == "TOGGLES";
+                string command = usesToggle ? "toggle " : "";
+                string values = bind.values?.Trim();
+                string space = string.IsNullOrWhiteSpace(values) ? "" : " ";
+                string line = $"bind \"{bind.scancode}\" \"{command}{bind.name}{space}{values}\"";
+                Debug.Log($"'{line}' ({line.Length})");
+                return line.Length;
+            })
             .Max();
+
+        Debug.Log($"maxunique: {maxLeftWidthUnique}, maxMulti: {maxLeftWidthMulti}");
 
         int maxLeftWidth = Math.Max(maxLeftWidthMulti, maxLeftWidthUnique) + 4;
 
@@ -448,6 +503,7 @@ public class BindManager : MonoBehaviour
 
             writer.WriteLine();
             writer.WriteLine("//========== YOU SHOULD NOT CHANGE THESE ==========");
+            if(MenuManager.Instance.addUnbindall) writer.WriteLine("unbindall");
             writer.WriteLine("bind \"MOUSE1\" \"+attack\"");
             writer.WriteLine("bind \"MOUSE_X\" \"yaw\"");
             writer.WriteLine("bind \"MOUSE_Y\" \"pitch\"");
@@ -465,11 +521,18 @@ public class BindManager : MonoBehaviour
                     {
                         if (string.IsNullOrEmpty(bind.secondScancode))
                         {
-                            string left = $"bind \"{bind.scancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
-                            writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
+                            if(string.IsNullOrEmpty(bind.values))
+                            {
+                                string left = $"bind \"{bind.scancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
+                                writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
+                            } else
+                            {
+                                string left = $"bind \"{bind.scancode}\" \"toggle {bind.name} {bind.values}\"".PadRight(maxLeftWidth + 4);
+                                writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
+                            }
+                            
                         } else
                         {
-                            Debug.Log($"{bind.name} su second scancode es = {bind.secondScancode}");
                             string left = $"bind \"{bind.scancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
                             writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
                             string extraLeft = $"bind \"{bind.secondScancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);

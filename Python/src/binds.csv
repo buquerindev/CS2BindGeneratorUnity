@@ -107,9 +107,9 @@ noclip;Noclip;Toggle no clipping mode, you can fly through walls;HIDDEN;sv_cheat
 bot_add_t;Add T Bot;Adds a bot to the Terrorist team;HIDDEN;Bot
 bot_add_ct;Add CT Bot;Adds a bot to the Counter-Terrorist team;HIDDEN;Bot
 bot_place;Place Bot;Places a bot at the crosshair position;HIDDEN;Bot
-toggle bot_stop 1 0;Toggle bot stop;Stops all bots from doing any action;HIDDEN;Bot
-toggle bot_mimic 1 0;Toggle bot mimic;Makes the bot mimic the player's movements;HIDDEN;Bot
-toggle bot_crouch 1 0;Toggle bot crouch;Makes the bot crouch;HIDDEN;Bot
+toggle bot_stop;Toggle bot stop;Stops all bots from doing any action;HIDDEN;Bot
+toggle bot_mimic;Toggle bot mimic;Makes the bot mimic the player's movements;HIDDEN;Bot
+toggle bot_crouch;Toggle bot crouch;Makes the bot crouch;HIDDEN;Bot
 yaw;Mouse Yaw;Don't change this option;HIDDEN;Hidden
 pitch;Mouse Pitch;Don't change this option;HIDDEN;Hidden
 cancelselect;Escape;Don't change this option;HIDDEN;Hidden
@@ -117,4 +117,5 @@ cl_hud_color;Change HUD Color;Press this key to alternate the HUD color\n0:Team 
 cl_radar_scale;Change Radar Scale;It's the same as toggleradarscale but you could add more values;TOGGLES;HUD
 cl_crosshaircolor;Change Crosshair Color;Press this key to alternate the crosshair color\n0:Red\n1:Green\n2:Yellow\n3:Blue\n4:Cyan\n5:Custom RGB color from the crosshair_[r/g/b] command;TOGGLES;HUD
 cl_crosshairsize;Change Crosshair Size;Press this key to change the crosshair size (Some players prefer this instead of the new grenade reticle);TOGGLES;HUD
-host_timescale;Change Host Time Scale;Use this while practicing, if you miss a smoke you can accelerate time, for example:\n1 = Normal time\n0.5 = Half time (slow motion)\n5 = 5x normal time (A smoke would last 4 seconds);TOGGLES;category
+host_timescale;Change Host Time Scale;Use this while practicing, if you miss a smoke you can accelerate time, for example:\n1 = Normal time\n0.5 = Half time (slow motion)\n5 = 5x normal time (A smoke would last 4 seconds);TOGGLES;misc
+r_fullscreen_gamma;Change brightness (gamma);Changes the brightness of the game, some of the values are: \n1: 133% brightness\n2: 100% brightness (default)\n3: 66% brightness\n4: 33% brightness;TOGGLES;misc

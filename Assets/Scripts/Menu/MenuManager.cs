@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button bindsMenuButton;
     [SerializeField] private Button closeMenuButton;
     [SerializeField] private Button switchKeyboard;
+    [SerializeField] private Button quitButton;
 
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject settingsMenu;
@@ -19,9 +20,11 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private CameraMover cameraMover;
     [SerializeField] private Transform cameraDefault;
-    [SerializeField] private Transform cameraCenter;
     [SerializeField] private Transform cameraZoom;
 
+    [SerializeField] private Toggle unbindallToggle;
+
+    public bool addUnbindall = false;
     public bool isANSI = false;
 
     private Vector3 keyboardPosition = new Vector3((float)-43.4039993, (float)7.10900021, (float)13.7150002);
@@ -45,6 +48,8 @@ public class MenuManager : MonoBehaviour
         bindsMenuButton.onClick.AddListener(OpenBindsMenuButton);
         closeMenuButton.onClick.AddListener(CloseMenu);
         switchKeyboard.onClick.AddListener(ToggleKeyboard);
+        quitButton.onClick.AddListener(Application.Quit);
+        unbindallToggle.onValueChanged.AddListener(OnToggleChanged);
         //cameraMover.MoveCameraTo(cameraDefault,1);
     }
 
@@ -101,5 +106,10 @@ public class MenuManager : MonoBehaviour
             keyboardISO.transform.position = keyboardPosition;
             isANSI = false;
         }
+    }
+
+    private void OnToggleChanged(bool value)
+    {
+        addUnbindall = value;
     }
 }

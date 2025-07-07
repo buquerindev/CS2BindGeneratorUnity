@@ -48,6 +48,7 @@ public class TogglePanel : BindPanel
                 string values = parts[4];
                 valuesTMP.text = values;
                 valuesInputField.LoadBind(localKey, americanKey);
+                SendValuesToBind(values);
             }
         }
     }

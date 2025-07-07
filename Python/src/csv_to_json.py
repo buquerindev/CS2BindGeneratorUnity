@@ -3,7 +3,7 @@ import json
 import os
 
 # Path with the CSV and JSON
-path = "G:\\Programacion\\CS2BindGeneratorUnity\\Python\\src\\"
+path = "D:\\Programacion\\CS2BindGeneratorUnity\\Python\\src\\"
 
 json_data_path = path + "commands.json"
 binds_data_path = path + "binds.json"
