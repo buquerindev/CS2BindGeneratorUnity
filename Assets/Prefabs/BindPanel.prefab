@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4535840368720349060}
   - component: {fileID: 7012061473227367886}
   - component: {fileID: 929165466553970990}
+  - component: {fileID: 3318764467359433847}
   m_Layer: 5
   m_Name: UnbindButton
   m_TagString: Untagged
@@ -120,6 +121,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3318764467359433847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279131287264871727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bf9ba050e0acb47ad89a57487c9555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 2db10c63547baab4cbd4b2bc10df1d3a, type: 3}
+  hoverSound: {fileID: 8300000, guid: 253dd5e85601161469e065a814700e05, type: 3}
 --- !u!1 &814470250563129117
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +148,7 @@ GameObject:
   - component: {fileID: 7522211572547816982}
   - component: {fileID: 4954402879000516773}
   - component: {fileID: 8877531423891554340}
+  - component: {fileID: 4391260616565276629}
   m_Layer: 5
   m_Name: KeyInputField
   m_TagString: Untagged
@@ -313,6 +329,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindPanel: {fileID: 9165105394129703474}
   inputField: {fileID: 4954402879000516773}
+--- !u!114 &4391260616565276629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814470250563129117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bf9ba050e0acb47ad89a57487c9555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 2db10c63547baab4cbd4b2bc10df1d3a, type: 3}
+  hoverSound: {fileID: 8300000, guid: 253dd5e85601161469e065a814700e05, type: 3}
 --- !u!1 &2667108542037678570
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +923,7 @@ GameObject:
   - component: {fileID: 4429700615136681512}
   - component: {fileID: 4120807083840527267}
   - component: {fileID: 4799711873041840801}
+  - component: {fileID: 332315744045178957}
   m_Layer: 5
   m_Name: ExtraKeyInputField
   m_TagString: Untagged
@@ -1073,6 +1104,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindPanel: {fileID: 9165105394129703474}
   inputField: {fileID: 4120807083840527267}
+--- !u!114 &332315744045178957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080696981595879871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bf9ba050e0acb47ad89a57487c9555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 2db10c63547baab4cbd4b2bc10df1d3a, type: 3}
+  hoverSound: {fileID: 8300000, guid: 253dd5e85601161469e065a814700e05, type: 3}
 --- !u!1 &8524527374871130010
 GameObject:
   m_ObjectHideFlags: 0

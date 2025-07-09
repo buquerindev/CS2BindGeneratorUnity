@@ -377,10 +377,6 @@ public class CommandManager : MonoBehaviour
             string[] values = lines[1].Split(',');
             snd_formula_commands.AddRange(values);
         }
-        foreach (string line in snd_formula_commands)
-        {
-            Debug.Log(line);
-        }
     }
 
     private void SNDDecimalList(string file)
@@ -402,7 +398,11 @@ public class CommandManager : MonoBehaviour
     {
         if (sndFormulaLoaded && sndDecimalLoaded)
         {
-            JSONLoader.LoadFile(jsonURL, OnJSONReceived);
+            JSONLoader.LoadFile(jsonURL, (text) =>
+            {
+                Debug.Log("JSON de commands recibido, comenzando a instanciar paneles");
+                OnJSONReceived(text);
+            });
         }
     }
 }

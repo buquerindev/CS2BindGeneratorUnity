@@ -12,7 +12,6 @@ public class MouseLookSway : MonoBehaviour
     void Start()
     {
         initialRotation = transform.localRotation;
-        Debug.Log($"Initial Rotation: {initialRotation.eulerAngles}");
     }
 
     void Update()
@@ -45,7 +44,6 @@ public class MouseLookSway : MonoBehaviour
     public void SetRotation(Quaternion rotation)
     {
         initialRotation = rotation;
-        Debug.Log($"SetRotation called with: {rotation.eulerAngles}");
     }
 }
 

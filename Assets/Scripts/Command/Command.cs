@@ -45,8 +45,6 @@ public class Command
             convertedValue = Mathf.Pow(numericValue / 100f, 2);
         else
             convertedValue = numericValue / 100f;
-
-        Debug.Log($"Converted value ({name}): {convertedValue}");
     }
 }
 

@@ -44,6 +44,7 @@ public class MenuManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Application.targetFrameRate = 144;
         settingsMenuButton.onClick.AddListener(OpenSettingsMenu);
         bindsMenuButton.onClick.AddListener(OpenBindsMenuButton);
         closeMenuButton.onClick.AddListener(CloseMenu);

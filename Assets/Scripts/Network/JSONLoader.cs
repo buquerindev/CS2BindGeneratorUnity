@@ -24,7 +24,21 @@ public class JSONLoader : MonoBehaviour
         else
         {
             string jsonText = request.downloadHandler.text;
-            onSuccess.Invoke(jsonText);
+            if (string.IsNullOrWhiteSpace(jsonText))
+            {
+                Debug.LogError("JSON vacío o inválido recibido desde " + fileURL);
+                yield break;
+            }
+
+            try
+            {
+                onSuccess?.Invoke(jsonText);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Excepción al procesar JSON: " + ex.Message);
+            }
         }
+
     }
 }

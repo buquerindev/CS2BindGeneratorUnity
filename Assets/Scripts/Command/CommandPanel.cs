@@ -69,8 +69,6 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
             {
                 command.selectedValue = result;
             }   
-            else
-                command.selectedValue = 0; // o mantén el valor anterior
         }
         else
         {
@@ -80,8 +78,6 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
                     value = "0" + value;
                 command.selectedValue = fresult;
             }
-            else
-                command.selectedValue = 0f;
         }
 
         if (CommandManager.Instance.snd_formula_commands.Contains(command.name))
@@ -191,7 +187,7 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
             
             if(name == command.name)
             {
-                //command.selectedValue = parts[1];
+                command.selectedValue = parts[1];
                 floatInputField.text = parts[1].ToString();
                 intInputField.text = parts[1].ToString();
 

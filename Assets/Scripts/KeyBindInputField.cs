@@ -33,7 +33,10 @@ public class KeyBindInputField : MonoBehaviour, ISelectHandler, IDeselectHandler
         if (!isListening)
             return;
 
-        foreach (var key in Keyboard.current.allKeys)
+        var pressedKeys = Keyboard.current.allKeys
+        .Where(k => k != null);
+
+        foreach (var key in pressedKeys)
         {
             if (key.wasPressedThisFrame)
             {

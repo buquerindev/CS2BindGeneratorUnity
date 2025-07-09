@@ -249,7 +249,11 @@ public class BindManager : MonoBehaviour
         scrollRect.content = currentContainer as RectTransform;
         InitializeContainerDictionary();
 
-        JSONLoader.LoadFile(jsonURL, OnJSONReceived);
+        JSONLoader.LoadFile(jsonURL, (json) =>
+        {
+            Debug.Log("JSON recibido con éxito");
+            OnJSONReceived(json);
+        });
 
         controlsButton.onClick.AddListener(() => SwitchContainer(controlsPanelContainer, controlsButton));
         hiddenButton.onClick.AddListener(() => SwitchContainer(hiddenPanelContainer, hiddenButton));
@@ -260,6 +264,7 @@ public class BindManager : MonoBehaviour
 
     private void OnJSONReceived(string jsonText)
     {
+        Debug.Log("Comenzando a instanciar los paneles");
         JObject root = JObject.Parse(jsonText);
         JArray binds = (JArray)root["binds"];
 
