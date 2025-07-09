@@ -1,9 +1,9 @@
 # CS2 Config Generator
 This application allows you to save your settings and binds into a .cfg file, it also includes common settings/binds that are not included in the game but are used by professional players
 
-![Main menu](mainmenu.jpg)
+![Main menu](CloudFiles/mainmenu.jpg)
 
-![Binds menu](binds.jpg)
+![Binds menu](CloudFiles/binds.jpg)
 
 ## To Do:
 

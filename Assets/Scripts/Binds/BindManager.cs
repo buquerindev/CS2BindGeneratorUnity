@@ -13,7 +13,7 @@ public class BindManager : MonoBehaviour
 {
     [SerializeField] private JSONLoader JSONLoader;
     private BindList bindList = new();
-    private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/binds.json";
+    private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/CloudFiles/binds.json";
 
     [SerializeField] private ScrollRect scrollRect;
 
