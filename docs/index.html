@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Config Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>CS2 Config Generator</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#current-problem">Main Problem</a>
+            <a href="#features">Features</a>
+            <a href="#">Binds</a>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About the application</h2>
+            <img src="../CloudFiles/mainmenu.jpg" alt="Main Menu of the application">
+            <p>
+            This application let's you save your CS2 settings into .cfg files, 
+            including popular settings and binds that aren't available in the game's menu but are often used by pros. 
+            </p>
+            <p>
+                It was designed using <strong>Unity</strong> and every command from the game was researched and implemented, so you can easily create your own custom configs.
+            </p>
+            <img src="images/files.jpg" alt="Files that the app generates">
+        </section>
+        <section id="current-problem">
+            <h2>The Problem with Custom Keybinds</h2>
+            <p>
+                The biggest issue when creating custom keybinds in CS2 isn’t with the standard keybindings found in the game’s settings menu — those work fine regardless of your keyboard layout.
+            </p>
+            <p>
+                The problem appears when you try to bind actions that are <strong>only available via the console</strong>, such as <code>noclip</code>, <code>toggle r_fullscreen_gamma [values]</code> or any other advanced binds.
+            </p>
+            <p>
+                On <strong>non-US keyboard layouts</strong> (let's use Spanish or Portuguese as an example), some keys — like <code>ç</code> — simply aren’t recognized by the console. For example, running <code>bind ç noclip</code> 
+                will result in an error because <code>ç</code> is not a valid key name according to CS2. <img src="images/console.jpg" alt="Descripción de la imagen">
+
+            </p>
+            <p>
+                You might think: “I’ll just find the US equivalent.” But here’s the catch: many of those keys <strong>don’t exist at all on the US ANSI layout</strong>, this is because the majority of countries uses <strong>ISO layout</strong>, and it has one more key. The <code>ç</code> key, for instance, doesn't have a direct counterpart, making it impossible to bind unless you guess the correct layout-dependent key name — which varies per system. <img src="images/difference-spanish-english.jpg" alt="Difference between Spanish and English layouts">
+            </p>
+            <p>
+                This makes creating reliable custom configs a nightmare for anyone not using a US keyboard.
+            </p>
+            <p>
+                Additionally, the game uses keyboard layout-specific key names, which can cause issues when switching between different keyboard layouts.
+            </p>
+        </section>
+        <section id="features">
+            <h2>Features & Benefits</h2>
+            <article>
+                <h3>Keyboard Layout Independent</h3>
+                <p>
+                    One of the biggest advantages is that this app works with <strong>any keyboard physical and logical layout</strong>. Instead of using layout-specific key names, it uses
+                    <a href="https://wiki.libsdl.org/SDL2/SDL_Scancode" target="_blank">SDL scancodes</a>, these codes represent the physical key of every keyboard, and they are used in Counter-Strike 2.
+                </p>
+                <p>
+                    This ensures your config works the same on <strong>QWERTY</strong>, <strong>AZERTY</strong>, <strong>DVORAK</strong>, and others — no more broken keybinds.
+                </p>
+                <p> You can even <strong>test your keyboard</strong> using the application, just select ISO/ANSI, press a key, and it will turn blue!</p>
+                <video autoplay muted loop playsinline style="display: block; margin: 2rem auto; max-width: 100%; height: auto; border-radius: 8px;">
+                <source src="videos/PressKeysBindGenerator.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+            </article>
+            <article>
+                <h3>Familiar layout</h3>
+                <p>
+                    The app's interface replicates the in-game settings menu, making it intuitive for players.
+                    You can easily navigate through the different sections and categories, just like in CS2.
+                </p>
+            </article>
+            <article>
+                <h3>Automatic and organized Config Generation</h3>
+                <p>
+                    This app automates the creation of `.cfg` files for CS2, making it easy to save, export, and reuse your settings. Each command/bind is placed inside a category. Perfect for sharing configs or switching between PCs. <image src="images/organized-binds.jpg"></image>
+                </p>
+            </article>
+            <article>
+                <h3>Includes Hidden Binds & Settings</h3>
+                <p>
+                    It includes advanced commands and binds commonly used by professional players — but not available in the in-game menu — such as:
+                </p>
+                <ul>
+                    <li>Quick-buy binds</li>
+                    <li>Sound and HUD toggle binds</li>
+                    <li>Bot commands and toggle binds</li>
+                    <li><code>say</code> binds</li>
+                    <li><code>sv_cheats</code> related commands to practice</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Automatic updates</h3>
+                <p>
+                    The application fetches all settings and bindable commands from remote JSON files. 
+                    These are loaded and instantiated dynamically, which means new features or game updates can be integrated without requiring the user to download a new version. 
+                    Updates only become necessary in case of major structural changes or critical bug fixes.
+                </p>
+            </article>
+        </section>
+    </main>
+</body>
