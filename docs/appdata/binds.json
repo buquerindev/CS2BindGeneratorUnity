@@ -722,6 +722,13 @@
             "subcategory": "Action"
         },
         {
+            "name": "cl_dm_buyrandomweapons",
+            "ingameName": "Deathmatch Random Weapons",
+            "description": "Enable/Disable getting random weapons in Deathmatch mode (Default is F3)",
+            "category": "HIDDEN",
+            "subcategory": "Action"
+        },
+        {
             "name": "sv_rethrow_last_grenade",
             "ingameName": "Re-throw Last Grenade",
             "description": "Re-throws the last thrown grenade",
@@ -757,21 +764,21 @@
             "subcategory": "Bot"
         },
         {
-            "name": "toggle bot_stop 1 0",
+            "name": "toggle bot_stop",
             "ingameName": "Toggle bot stop",
             "description": "Stops all bots from doing any action",
             "category": "HIDDEN",
             "subcategory": "Bot"
         },
         {
-            "name": "toggle bot_mimic 1 0",
+            "name": "toggle bot_mimic",
             "ingameName": "Toggle bot mimic",
             "description": "Makes the bot mimic the player's movements",
             "category": "HIDDEN",
             "subcategory": "Bot"
         },
         {
-            "name": "toggle bot_crouch 1 0",
+            "name": "toggle bot_crouch",
             "ingameName": "Toggle bot crouch",
             "description": "Makes the bot crouch",
             "category": "HIDDEN",
@@ -831,7 +838,70 @@
             "ingameName": "Change Host Time Scale",
             "description": "Use this while practicing, if you miss a smoke you can accelerate time, for example:\\n1 = Normal time\\n0.5 = Half time (slow motion)\\n5 = 5x normal time (A smoke would last 4 seconds)",
             "category": "TOGGLES",
-            "subcategory": "category"
+            "subcategory": "misc"
+        },
+        {
+            "name": "r_fullscreen_gamma",
+            "ingameName": "Change brightness (gamma)",
+            "description": "Changes the brightness of the game, some of the values are: \\n1: 133% brightness\\n2: 100% brightness (default)\\n3: 66% brightness\\n4: 33% brightness",
+            "category": "TOGGLES",
+            "subcategory": "misc"
+        },
+        {
+            "name": "say",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say_team",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
+        },
+        {
+            "name": "say_team",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
+        },
+        {
+            "name": "say_team",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
+        },
+        {
+            "name": "say_team",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
         }
     ]
 }
