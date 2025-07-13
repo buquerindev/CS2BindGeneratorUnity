@@ -521,6 +521,7 @@ public class BindManager : MonoBehaviour
             writer.WriteLine("bind \"MOUSE1\" \"+attack\"");
             writer.WriteLine("bind \"MOUSE_X\" \"yaw\"");
             writer.WriteLine("bind \"MOUSE_Y\" \"pitch\"");
+            writer.WriteLine("bind \"Escape\" \"cancelselect\"");
 
             // Export unique binds ordenados
             foreach (var categoryPair in groupedUniqueBinds)
