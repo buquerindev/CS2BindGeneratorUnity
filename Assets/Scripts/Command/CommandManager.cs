@@ -22,9 +22,9 @@ public class CommandManager : MonoBehaviour
     private CommandList commandList = new CommandList();
     private List<CommandPanel> commandPanels = new List<CommandPanel>();
 
-    private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/CloudFiles/commands.json";
-    private readonly string snd_formula_txt = "https://buquerindev.github.io/CS2BindGeneratorUnity/CloudFiles/snd_formula.txt";
-    private readonly string snd_to_decimal_txt = "https://buquerindev.github.io/CS2BindGeneratorUnity/CloudFiles/snd_to_decimal.txt";
+    private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/appdata/commands.json";
+    private readonly string snd_formula_txt = "https://buquerindev.github.io/CS2BindGeneratorUnity/appdata/snd_formula.txt";
+    private readonly string snd_to_decimal_txt = "https://buquerindev.github.io/CS2BindGeneratorUnity/appdata/snd_to_decimal.txt";
 
     public List<string> snd_formula_commands;
     public List<string> snd_to_decimal_commands;
@@ -36,11 +36,13 @@ public class CommandManager : MonoBehaviour
 
     [SerializeField] private Transform audioPanelContainer;
     [SerializeField] private Transform gamePanelContainer;
+    [SerializeField] private Transform keyboardMousePanelContainer;
     private Transform currentContainer;
 
     [SerializeField] private Button exportSettingsButton;
     [SerializeField] private Button audioButton;
     [SerializeField] private Button gameButton;
+    [SerializeField] private Button keyboardMouseButton;
 
     private List<Button> menusButtons;
 
@@ -96,6 +98,7 @@ public class CommandManager : MonoBehaviour
         exportSettingsButton.onClick.AddListener(ExportSettings);
         audioButton.onClick.AddListener(() => SwitchContainer(audioPanelContainer, audioButton));
         gameButton.onClick.AddListener(() => SwitchContainer(gamePanelContainer, gameButton));
+        keyboardMouseButton.onClick.AddListener(() => SwitchContainer(keyboardMousePanelContainer, keyboardMouseButton));
     }
 
     private void OnJSONReceived(string jsonText)
@@ -336,7 +339,7 @@ public class CommandManager : MonoBehaviour
             btn.colors = cb;
         }
 
-        // Ahora aplicar los colores "activos" al botón seleccionado
+        // Ahora aplicar los colores "activos" al botï¿½n seleccionado
         selectedCB = button.colors;
 
         selectedCB.normalColor = buttonSelectedColor;
@@ -360,6 +363,7 @@ public class CommandManager : MonoBehaviour
             {
                 { "game", gamePanelContainer },
                 { "audio", audioPanelContainer },
+                { "kbmouse", keyboardMousePanelContainer }
             };
 
     }
@@ -368,10 +372,10 @@ public class CommandManager : MonoBehaviour
     {
         snd_formula_commands = new List<string>();
 
-        // Divide el contenido en líneas
+        // Divide el contenido en lï¿½neas
         string[] lines = file.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
 
-        // Comprueba que hay al menos dos líneas
+        // Comprueba que hay al menos dos lï¿½neas
         if (lines.Length > 1)
         {
             string[] values = lines[1].Split(',');
@@ -383,10 +387,10 @@ public class CommandManager : MonoBehaviour
     {
         snd_to_decimal_commands = new List<string>();
 
-        // Divide el contenido en líneas
+        // Divide el contenido en lï¿½neas
         string[] lines = file.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
 
-        // Comprueba que hay al menos dos líneas
+        // Comprueba que hay al menos dos lï¿½neas
         if (lines.Length > 1)
         {
             string[] values = lines[1].Split(',');

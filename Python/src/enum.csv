@@ -23,3 +23,7 @@ cl_hud_telemetry_net_quality_graph_show;Show network jitter / misdelivery graph;
 cl_hud_telemetry_net_detailed;Use the detailed network quality display;Show detailed network quality information in the HUD;1;GAME;Telemetry;0/1/2;Never/If conditions are poor/Always
 snd_headphone_eq_active;EQ Profile;Selects the equalizer profile for headphones;0;AUDIO;Audio;0/1/2;Natural/Crisp/Smooth
 voice_vox;Voice/Microphone Mode;Select the voice/microphone mode;0;AUDIO;Voice;0/0/1;Disabled/Push To Talk/Open Microphone
+option_duck_method;Duck (Crouch) Mode;Select the method for ducking (crouching);0;KBMOUSE;KB & Mouse settings;0/1;Hold/Toggle
+option_speed_method;Walk (Shift) Mode;Select the method for walking (pressing Shift);0;KBMOUSE;KB & Mouse ;0/1;Hold/Toggle
+cl_color;Team preferred color;Select the team preferred color;0;MISC;Hidden;0/1/2/3/4;Blue/Green/Yellow/Orange/Pink
+cl_join_advertise;Advertise joinable game;Advertise joinable game in progress to Steam friends, otherwise need a Steam invite;1;MISC;Hidden;0/1/2;None/Official Servers/All Servers

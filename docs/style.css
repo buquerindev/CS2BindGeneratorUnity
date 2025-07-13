@@ -1,62 +1,98 @@
-body {
-    padding-top: 130px; /* Ajusta este valor a la altura real del header */
-    font-family: "Montserrat", sans-serif; /* usa esta fuente si quieres */
+/* General resets and base styles */
+* {
+    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 8rem; /* espacio para el header fijo */
     margin: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #202020;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
 section {
-  position: relative;
-  padding-top: 160px;   /* igual a la altura del header */
-  margin-top: -160px;   /* negativo para compensar */
+    scroll-margin-top: 130px; /* mismo alto que el header */
 }
 
 main {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem;
-    background-color: #fff;
+    padding: 1rem 2rem;
+    background-color: #2c2c2c;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     border-radius: 8px;
 }
 
+/* HEADER */
 header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    background-color: #222;
+    z-index: 1000;
+    background-color: #131313;
     color: white;
-    padding: 1rem;
-    text-align: center;
-    z-index: 1000; /* Para que esté encima del contenido */
+    padding: 0rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
+
+.left-side {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+}
+
+.app-name {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* NAVIGATION */
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.main-nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.main-nav a:hover {
+    color: white;
+}
+
+/* CONTENT STYLES */
 h2 {
     text-align: center;
 }
 
-nav a {
-    margin: 0 1rem;
-    color: white;
-    text-decoration: none;
+p {
+    text-align: justify;
 }
 
-main {
-    padding: 2rem;
-}
-
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+code {
+    background-color: #2c2c2c;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: "Fira Code", monospace;
+    font-size: 0.95em;
 }
 
 img {
@@ -66,20 +102,46 @@ img {
     border-radius: 8px;
 }
 
-code {
-    background-color: #f4f4f4;
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
-    font-family: "Fira Code", monospace;
-    font-size: 0.95em;
+.btn-download {
+  display: inline-block;
+  align-items: center;
+  background-color: #faac19;   /* verde principal */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
 }
 
-p {
-    text-align: justify;
+.btn-download:hover {
+  background-color: rgb(196, 150, 25);   /* verde un poco más oscuro al pasar el ratón */
 }
 
-* {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+.download-wrapper {
+    text-align: center;
+    margin: 2rem 0;
 }
+
+.main-nav a.download-link {
+  color: #faac19; /* verde llamativo */
+}
+
+a {
+    color: #faac19; /* verde llamativo */
+    text-decoration: underline;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative; /* ← antes era fixed */
+    bottom: 0;
+    width: 100%;
+}
+
+

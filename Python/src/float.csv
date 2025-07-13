@@ -12,3 +12,5 @@ cl_grenadecrosshairdelay_smoke;Smoke Grenade Line-Up Crosshair Delay;Set the del
 cl_grenadecrosshairdelay_decoy;Decoy Grenade Line-Up Crosshair Delay;Set the delay for the decoy grenade line-up crosshair;2.0;GAME;Grenade Line-Up Reticle;0.0;5.0
 cl_hud_telemetry_frametime_poor;Frame time warning threshold;Set the threshold for poor frame time conditions, write the minimum FPS value here;14;GAME;Telemetry;1;100
 cl_hud_telemetry_net_misdelivery_poor;Network tick miss rate warning threshold;Set the threshold for poor network conditions, write the maximum tick miss rate here;0.1;GAME;Telemetry;0.0;2.0
+sensitivity;Mouse Sensitivity;Set the mouse sensitivity for aiming;2.5;KBMOUSE;KB & Mouse settings;0.01;100.0
+zoom_sensitivity_ratio;Zoom Sensitivity Multiplier;Set the sensitivity multiplier for zoomed aiming;1.0;KBMOUSE;KB & Mouse settings;0.01;100.0

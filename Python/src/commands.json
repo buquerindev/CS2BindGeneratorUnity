@@ -311,7 +311,16 @@
             "ingameName": "Show Equipped Character for Player Avatars",
             "description": "Determines whether to show the equipped character for player avatars in the HUD instead of Steam profile pricture",
             "defaultValue": "0",
-            "category": "GAME",
+            "category": "MISC",
+            "subcategory": "Hidden",
+            "type": "bool"
+        },
+        {
+            "name": "cl_invites_only_mainmenu",
+            "ingameName": "Get invites only in Main Menu",
+            "description": "If turned on, will ignore all invites when user is playing a match",
+            "defaultValue": "0",
+            "category": "MISC",
             "subcategory": "Hidden",
             "type": "bool"
         },
@@ -580,6 +589,50 @@
             "type": "enum"
         },
         {
+            "name": "option_duck_method",
+            "ingameName": "Duck (Crouch) Mode",
+            "description": "Select the method for ducking (crouching)",
+            "defaultValue": "0",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse settings",
+            "enumValues": "0/1",
+            "enumNames": "Hold/Toggle",
+            "type": "enum"
+        },
+        {
+            "name": "option_speed_method",
+            "ingameName": "Walk (Shift) Mode",
+            "description": "Select the method for walking (pressing Shift)",
+            "defaultValue": "0",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse ",
+            "enumValues": "0/1",
+            "enumNames": "Hold/Toggle",
+            "type": "enum"
+        },
+        {
+            "name": "cl_color",
+            "ingameName": "Team preferred color",
+            "description": "Select the team preferred color",
+            "defaultValue": "0",
+            "category": "MISC",
+            "subcategory": "Hidden",
+            "enumValues": "0/1/2/3/4",
+            "enumNames": "Blue/Green/Yellow/Orange/Pink",
+            "type": "enum"
+        },
+        {
+            "name": "cl_join_advertise",
+            "ingameName": "Advertise joinable game",
+            "description": "Advertise joinable game in progress to Steam friends, otherwise need a Steam invite",
+            "defaultValue": "1",
+            "category": "MISC",
+            "subcategory": "Hidden",
+            "enumValues": "0/1/2",
+            "enumNames": "None/Official Servers/All Servers",
+            "type": "enum"
+        },
+        {
             "name": "hud_scaling",
             "ingameName": "HUD Scale",
             "description": "Scale the size of the HUD elements",
@@ -720,6 +773,28 @@
             "subcategory": "Telemetry",
             "min": "0.0",
             "max": "2.0",
+            "type": "float"
+        },
+        {
+            "name": "sensitivity",
+            "ingameName": "Mouse Sensitivity",
+            "description": "Set the mouse sensitivity for aiming",
+            "defaultValue": "2.5",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse settings",
+            "min": "0.01",
+            "max": "100.0",
+            "type": "float"
+        },
+        {
+            "name": "zoom_sensitivity_ratio",
+            "ingameName": "Zoom Sensitivity Multiplier",
+            "description": "Set the sensitivity multiplier for zoomed aiming",
+            "defaultValue": "1.0",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse settings",
+            "min": "0.01",
+            "max": "100.0",
             "type": "float"
         },
         {

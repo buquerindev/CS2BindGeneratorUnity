@@ -150,12 +150,16 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
     {
         enumDropdown.ClearOptions();
         enumDropdown.AddOptions(command.enumNames);
+        int value = (int)command.defaultValue;
+        enumDropdown.value = command.enumValues.IndexOf(value);
     }
 
     private void InitializeStringPanel()
     {
         stringDropdown.ClearOptions();
         stringDropdown.AddOptions(command.optionsNames);
+        string value = command.defaultValue as string;
+        stringDropdown.value = command.options.IndexOf(value);
     }
 
     private void InitializeIntPanel()
@@ -188,10 +192,34 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
             if(name == command.name)
             {
                 command.selectedValue = parts[1];
-                floatInputField.text = parts[1].ToString();
-                intInputField.text = parts[1].ToString();
 
-                CheckSNDCommand(parts[1]);
+                if (command.type == "enum")
+                {
+                    enumDropdown.value = command.enumValues.IndexOf(int.Parse(parts[1]));
+                    enumDropdown.RefreshShownValue();
+                }
+
+                if (command.type == "int")
+                {
+                    intInputField.text = parts[1].ToString();
+                    CheckSNDCommand(parts[1]);
+                }
+
+                if (command.type == "float")
+                {
+                    floatInputField.text = parts[1].ToString();
+                }
+
+                if (command.type == "string")
+                {
+                    stringDropdown.value = command.options.IndexOf(parts[1]);
+                    stringDropdown.RefreshShownValue();
+                }
+
+                if (command.type == "bool")
+                {
+                    boolToggle.isOn = bool.Parse(parts[1]);
+                }
             }       
         }
     }

@@ -13,7 +13,7 @@ public class BindManager : MonoBehaviour
 {
     [SerializeField] private JSONLoader JSONLoader;
     private BindList bindList = new();
-    private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/CloudFiles/binds.json";
+    private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/appdata/binds.json";
 
     [SerializeField] private ScrollRect scrollRect;
 
@@ -251,7 +251,7 @@ public class BindManager : MonoBehaviour
 
         JSONLoader.LoadFile(jsonURL, (json) =>
         {
-            Debug.Log("JSON recibido con éxito");
+            Debug.Log("JSON recibido con ï¿½xito");
             OnJSONReceived(json);
         });
 
@@ -356,7 +356,7 @@ public class BindManager : MonoBehaviour
             btn.colors = cb;
         }
 
-        // Ahora aplicar los colores "activos" al botón seleccionado
+        // Ahora aplicar los colores "activos" al botï¿½n seleccionado
         selectedCB = button.colors;
 
         selectedCB.normalColor = buttonSelectedColor;

@@ -102,6 +102,7 @@ cs_quit_prompt;Quit Game;Quit the game with a confirmation prompt;HIDDEN;Action
 disconnect;Disconnect;Disconnects from the current server;HIDDEN;Action
 quit;Instantly Quit Game;Quits the game without any confirmation;HIDDEN;Action
 holdpos;Bot Hold Position;It's the classic Z+4 bind (radio + 4), it makes the bots hold their position so they don't rush and die;HIDDEN;Action
+cl_dm_buyrandomweapons;Deathmatch Random Weapons;Enable/Disable getting random weapons in Deathmatch mode (Default is F3);HIDDEN;Action
 sv_rethrow_last_grenade;Re-throw Last Grenade;Re-throws the last thrown grenade;HIDDEN;sv_cheats
 noclip;Noclip;Toggle no clipping mode, you can fly through walls;HIDDEN;sv_cheats
 bot_add_t;Add T Bot;Adds a bot to the Terrorist team;HIDDEN;Bot
@@ -119,3 +120,11 @@ cl_crosshaircolor;Change Crosshair Color;Press this key to alternate the crossha
 cl_crosshairsize;Change Crosshair Size;Press this key to change the crosshair size (Some players prefer this instead of the new grenade reticle);TOGGLES;HUD
 host_timescale;Change Host Time Scale;Use this while practicing, if you miss a smoke you can accelerate time, for example:\n1 = Normal time\n0.5 = Half time (slow motion)\n5 = 5x normal time (A smoke would last 4 seconds);TOGGLES;misc
 r_fullscreen_gamma;Change brightness (gamma);Changes the brightness of the game, some of the values are: \n1: 133% brightness\n2: 100% brightness (default)\n3: 66% brightness\n4: 33% brightness;TOGGLES;misc
+say;Say;Send a message to the general chat;SAY;General
+say;Say;Send a message to the general chat;SAY;General
+say;Say;Send a message to the general chat;SAY;General
+say;Say;Send a message to the general chat;SAY;General
+say_team;Say team; Send a message to the team chat;SAY;Team
+say_team;Say team; Send a message to the team chat;SAY;Team
+say_team;Say team; Send a message to the team chat;SAY;Team
+say_team;Say team; Send a message to the team chat;SAY;Team

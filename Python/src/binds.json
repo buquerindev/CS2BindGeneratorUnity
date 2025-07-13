@@ -722,6 +722,13 @@
             "subcategory": "Action"
         },
         {
+            "name": "cl_dm_buyrandomweapons",
+            "ingameName": "Deathmatch Random Weapons",
+            "description": "Enable/Disable getting random weapons in Deathmatch mode (Default is F3)",
+            "category": "HIDDEN",
+            "subcategory": "Action"
+        },
+        {
             "name": "sv_rethrow_last_grenade",
             "ingameName": "Re-throw Last Grenade",
             "description": "Re-throws the last thrown grenade",
@@ -839,6 +846,62 @@
             "description": "Changes the brightness of the game, some of the values are: \\n1: 133% brightness\\n2: 100% brightness (default)\\n3: 66% brightness\\n4: 33% brightness",
             "category": "TOGGLES",
             "subcategory": "misc"
+        },
+        {
+            "name": "say",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say_team",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
+        },
+        {
+            "name": "say_team",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
+        },
+        {
+            "name": "say_team",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
+        },
+        {
+            "name": "say_team",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
         }
     ]
 }
