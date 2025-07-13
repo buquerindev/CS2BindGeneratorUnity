@@ -15,7 +15,10 @@ public class ValueInputField : KeyBindInputField, ISelectHandler, IDeselectHandl
         if (!isListening)
             return;
 
-        foreach (var key in Keyboard.current.allKeys)
+        var pressedKeys = Keyboard.current.allKeys
+        .Where(k => k != null);
+
+        foreach (var key in pressedKeys)
         {
             if (key.wasPressedThisFrame)
             {
@@ -28,6 +31,7 @@ public class ValueInputField : KeyBindInputField, ISelectHandler, IDeselectHandl
                 lastInputFieldText = inputField.text;
 
                 // Invoke event so the relative key knows it's pressed
+                togglePanel.ActivateUnbindAndExtraKey(true);
                 KeyBindInputField.OnKeyPressed?.Invoke(key, togglePanel.GetBind());
                 isListening = false;
                 EventSystem.current.SetSelectedGameObject(null);
@@ -116,7 +120,7 @@ public class ValueInputField : KeyBindInputField, ISelectHandler, IDeselectHandl
         {
             KeyBindInputField.OnUnbindKey?.Invoke(lastKeyControl, togglePanel.GetBind());
         }
-        togglePanel.ActivateUnbindAndExtraKey(true);
+        togglePanel.ActivateUnbindAndExtraKey(false);
     }
 
     public override void OnDeselect(BaseEventData eventData)

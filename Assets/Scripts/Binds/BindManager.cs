@@ -25,12 +25,14 @@ public class BindManager : MonoBehaviour
     [SerializeField] private Transform hiddenPanelContainer;
     [SerializeField] private Transform buyPanelContainer;
     [SerializeField] private Transform togglesPanelContainer;
+    [SerializeField] private Transform sayPanelContainer;
     private Transform currentContainer;
 
     [SerializeField] private Button controlsButton;
     [SerializeField] private Button hiddenButton;
     [SerializeField] private Button buyButton;
     [SerializeField] private Button togglesButton;
+    [SerializeField] private Button sayButton;
     [SerializeField] private Button exportBindsButton;
 
     private bool addUnbindall = false;
@@ -242,7 +244,8 @@ public class BindManager : MonoBehaviour
             controlsButton,
             hiddenButton,
             buyButton,
-            togglesButton
+            togglesButton,
+            sayButton
         };
 
         currentContainer = controlsPanelContainer;
@@ -259,6 +262,7 @@ public class BindManager : MonoBehaviour
         hiddenButton.onClick.AddListener(() => SwitchContainer(hiddenPanelContainer, hiddenButton));
         buyButton.onClick.AddListener(() => SwitchContainer(buyPanelContainer, buyButton));
         togglesButton.onClick.AddListener(() => SwitchContainer(togglesPanelContainer, togglesButton));
+        sayButton.onClick.AddListener(() => SwitchContainer(sayPanelContainer, sayButton));
         exportBindsButton.onClick.AddListener(ExportBinds);
     }
 
@@ -307,7 +311,7 @@ public class BindManager : MonoBehaviour
                 commandSeparator.SetName($"{category.Key.ToUpper()} - {subcategory.Key}");
                 foreach (var bind in binds)
                 {
-                    if(category.Key != "TOGGLES")
+                    if((category.Key != "TOGGLES") && (category.Key != "SAY"))
                     {
                         BindPanel bindPanel = Instantiate(bindPanelPrefab, targetTransform).GetComponent<BindPanel>();
                         bindPanel.SetBind(bind);
@@ -382,7 +386,8 @@ public class BindManager : MonoBehaviour
                 { "controls", controlsPanelContainer },
                 { "hidden", hiddenPanelContainer },
                 { "buy", buyPanelContainer },
-                { "toggles", togglesPanelContainer }
+                { "toggles", togglesPanelContainer },
+                { "say", sayPanelContainer }
             };
 
     }
@@ -424,6 +429,9 @@ public class BindManager : MonoBehaviour
 
     private void ExportBinds()
     {
+        // Also save the binds
+        SaveBinds();
+
         string filePath = SelectFolder();
         filePath = Path.Combine(filePath, "binds.cfg");
 
@@ -464,9 +472,6 @@ public class BindManager : MonoBehaviour
                     .ToDictionary(subgroup => subgroup.Key, subgroup => subgroup.ToList())
             );
 
-        // Also save the binds
-        SaveBinds();
-
         // Get the biggest command to align the comments
         int maxLeftWidthMulti = 0;
         int maxLeftWidthUnique = 0;
@@ -489,6 +494,10 @@ public class BindManager : MonoBehaviour
                 // Checks if it's a toggle command because it adds "toggle " at the beginning
                 bool usesToggle = bind.category == "TOGGLES";
                 string command = usesToggle ? "toggle " : "";
+                
+                if(usesToggle)
+                    bind.name = "toggle " + bind.name;
+
                 string values = bind.values?.Trim();
                 string space = string.IsNullOrWhiteSpace(values) ? "" : " ";
                 string line = $"bind \"{bind.scancode}\" \"{command}{bind.name}{space}{values}\"";
@@ -526,16 +535,23 @@ public class BindManager : MonoBehaviour
                     {
                         if (string.IsNullOrEmpty(bind.secondScancode))
                         {
-                            if(string.IsNullOrEmpty(bind.values))
+                            if(string.IsNullOrEmpty(bind.values)) // If it's a command without values (not say,say_team,toggle...)
                             {
                                 string left = $"bind \"{bind.scancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
                                 writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
-                            } else
+                            } else if (bind.name.StartsWith("say_team")) // If the bind is a say_team command
                             {
-                                string left = $"bind \"{bind.scancode}\" \"toggle {bind.name} {bind.values}\"".PadRight(maxLeftWidth + 4);
+                                string left = $"bind \"{bind.scancode}\" \"say_team {bind.values}\"".PadRight(maxLeftWidth + 4);
+                                writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
+                            } else if (bind.name.StartsWith("say")) // If the bind is a say command
+                            {
+                                string left = $"bind \"{bind.scancode}\" \"say {bind.values}\"".PadRight(maxLeftWidth + 4);
+                                writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
+                            } else // If the bind is just a toggle command with values
+                            {
+                                string left = $"bind \"{bind.scancode}\" \"{bind.name} {bind.values}\"".PadRight(maxLeftWidth + 4);
                                 writer.WriteLine(left + $"// {bind.localKey} ({bind.americanKey}) -> {bind.ingameName}");
                             }
-                            
                         } else
                         {
                             string left = $"bind \"{bind.scancode}\" \"{bind.name}\"".PadRight(maxLeftWidth + 4);
@@ -555,7 +571,25 @@ public class BindManager : MonoBehaviour
 
                 foreach (var pair in multiBinds)
                 {
-                    string actions = string.Join("; ", pair.Value.Select(b => b.name));
+                    string actions = string.Join("; ", pair.Value.Select(b =>
+                    {
+                        if (string.IsNullOrEmpty(b.values))
+                            return b.name;
+                        else if (b.name.StartsWith("say_team"))
+                        {
+                            string editedName = "say_team";
+                            return editedName + " " + b.values;
+                        } else if (b.name.StartsWith("say"))
+                        {
+                            string editedName = "say";
+                            return editedName + " " + b.values;
+                        } else 
+                        {
+                            return $"{b.name} {b.values}";
+                        }
+                    }
+                    ));
+                    
                     Bind example = pair.Value[0]; // para mostrar info auxiliar
 
                     string left = $"bind \"{pair.Key}\" \"{actions}\"".PadRight(maxLeftWidth + 4);

@@ -120,11 +120,11 @@ cl_crosshaircolor;Change Crosshair Color;Press this key to alternate the crossha
 cl_crosshairsize;Change Crosshair Size;Press this key to change the crosshair size (Some players prefer this instead of the new grenade reticle);TOGGLES;HUD
 host_timescale;Change Host Time Scale;Use this while practicing, if you miss a smoke you can accelerate time, for example:\n1 = Normal time\n0.5 = Half time (slow motion)\n5 = 5x normal time (A smoke would last 4 seconds);TOGGLES;misc
 r_fullscreen_gamma;Change brightness (gamma);Changes the brightness of the game, some of the values are: \n1: 133% brightness\n2: 100% brightness (default)\n3: 66% brightness\n4: 33% brightness;TOGGLES;misc
-say;Say;Send a message to the general chat;SAY;General
-say;Say;Send a message to the general chat;SAY;General
-say;Say;Send a message to the general chat;SAY;General
-say;Say;Send a message to the general chat;SAY;General
-say_team;Say team; Send a message to the team chat;SAY;Team
-say_team;Say team; Send a message to the team chat;SAY;Team
-say_team;Say team; Send a message to the team chat;SAY;Team
-say_team;Say team; Send a message to the team chat;SAY;Team
+say0;Say;Send a message to the general chat;SAY;General
+say1;Say;Send a message to the general chat;SAY;General
+say2;Say;Send a message to the general chat;SAY;General
+say3;Say;Send a message to the general chat;SAY;General
+say_team0;Say team; Send a message to the team chat;SAY;Team
+say_team1;Say team; Send a message to the team chat;SAY;Team
+say_team2;Say team; Send a message to the team chat;SAY;Team
+say_team3;Say team; Send a message to the team chat;SAY;Team

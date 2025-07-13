@@ -66,7 +66,6 @@ public class Key : MonoBehaviour
         {
             if (meshRenderer.material.name == "UnusableKey (Instance)")
                 return;
-            Deselect();
             binds.RemoveAll(b => b.name == bind.name);
             if(bind.scancode == scanCode)
             {
@@ -79,6 +78,7 @@ public class Key : MonoBehaviour
                 bind.secondAmericanKey = null;
                 bind.secondLocalKey= null;
             }
+            Deselect();
         }
     }
 
@@ -112,6 +112,10 @@ public class Key : MonoBehaviour
 
     private void Deselect()
     {
+        if(binds.Count > 0)
+            return;
+
+        Debug.Log($"Deselecting key {keyName}: bindList = {binds.Count}");
         previousMaterial = defaultMaterial;
         meshRenderer.material = defaultMaterial;
     }

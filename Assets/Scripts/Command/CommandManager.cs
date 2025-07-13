@@ -75,7 +75,8 @@ public class CommandManager : MonoBehaviour
 
         menusButtons = new List<Button> {
             audioButton,
-            gameButton
+            gameButton,
+            keyboardMouseButton
         };
 
         currentContainer = audioPanelContainer;
@@ -221,6 +222,8 @@ public class CommandManager : MonoBehaviour
                 ? categoryContainers[category.Key.ToLower()]
                 : null;
             var subcategories = category.Value;
+            if(category.Key == "KBMouse")
+                Debug.Log("Detectado un KBMOUSE");
             foreach (var subcategory in subcategories)
             {
                 var commands = subcategory.Value;

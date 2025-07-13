@@ -1,9 +1,11 @@
+using NUnit.Framework;
 using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class BindPanel : MonoBehaviour , ISelectHandler
 {
@@ -19,6 +21,13 @@ public class BindPanel : MonoBehaviour , ISelectHandler
 
     private bool loadedFirstKey = false;
 
+    private Dictionary<string,string> lockedBinds = new Dictionary<string, string>(){
+            { "+attack", "MOUSE1"},
+            { "pitch", "MOUSE_Y"},
+            { "yaw", "MOUSE_X"},
+            { "cancelselect", "Escape"}
+        };
+
     public virtual void Start()
     {
         unbindButton.onClick.AddListener(keyInputField.Unbind);
@@ -30,10 +39,13 @@ public class BindPanel : MonoBehaviour , ISelectHandler
     public virtual void SetBind(Bind bind)
     {
         this.bind = bind;
-        if (bind.ingameName == "Fire")
+
+        // Check if the bind is locked
+        if (lockedBinds.TryGetValue(bind.name, out string lockedKey))
         {
-            keyInputField.LockBind("MOUSE1");
+            keyInputField.LockBind(lockedKey);
         }
+
         bindName.text = bind.ingameName;
     }
 

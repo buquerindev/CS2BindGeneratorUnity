@@ -848,56 +848,56 @@
             "subcategory": "misc"
         },
         {
-            "name": "say",
+            "name": "say0",
             "ingameName": "Say",
             "description": "Send a message to the general chat",
             "category": "SAY",
             "subcategory": "General"
         },
         {
-            "name": "say",
+            "name": "say1",
             "ingameName": "Say",
             "description": "Send a message to the general chat",
             "category": "SAY",
             "subcategory": "General"
         },
         {
-            "name": "say",
+            "name": "say2",
             "ingameName": "Say",
             "description": "Send a message to the general chat",
             "category": "SAY",
             "subcategory": "General"
         },
         {
-            "name": "say",
+            "name": "say3",
             "ingameName": "Say",
             "description": "Send a message to the general chat",
             "category": "SAY",
             "subcategory": "General"
         },
         {
-            "name": "say_team",
+            "name": "say_team0",
             "ingameName": "Say team",
             "description": " Send a message to the team chat",
             "category": "SAY",
             "subcategory": "Team"
         },
         {
-            "name": "say_team",
+            "name": "say_team1",
             "ingameName": "Say team",
             "description": " Send a message to the team chat",
             "category": "SAY",
             "subcategory": "Team"
         },
         {
-            "name": "say_team",
+            "name": "say_team2",
             "ingameName": "Say team",
             "description": " Send a message to the team chat",
             "category": "SAY",
             "subcategory": "Team"
         },
         {
-            "name": "say_team",
+            "name": "say_team3",
             "ingameName": "Say team",
             "description": " Send a message to the team chat",
             "category": "SAY",

@@ -33,5 +33,7 @@ snd_mute_losefocus;Play Audio When Game In Background;Determines whether the gam
 voice_loopback;Loopback Voice;Determines whether the game will play your own voice in the speakers;0;AUDIO;Voice
 voice_always_sample_mic;Streamlined Push To Talk;Setups the mic when you open the game instead of the first time you press Push To Talk;0;AUDIO;Voice
 snd_mute_mvp_music_live_players;Mute MVP Music when players on both teams are alive;Determines whether to mute the MVP music when some players on both teams are alive;0;AUDIO;Music
+m_pitch;Invert Mouse Pitch (Vertical Axis);Sets the mouse pitch (vertical axis) to -0.022 in the game;0;KBMOUSE;KB & Mouse settings
+m_yaw;Invert Mouse Yaw (Horizontal Axis);Sets the mouse yaw (horizontal axis) to -0.022 in the game;0;KBMOUSE;KB & Mouse settings
 cl_show_equipped_character_for_player_avatars false;Show Equipped Character for Player Avatars;Determines whether to show the equipped character for player avatars in the HUD instead of Steam profile pricture;0;MISC;Hidden
 cl_invites_only_mainmenu;Get invites only in Main Menu;If turned on, will ignore all invites when user is playing a match;0;MISC;Hidden

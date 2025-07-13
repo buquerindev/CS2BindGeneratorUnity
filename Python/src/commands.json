@@ -307,6 +307,24 @@
             "type": "bool"
         },
         {
+            "name": "m_pitch",
+            "ingameName": "Invert Mouse Pitch (Vertical Axis)",
+            "description": "Sets the mouse pitch (vertical axis) to -0.022 in the game",
+            "defaultValue": "0",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse settings",
+            "type": "bool"
+        },
+        {
+            "name": "m_yaw",
+            "ingameName": "Invert Mouse Yaw (Horizontal Axis)",
+            "description": "Sets the mouse yaw (horizontal axis) to -0.022 in the game",
+            "defaultValue": "0",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse settings",
+            "type": "bool"
+        },
+        {
             "name": "cl_show_equipped_character_for_player_avatars false",
             "ingameName": "Show Equipped Character for Player Avatars",
             "description": "Determines whether to show the equipped character for player avatars in the HUD instead of Steam profile pricture",
