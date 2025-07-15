@@ -4,10 +4,14 @@ using UnityEngine.InputSystem;
 
 public class MouseKeySelector : MonoBehaviour
 {
+    // Delegate to handle key selection
+    public delegate void KeySelectedHandler(Key selectedKey);
+    public static event KeySelectedHandler OnKeySelected;
     private void Update()
     {
-        if (Keyboard.current.sKey.isPressed)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            Debug.Log("Mouse button pressed, selecting key...");
             SelectKeyWithMouse();
         }
     }
@@ -19,7 +23,8 @@ public class MouseKeySelector : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            hit.transform.GetComponent<Key>().Select();
+            Debug.Log("Hit object: " + hit.collider.gameObject.name);
+            OnKeySelected?.Invoke(hit.collider.gameObject.GetComponent<Key>());
         }
     }
 }

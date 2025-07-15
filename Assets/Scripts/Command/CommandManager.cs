@@ -22,9 +22,9 @@ public class CommandManager : MonoBehaviour
     private CommandList commandList = new CommandList();
     private List<CommandPanel> commandPanels = new List<CommandPanel>();
 
-    private readonly string jsonURL = "https://buquerindev.github.io/CS2BindGeneratorUnity/appdata/commands.json";
-    private readonly string snd_formula_txt = "https://buquerindev.github.io/CS2BindGeneratorUnity/appdata/snd_formula.txt";
-    private readonly string snd_to_decimal_txt = "https://buquerindev.github.io/CS2BindGeneratorUnity/appdata/snd_to_decimal.txt";
+    private readonly string jsonURL = "https://buquerindev.github.io/CS2ConfigGenerator/appdata/commands.json";
+    private readonly string snd_formula_txt = "https://buquerindev.github.io/CS2ConfigGenerator/appdata/snd_formula.txt";
+    private readonly string snd_to_decimal_txt = "https://buquerindev.github.io/CS2ConfigGenerator/appdata/snd_to_decimal.txt";
 
     public List<string> snd_formula_commands;
     public List<string> snd_to_decimal_commands;

@@ -9,6 +9,7 @@ public class KeyboardKeySelector : MonoBehaviour
     public delegate void KeyDownDelegate(KeyControl key);
     public static event KeyDownDelegate OnKeyPressed;
     public static event KeyDownDelegate OnKeyReleased;
+
     private KeyControl pressedKey;
     private KeyControl unreleasedKey;
 

@@ -67,16 +67,39 @@ public class CommandPanel : MonoBehaviour, ISelectHandler
         {
             if (int.TryParse(value, out int result))
             {
-                command.selectedValue = result;
+                if(result > (int)command.max)
+                {
+                    command.selectedValue = command.max;
+                    result = (int)command.max;
+                } else if (result < (int)command.min)
+                {
+                    command.selectedValue = command.min;
+                    result = (int)command.min;
+                }
+                else
+                {
+                    command.selectedValue = result;
+                }
+                intInputField.text = result.ToString();
             }   
         }
         else
         {
             if (float.TryParse(value, out float fresult))
             {
-                if (value.StartsWith("."))
-                    value = "0" + value;
-                command.selectedValue = fresult;
+                if(fresult > (float)command.max)
+                {
+                    command.selectedValue = command.max;
+                    fresult = (float)command.max;
+                } else if (fresult < (float)command.min)
+                {
+                    command.selectedValue = command.min;
+                    fresult = (float)command.min;
+                } else
+                {
+                    command.selectedValue = fresult;
+                }
+                floatInputField.text = fresult.ToString();
             }
         }
 

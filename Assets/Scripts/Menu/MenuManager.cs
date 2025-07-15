@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,7 @@ public class MenuManager : MonoBehaviour
 
     public bool addUnbindall = false;
     public bool isANSI = false;
+    public bool bindsMenuActive = false;
 
     private Vector3 keyboardPosition = new Vector3((float)-43.4039993, (float)7.10900021, (float)13.7150002);
     private Vector3 keyboardRotation = new Vector3((float)357, (float)90, 0);
@@ -69,6 +71,7 @@ public class MenuManager : MonoBehaviour
     void OpenBindsMenuButton()
     {
         CloseMainMenu();
+        bindsMenuActive = true;
         bindsMenu.SetActive(true);
         cameraMover.MoveCameraTo(cameraZoom,2);
     }
@@ -87,6 +90,7 @@ public class MenuManager : MonoBehaviour
 
     void CloseMenu()
     {
+        bindsMenuActive = false;
         settingsMenu.SetActive(false);
         bindsMenu.SetActive(false);
         cameraMover.MoveCameraTo(cameraDefault,2);

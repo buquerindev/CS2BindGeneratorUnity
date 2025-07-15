@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 public class Key : MonoBehaviour
 {
+    public delegate void KeyDownDelegate(Key key);
+    public static event KeyDownDelegate OnKeyDown;
+
     private List<Bind> binds;
 
     [SerializeField] private string scanCode;
@@ -91,6 +94,7 @@ public class Key : MonoBehaviour
                 return;
             previousMaterial = meshRenderer.material;
             meshRenderer.material = pressingMaterial;
+            OnKeyDown.Invoke(this);
         }
     }
 
@@ -120,4 +124,23 @@ public class Key : MonoBehaviour
         meshRenderer.material = defaultMaterial;
     }
 
+    public string GetKeyName()
+    {
+        return keyName;
+    }
+
+    public string GetScanCode()
+    {
+        return scanCode;
+    }
+
+    public string GetKeyActions()
+    {
+        string actions = string.Empty;
+        foreach (var bind in binds)
+        {
+            actions += $"{bind.name}\n";
+        }
+        return actions.TrimEnd('\n');
+    }
 }
