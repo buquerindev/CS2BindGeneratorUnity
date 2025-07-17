@@ -433,6 +433,13 @@ public class BindManager : MonoBehaviour
         SaveBinds();
 
         string filePath = SelectFolder();
+
+        if (string.IsNullOrEmpty(filePath))
+        {
+            Debug.LogWarning("No folder selected for export.");
+            return;
+        }
+
         filePath = Path.Combine(filePath, "binds.cfg");
 
         // Create an scancode Dictionary:

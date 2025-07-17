@@ -22,7 +22,7 @@ public class Key : MonoBehaviour
 
     private MeshRenderer meshRenderer;
 
-    private void OnEnable()
+    private void Start()
     {
         KeyBindInputField.OnKeyPressed += OnBind;
         KeyBindInputField.OnUnbindKey += OnUnbind;
@@ -94,6 +94,9 @@ public class Key : MonoBehaviour
                 return;
             previousMaterial = meshRenderer.material;
             meshRenderer.material = pressingMaterial;
+
+            if (!MenuManager.Instance.bindsMenuActive)
+                return;
             OnKeyDown.Invoke(this);
         }
     }

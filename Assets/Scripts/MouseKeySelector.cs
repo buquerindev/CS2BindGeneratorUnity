@@ -9,9 +9,8 @@ public class MouseKeySelector : MonoBehaviour
     public static event KeySelectedHandler OnKeySelected;
     private void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current.leftButton.wasPressedThisFrame && MenuManager.Instance.bindsMenuActive)
         {
-            Debug.Log("Mouse button pressed, selecting key...");
             SelectKeyWithMouse();
         }
     }
@@ -23,7 +22,6 @@ public class MouseKeySelector : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log("Hit object: " + hit.collider.gameObject.name);
             OnKeySelected?.Invoke(hit.collider.gameObject.GetComponent<Key>());
         }
     }

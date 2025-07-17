@@ -43,6 +43,7 @@ public class CommandManager : MonoBehaviour
     [SerializeField] private Button audioButton;
     [SerializeField] private Button gameButton;
     [SerializeField] private Button keyboardMouseButton;
+    [SerializeField] private Button aliasButton;
 
     private List<Button> menusButtons;
 
@@ -56,6 +57,13 @@ public class CommandManager : MonoBehaviour
 
     private bool sndFormulaLoaded = false;
     private bool sndDecimalLoaded = false;
+
+    // Alias
+
+    [SerializeField] private Button addAliasButton;
+    [SerializeField] private GameObject aliasPanelPrefab;
+    [SerializeField] private Transform aliasPanelContainer;
+    public List<Alias> aliases = new List<Alias>();
 
     private void Awake()
     {
@@ -76,7 +84,8 @@ public class CommandManager : MonoBehaviour
         menusButtons = new List<Button> {
             audioButton,
             gameButton,
-            keyboardMouseButton
+            keyboardMouseButton,
+            aliasButton
         };
 
         currentContainer = audioPanelContainer;
@@ -96,10 +105,13 @@ public class CommandManager : MonoBehaviour
 
 
         // Buttons
+        addAliasButton.onClick.AddListener(AddAliasPanel);
         exportSettingsButton.onClick.AddListener(ExportSettings);
         audioButton.onClick.AddListener(() => SwitchContainer(audioPanelContainer, audioButton));
         gameButton.onClick.AddListener(() => SwitchContainer(gamePanelContainer, gameButton));
         keyboardMouseButton.onClick.AddListener(() => SwitchContainer(keyboardMousePanelContainer, keyboardMouseButton));
+        aliasButton.onClick.AddListener(() => SwitchContainer(aliasPanelContainer, aliasButton));
+        LoadAliases();
     }
 
     private void OnJSONReceived(string jsonText)
@@ -222,8 +234,6 @@ public class CommandManager : MonoBehaviour
                 ? categoryContainers[category.Key.ToLower()]
                 : null;
             var subcategories = category.Value;
-            if(category.Key == "KBMouse")
-                Debug.Log("Detectado un KBMOUSE");
             foreach (var subcategory in subcategories)
             {
                 var commands = subcategory.Value;
@@ -250,6 +260,26 @@ public class CommandManager : MonoBehaviour
         }
     }
 
+    private void LoadAliases()
+    {
+        string filePath = Path.Combine(Application.persistentDataPath, "settings.txt");
+        if (!File.Exists(filePath))
+            return;
+
+        string[] lines = File.ReadAllLines(filePath);
+
+        foreach (string line in lines)
+        {
+            if (line.StartsWith("alias|"))
+            {
+                string[] parts = line.Split('|');
+                AliasPanel aliasPanel = Instantiate(aliasPanelPrefab, aliasPanelContainer).GetComponent<AliasPanel>();
+                aliasPanel.transform.SetSiblingIndex(aliasPanelContainer.childCount - 2);
+                aliasPanel.Initialize(parts[1], parts[2]);
+            }
+        }
+    }
+
     private void SaveSettings()
     {
         string filePath = Path.Combine(Application.persistentDataPath, "settings.txt");
@@ -261,6 +291,15 @@ public class CommandManager : MonoBehaviour
             foreach (Command command in commandList.commands)
             {
                 writer.WriteLine($"{command.name}|{command.selectedValue}");
+            }
+
+            // Also save aliases
+            foreach (Alias alias in aliases)
+            {
+                if (alias.IsWritten())
+                {
+                    writer.WriteLine($"alias|{alias.originalCommand}|{alias.aliasCommand}");
+                }
             }
         }
     }
@@ -279,10 +318,17 @@ public class CommandManager : MonoBehaviour
 
     private void ExportSettings()
     {
-        string filePath = SelectFolder();
-        filePath = Path.Combine(filePath, "config.cfg");
-
         SaveSettings();
+
+        string filePath = SelectFolder();
+
+        if (string.IsNullOrEmpty(filePath))
+        {
+            Debug.LogWarning("No folder selected for export.");
+            return;
+        }
+
+        filePath = Path.Combine(filePath, "config.cfg");
 
         // Get the biggest command to align the comments
         int maxLeftWidth = commandList.commands
@@ -322,6 +368,16 @@ public class CommandManager : MonoBehaviour
                         string line = left + $"// {cmd.ingameName}";
                         writer.WriteLine(line);
                     }
+                }
+            }
+            writer.WriteLine();
+            writer.WriteLine($"//========== ALIASES ==========");
+            foreach (Alias alias in aliases)
+            {
+                if (alias.IsWritten())
+                {
+                    string line = $"alias \"{alias.originalCommand}\" \"{alias.aliasCommand}\"";
+                    writer.WriteLine(line);
                 }
             }
         }
@@ -412,4 +468,16 @@ public class CommandManager : MonoBehaviour
             });
         }
     }
+
+    #region Alias
+
+    private void AddAliasPanel()
+    {
+        AliasPanel aliasPanel = Instantiate(aliasPanelPrefab, aliasPanelContainer).GetComponent<AliasPanel>();
+        int insertIndex = aliasPanelContainer.childCount - 2;
+        aliasPanel.transform.SetSiblingIndex(insertIndex);
+        aliasPanel.Initialize();
+    }
+
+    #endregion
 }

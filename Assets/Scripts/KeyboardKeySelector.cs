@@ -20,6 +20,7 @@ public class KeyboardKeySelector : MonoBehaviour
     private void Update()
     {
 
+
         var pressedKeys = Keyboard.current.allKeys
         .Where(k => k != null && k.wasPressedThisFrame);
         var unreleasedKeys = Keyboard.current.allKeys

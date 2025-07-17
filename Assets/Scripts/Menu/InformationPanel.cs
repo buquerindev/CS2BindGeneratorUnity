@@ -13,6 +13,7 @@ public class InformationPanel : MonoBehaviour
     {
         BindPanel.OnPanelSelected += UpdateBindInformation;
         CommandPanel.OnPanelSelected += UpdateCommandInformation;
+        AliasPanel.OnPanelSelected += UpdateAliasInformation;
     }
 
     private void UpdateBindInformation(Bind bind)
@@ -27,6 +28,22 @@ public class InformationPanel : MonoBehaviour
         title.text = command.ingameName;
         this.command.text = command.name;
         description.text = ConvertAsterisksToBold(command.description);
+    }
+
+    private void UpdateAliasInformation(Alias alias)
+    {
+        Debug.Log("Se llama a UpdateAliasInformation");
+        title.text = "Alias";
+        if (alias.IsWritten())
+        {
+            command.text = $"alias \"{alias.originalCommand}\" \"{alias.aliasCommand}\"";
+            description.text = $"If you type {alias.aliasCommand} it would be like typing {alias.originalCommand}";
+        }
+        else 
+        {
+            command.text = "No alias set";
+            description.text = alias.description;
+        }
     }
 
     string ConvertAsterisksToBold(string input)

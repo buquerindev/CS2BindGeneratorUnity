@@ -14,3 +14,7 @@ cl_hud_telemetry_frametime_poor;Frame time warning threshold;Set the threshold f
 cl_hud_telemetry_net_misdelivery_poor;Network tick miss rate warning threshold;Set the threshold for poor network conditions, write the maximum tick miss rate here;0.1;GAME;Telemetry;0.0;2.0
 sensitivity;Mouse Sensitivity;Set the mouse sensitivity for aiming;2.5;KBMOUSE;KB & Mouse settings;0.01;100.0
 zoom_sensitivity_ratio;Zoom Sensitivity Multiplier;Set the sensitivity multiplier for zoomed aiming;1.0;KBMOUSE;KB & Mouse settings;0.01;100.0
+cl_teamid_overhead_fade_near_crosshair;Team ID Overhead Fade Near Crosshair;Changes the opacity of your team mates names when your crosshair is near them\nYou can use a decimal value between 0-1\n0: The name's opacity doesn't change\n1: The name's opacity gets almost transparent\n I personally recommend 0.7-0.8;0.5;MISC;Hidden;0;1
+viewmodel_offset_x;Viewmodel offset X-axis;Changes the X-axis of the viewmodel;1;GAME;Viewmodel;-2;2.5
+viewmodel_offset_y;Viewmodel offset Y-axis;Changes the Y-axis of the viewmodel;1;GAME;Viewmodel;-2;2
+viewmodel_offset_z;Viewmodel offset Z-axis;Changes the Z-axis of the viewmodel;-1;GAME;Viewmodel;-2;2

@@ -1,9 +1,6 @@
-using NUnit.Framework;
-using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
@@ -99,10 +96,5 @@ public class BindPanel : MonoBehaviour , ISelectHandler
     {
         Debug.Log("Seleccionado panel " + bind.ingameName);
         OnPanelSelected?.Invoke(bind);
-    }
-
-    public void SendSelectEvent()
-    {
-        
     }
 }

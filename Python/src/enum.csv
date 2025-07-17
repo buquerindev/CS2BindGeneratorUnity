@@ -11,7 +11,7 @@ cl_hide_avatar_images;Hide Avatar Images and Customized Items;Hide avatar images
 spec_usenumberkeys_nobinds;Spectator/Map Vote Number Selection Method;Select the method for number key selection in spectator/map vote;1;GAME;Spectator/Scoreboard;0/1;Use Weapon Slots/Use Number Keys
 eom_local_player_defeat_anim_enabled;End of Match Local Player Defeat Animation;Enable the local player defeat animation at the end of the match;1;GAME;Spectator/Scoreboard;0/1;Disabled/Enabled
 cl_silencer_mode;Detach Silencer on M4A1-S and USP-S;Select the mode for detaching the silencer on M4A1-S and USP-S;0;GAME;Item;0/1;Disabled/Secondary Fire
-viewmodel_presetpos;Viewmodel Position;Select the viewmodel position preset;1;GAME;Item;1/2;Desktop/Classic
+viewmodel_presetpos;Viewmodel Position;Select the viewmodel position preset;1;GAME;Viewmodel;1/2;Desktop/Classic
 cl_prefer_lefthanded;Preferred Viewmodel Left/Right Handedness;Select the preferred viewmodel handedness;0;GAME;Item;0/1;Right/Left
 r_drawtracers_firstperson;First Person Tracers;Enable or disable first person tracers;1;GAME;Item;0/1;Disabled/Enabled
 cl_buywheel_nonumberpurchasing;Buy Menu Number Keys;Choose whether to use number keys for purchasing in the buy menu;0;GAME;Item;0/1;Number Keys Buy Items/Ignored, Handled by Game
