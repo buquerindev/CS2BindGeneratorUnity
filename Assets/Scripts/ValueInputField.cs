@@ -22,6 +22,9 @@ public class ValueInputField : KeyBindInputField, ISelectHandler, IDeselectHandl
         {
             if (key.wasPressedThisFrame)
             {
+                Debug.Log("Invocado OnUnbindKey para " + lastKeyControl.displayName);
+                OnUnbindKey?.Invoke(lastKeyControl, togglePanel.GetBind());
+
                 // Save the key to unbind later
                 lastKeyControl = key;
 

@@ -52,7 +52,7 @@ public class Key : MonoBehaviour
                 bind.americanKey = keyName;
                 bind.localKey = key.displayName;
             }
-            else
+            else 
             {
                 bind.secondScancode = scanCode;
                 bind.secondAmericanKey = keyName;
@@ -69,8 +69,18 @@ public class Key : MonoBehaviour
         {
             if (meshRenderer.material.name == "UnusableKey (Instance)")
                 return;
+
+            Debug.Log("Bind list before removal: " + binds.Count);
+            foreach (var b in binds)
+            {
+                Debug.Log($"Bind: {b.name}, Scancode: {b.scancode}");
+            }
+
+
             binds.RemoveAll(b => b.name == bind.name);
-            if(bind.scancode == scanCode)
+
+            Debug.Log("Bind list before removal: " + binds.Count);
+            if (bind.scancode == scanCode)
             {
                 bind.scancode = null;
                 bind.americanKey = null;
