@@ -848,6 +848,13 @@
             "subcategory": "misc"
         },
         {
+            "name": "dm_togglerandomweapons",
+            "ingameName": "Toggle Random Weapons in Deathmatch",
+            "description": "Toggles the random weapons in Deathmatch mode, you can also use cl_dm_buyrandomweapons",
+            "category": "TOGGLES",
+            "subcategory": "misc"
+        },
+        {
             "name": "say0",
             "ingameName": "Say",
             "description": "Send a message to the general chat",

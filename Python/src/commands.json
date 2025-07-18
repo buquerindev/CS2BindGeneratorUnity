@@ -10,6 +10,15 @@
             "type": "bool"
         },
         {
+            "name": "con_enable",
+            "ingameName": "Enable developer console",
+            "description": "Enables the developer console in the game",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Game",
+            "type": "bool"
+        },
+        {
             "name": "cl_teamcounter_playercount_instead_of_avatars",
             "ingameName": "Large Player Count",
             "description": "During the active portion of the round, replace player avatars with team player count in the mini-scoreboard.",
@@ -480,7 +489,7 @@
             "description": "Select the viewmodel position preset",
             "defaultValue": "1",
             "category": "GAME",
-            "subcategory": "Item",
+            "subcategory": "Viewmodel",
             "enumValues": "1/2",
             "enumNames": "Desktop/Classic",
             "type": "enum"
@@ -816,6 +825,50 @@
             "type": "float"
         },
         {
+            "name": "cl_teamid_overhead_fade_near_crosshair",
+            "ingameName": "Team ID Overhead Fade Near Crosshair",
+            "description": "Changes the opacity of your team mates names when your crosshair is near them\\nYou can use a decimal value between 0-1\\n0: The name's opacity doesn't change\\n1: The name's opacity gets almost transparent\\n I personally recommend 0.7-0.8",
+            "defaultValue": "0.5",
+            "category": "MISC",
+            "subcategory": "Hidden",
+            "min": "0",
+            "max": "1",
+            "type": "float"
+        },
+        {
+            "name": "viewmodel_offset_x",
+            "ingameName": "Viewmodel offset X-axis",
+            "description": "Changes the X-axis of the viewmodel",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Viewmodel",
+            "min": "-2",
+            "max": "2.5",
+            "type": "float"
+        },
+        {
+            "name": "viewmodel_offset_y",
+            "ingameName": "Viewmodel offset Y-axis",
+            "description": "Changes the Y-axis of the viewmodel",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Viewmodel",
+            "min": "-2",
+            "max": "2",
+            "type": "float"
+        },
+        {
+            "name": "viewmodel_offset_z",
+            "ingameName": "Viewmodel offset Z-axis",
+            "description": "Changes the Z-axis of the viewmodel",
+            "defaultValue": "-1",
+            "category": "GAME",
+            "subcategory": "Viewmodel",
+            "min": "-2",
+            "max": "2",
+            "type": "float"
+        },
+        {
             "name": "mm_dedicated_search_maxping",
             "ingameName": "Max Acceptable Ping for Matchmaking",
             "description": "Allows you to specify max acceptable matchmaking ping when searching for a game on official matchmaking servers. If there are official servers satisfying your ping setting then official matchmaking will always put you in a match hosted on those servers. If there are no official servers near you satisfying your ping setting then official matchmaking will put you in a match hosted on the next nearest official server, latency to which may exceed your ping setting.",
@@ -989,6 +1042,17 @@
             "subcategory": "Music",
             "min": "0",
             "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "viewmodel_fov",
+            "ingameName": "Viewmodel Field of View",
+            "description": "Sets the field of view for the viewmodel, most people use 68 (max)",
+            "defaultValue": "60",
+            "category": "GAME",
+            "subcategory": "Viewmodel",
+            "min": "54",
+            "max": "68",
             "type": "int"
         },
         {
