@@ -14,6 +14,7 @@ public class InformationPanel : MonoBehaviour
         BindPanel.OnPanelSelected += UpdateBindInformation;
         CommandPanel.OnPanelSelected += UpdateCommandInformation;
         AliasPanel.OnPanelSelected += UpdateAliasInformation;
+        PracticeCommandPanel.OnPanelSelected += UpdateCommandInformation;
     }
 
     private void UpdateBindInformation(Bind bind)
@@ -32,8 +33,15 @@ public class InformationPanel : MonoBehaviour
 
     private void UpdateAliasInformation(Alias alias)
     {
-        Debug.Log("Se llama a UpdateAliasInformation");
         title.text = "Alias";
+        if (alias.aliasCommand == "kill_entities")
+        {
+            command.text = $"alias \"{alias.originalCommand}\" \"{alias.aliasCommand}\"";
+            description.text = alias.description;
+            return; // Ignore this
+        }
+            
+
         if (alias.IsWritten())
         {
             command.text = $"alias \"{alias.originalCommand}\" \"{alias.aliasCommand}\"";
@@ -44,6 +52,13 @@ public class InformationPanel : MonoBehaviour
             command.text = "No alias set";
             description.text = alias.description;
         }
+    }
+
+    private void UpdateCommandInformation(PracticeCommand command)
+    {
+        title.text = command.ingameName;
+        this.command.text = command.commandName;
+        description.text = ConvertAsterisksToBold(command.description);
     }
 
     string ConvertAsterisksToBold(string input)

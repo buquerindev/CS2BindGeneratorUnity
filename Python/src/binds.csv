@@ -105,6 +105,7 @@ holdpos;Bot Hold Position;It's the classic Z+4 bind (radio + 4), it makes the bo
 cl_dm_buyrandomweapons;Deathmatch Random Weapons;Enable/Disable getting random weapons in Deathmatch mode (Default is F3);HIDDEN;Action
 sv_rethrow_last_grenade;Re-throw Last Grenade;Re-throws the last thrown grenade;HIDDEN;sv_cheats
 noclip;Noclip;Toggle no clipping mode, you can fly through walls;HIDDEN;sv_cheats
+kill_entities;Kill Utility Entities;Kills all utility entities, like smokes, molotovs, etc.\n You also need to export the settings.cfg file and +exec it, because it has an "alias" command that is mandatory for this command to work;HIDDEN;sv_cheats
 bot_add_t;Add T Bot;Adds a bot to the Terrorist team;HIDDEN;Bot
 bot_add_ct;Add CT Bot;Adds a bot to the Counter-Terrorist team;HIDDEN;Bot
 bot_place;Place Bot;Places a bot at the crosshair position;HIDDEN;Bot

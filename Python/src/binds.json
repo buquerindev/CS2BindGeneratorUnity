@@ -743,6 +743,13 @@
             "subcategory": "sv_cheats"
         },
         {
+            "name": "kill_entities",
+            "ingameName": "Kill Utility Entities",
+            "description": "Kills all utility entities, like smokes, molotovs, etc.\\n You also need to export the settings.cfg file and +exec it, because it has an \"alias\" command that is mandatory for this command to work",
+            "category": "HIDDEN",
+            "subcategory": "sv_cheats"
+        },
+        {
             "name": "bot_add_t",
             "ingameName": "Add T Bot",
             "description": "Adds a bot to the Terrorist team",

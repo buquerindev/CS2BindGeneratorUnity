@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private Button settingsMenuButton;
     [SerializeField] private Button bindsMenuButton;
+    [SerializeField] private Button practiceMenuButton;
     [SerializeField] private Button closeMenuButton;
     [SerializeField] private Button switchKeyboard;
     [SerializeField] private Button quitButton;
@@ -15,6 +16,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject bindsMenu;
+    [SerializeField] private GameObject practiceMenu;
 
     [SerializeField] private GameObject keyboardISO;
     [SerializeField] private GameObject keyboardANSI;
@@ -49,6 +51,7 @@ public class MenuManager : MonoBehaviour
         Application.targetFrameRate = 144;
         settingsMenuButton.onClick.AddListener(OpenSettingsMenu);
         bindsMenuButton.onClick.AddListener(OpenBindsMenuButton);
+        practiceMenuButton.onClick.AddListener(OpenPracticeMenu);
         closeMenuButton.onClick.AddListener(CloseMenu);
         switchKeyboard.onClick.AddListener(ToggleKeyboard);
         quitButton.onClick.AddListener(Application.Quit);
@@ -76,6 +79,12 @@ public class MenuManager : MonoBehaviour
         cameraMover.MoveCameraTo(cameraZoom,2);
     }
 
+    void OpenPracticeMenu()
+    {
+        CloseMainMenu();
+        practiceMenu.SetActive(true);
+    }
+
     void OpenMainMenu()
     {
         mainMenu.SetActive(true);
@@ -93,6 +102,7 @@ public class MenuManager : MonoBehaviour
         bindsMenuActive = false;
         settingsMenu.SetActive(false);
         bindsMenu.SetActive(false);
+        practiceMenu.SetActive(false);
         cameraMover.MoveCameraTo(cameraDefault,2);
         OpenMainMenu();
     }

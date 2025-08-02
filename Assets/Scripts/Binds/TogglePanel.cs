@@ -56,6 +56,5 @@ public class TogglePanel : BindPanel
     private void SendValuesToBind(string values)
     {
         bind.values = values;
-        Debug.Log($"Asignado el siguiente bindeo: bind {bind.scancode} toggle {bind.name} {bind.values}");
     }
 }

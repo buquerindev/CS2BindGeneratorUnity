@@ -10,7 +10,7 @@ public class AliasPanel : MonoBehaviour, ISelectHandler
 
     [SerializeField] private TMP_InputField originalCommandIF;
     [SerializeField] private TMP_InputField aliasCommandIF;
-    private Alias alias;
+    [SerializeField] private Alias alias;
 
     private void Start()
     {
