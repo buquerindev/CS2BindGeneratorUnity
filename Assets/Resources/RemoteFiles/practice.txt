@@ -1,0 +1,28 @@
+mp_limitteams|Max Team Difference|0|bool|Maximum number of extra players allowed on one team over the other (0 disables the check)  
+mp_autoteambalance|Auto Team Balance|0|bool|Prevents automatic team balancing (0 disables it)  
+mp_maxmoney|Max Money|99999|int|Maximum amount of money a player can have  
+mp_startmoney|Start Money|99999|int|Amount of money players start with  
+mp_buytime|Buy Time|99999|int|Amount of time players can buy weapons and equipment  
+mp_buy_anywhere|Buy Anywhere|1|bool|Allows buying from anywhere on the map  
+mp_freezetime|Freezetime Duration (minutes)|0|int|Removes freeze time at the beginning of rounds  
+mp_roundtime|Round Time Duration (minutes)|60|int|Sets the round length to 60 minutes  
+mp_roundtime_defuse|Round Time Duration Defusal(minutes)|60|int|Sets the round length to 60 minutes for defusal modes  
+mp_respawn_on_death_ct|CT Respawn On Death|1|bool|CT players respawn after dying  
+mp_respawn_on_death_t|T Respawn On Death|1|bool|T players respawn after dying
+ammo_grenade_limit_total|Grenade Amount|5|int|Allows players to carry up to 5 grenades - Let's you carry default nades + decoy
+buddha|God Mode|1|bool|Makes you invincible (you survive with 1 HP)  
+sv_regeneration_force_on|Health Regeneration|1|bool|Enables health regeneration, this way buddha won't show a weird red X in your screen
+sv_infinite_ammo|Infinite Ammo|1|bool|Gives players infinite ammo  
+sv_grenade_trajectory|Grenade Trajectory Line|1|bool|Shows grenade trajectory lines  
+sv_grenade_trajectory_prac_pipreview|Grenade Trajectory Screen|1|bool|Shows a small preview screen of where the grenade will land  
+sv_grenade_trajectory_prac_trailtime|Grenade Trail Duration|10|int|Sets grenade trail duration to 10 seconds  
+sv_showimpacts|Show Bullet Impacts|1|bool|Shows bullet impact points  
+sv_showimpacts_penetration|Show Impacts Penetration|1|bool|Shows bullet impacts along with penetration (damage) data — use only when testing wallbangs  
+sv_showimpacts_time|Impacts Duration|10|int|Sets how long bullet impacts remain visible  
+sv_enablebunnyhopping|Enable Bunny Hop|1|bool|Allow player speed to exceed maximum running speed  
+sv_autobunnyhopping|Auto Bunny Hop|1|bool|This command will make you automatically bunny hop by holding down the space bar  
+sv_maxvelocity|Max Velocity|3500|int|Sets the maximum player velocity to 3500 units  
+sv_staminamax|Stamina Penalty|0|int|Sets the maximum stamina penalty that you can receive (0 disables it and 80 is default)  
+sv_staminalandcost|Land Stamina Penalty|0|float|Sets the stamina penalty you receive after landing from a jump (default is 0.05 == 5%)
+sv_staminajumpcost|Jump Stamina Penalty|0|float|Sets the stamina penalty you receive after jumping (default is 0.08 == 8%)
+sv_accelerate_use_weapon_speed|Equipped Weapon Acceleration|0|bool|This command sets whether or not your acceleration should be affected by the weapon you are holding

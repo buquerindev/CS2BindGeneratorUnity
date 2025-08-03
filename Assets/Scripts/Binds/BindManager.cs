@@ -11,9 +11,9 @@ using UnityEngine.UI;
 
 public class BindManager : MonoBehaviour
 {
-    [SerializeField] private JSONLoader JSONLoader;
+    [SerializeField] private RemoteFileManager fileManager;
     private BindList bindList = new();
-    private readonly string jsonURL = "https://buquerindev.github.io/CS2ConfigGenerator/appdata/binds.json";
+    private readonly string jsonURL = "binds.json";
 
     [SerializeField] private ScrollRect scrollRect;
 
@@ -252,7 +252,7 @@ public class BindManager : MonoBehaviour
         scrollRect.content = currentContainer as RectTransform;
         InitializeContainerDictionary();
 
-        JSONLoader.LoadFile(jsonURL, (json) =>
+        fileManager.LoadFile(jsonURL, (json) =>
         {
             Debug.Log("JSON recibido con �xito");
             OnJSONReceived(json);

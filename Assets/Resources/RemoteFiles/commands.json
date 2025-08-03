@@ -1,0 +1,1081 @@
+{
+    "commands": [
+        {
+            "name": "install_dlc_workshoptools_cvar",
+            "ingameName": "Install Counter-Strike Workshop Tools",
+            "description": "Install the Counter-Strike Workshop Tools",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Game",
+            "type": "bool"
+        },
+        {
+            "name": "con_enable",
+            "ingameName": "Enable developer console",
+            "description": "Enables the developer console in the game",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Game",
+            "type": "bool"
+        },
+        {
+            "name": "cl_teamcounter_playercount_instead_of_avatars",
+            "ingameName": "Large Player Count",
+            "description": "During the active portion of the round, replace player avatars with team player count in the mini-scoreboard.",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Hud",
+            "type": "bool"
+        },
+        {
+            "name": "cl_weapon_selection_rarity_color",
+            "ingameName": "Glow Weapon with Rarity Color",
+            "description": "Weapons glow with their rarity color in the HUD",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Hud",
+            "type": "bool"
+        },
+        {
+            "name": "cl_teamid_overhead_colors_show",
+            "ingameName": "Use Player Colors on Team ID",
+            "description": "Use player colors on the name above teammates' heads",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Team",
+            "type": "bool"
+        },
+        {
+            "name": "cl_mute_enemy_team",
+            "ingameName": "Mute Enemy Team",
+            "description": "Mutes the enemy team (COMPROBAR EN QUE)",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Communication",
+            "type": "bool"
+        },
+        {
+            "name": "cl_mute_all_but_friends_and_party",
+            "ingameName": "Mute All But Friends",
+            "description": "Mutes all players except friends and party members",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Communication",
+            "type": "bool"
+        },
+        {
+            "name": "cl_allow_animated_avatars",
+            "ingameName": "Allow Animated Avatars",
+            "description": "Allow animated avatars in the HUD",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Communication",
+            "type": "bool"
+        },
+        {
+            "name": "cl_sanitize_player_names",
+            "ingameName": "Clean Player Names",
+            "description": "Change name of players not in your friends list to something neutral",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Communication",
+            "type": "bool"
+        },
+        {
+            "name": "cl_scoreboard_survivors_always_on",
+            "ingameName": "Survivors Always On",
+            "description": "Nobody knows what this does (maybe dangerzone stuff)",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Spectator/Scoreboard",
+            "type": "bool"
+        },
+        {
+            "name": "cl_obs_interp_enable",
+            "ingameName": "Smooth Spectator Camera",
+            "description": "Smooth the camera transition between players in spectator mode",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Spectator",
+            "type": "bool"
+        },
+        {
+            "name": "cl_sniper_delay_unscope",
+            "ingameName": "Delay Sniper Rifle Un-Scope after Shot",
+            "description": "Adds a delay after firing a shot before you can un-scope (only animation-wise and it's kinda awful)",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Item",
+            "type": "bool"
+        },
+        {
+            "name": "cl_sniper_auto_rezoom",
+            "ingameName": "Auto Re-Zoom Sniper Rifle After Shot",
+            "description": "Automatically re-zoom the sniper rifle after firing a shot",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Item",
+            "type": "bool"
+        },
+        {
+            "name": "cl_showloadout",
+            "ingameName": "Always Show Inventory",
+            "description": "Determines whether the Primary, Secondary and Knife are always shown in the HUD, if they are hidden, they will show for a short time if you switch weapon",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Item",
+            "type": "bool"
+        },
+        {
+            "name": "cl_use_opens_buy_menu",
+            "ingameName": "Open Buy Menu with Use Key",
+            "description": "Open the buy menu with the use key",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Item",
+            "type": "bool"
+        },
+        {
+            "name": "cl_quickinventory_lastinv",
+            "ingameName": "Last Weapon on Radial Weapon Trap",
+            "description": "This option is locked to true ingame, it currently doesn't work, and nobody uses the radial weapon menu",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Item",
+            "type": "bool"
+        },
+        {
+            "name": "cl_radar_always_centered",
+            "ingameName": "Radar Centers The Player",
+            "description": "Centers the radar on the player",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
+        },
+        {
+            "name": "cl_radar_rotate",
+            "ingameName": "Radar Is Rotating",
+            "description": "Rotates the radar to match the player's view direction",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
+        },
+        {
+            "name": "cl_hud_radar_map_additive",
+            "ingameName": "Radar HUD Map Blends With Background",
+            "description": "Blends the radar layout with the background",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
+        },
+        {
+            "name": "cl_radar_square_with_scoreboard",
+            "ingameName": "Toggle Shape With Scoreboard",
+            "description": "Changes the shape of the radar to a square when the scoreboard is open",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
+        },
+        {
+            "name": "cl_radar_scale_dynamic",
+            "ingameName": "Radar Is Zooming Dynamically",
+            "description": "Changes the zoom level of the radar based on the map information",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
+        },
+        {
+            "name": "cl_grenadecrosshair_keepusercrosshair",
+            "ingameName": "Keep Regular Crosshair",
+            "description": "Keep the regular crosshair when holding grenades",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
+        },
+        {
+            "name": "cl_grenadecrosshair_flash",
+            "ingameName": "Flashbangs",
+            "description": "Show the grenade line-up crosshair for flashbangs",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
+        },
+        {
+            "name": "cl_grenadecrosshair_explosive",
+            "ingameName": "HE Grenades",
+            "description": "Show the grenade line-up crosshair for HE grenades",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
+        },
+        {
+            "name": "cl_grenadecrosshair_fire",
+            "ingameName": "Molotov cocktails / Incendiary Grenades",
+            "description": "Show the grenade line-up crosshair for Molotov cocktails and incendiary grenades",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
+        },
+        {
+            "name": "cl_grenadecrosshair_smoke",
+            "ingameName": "Smoke Grenades",
+            "description": "Show the grenade line-up crosshair for smoke grenades",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
+        },
+        {
+            "name": "cl_grenadecrosshair_decoy",
+            "ingameName": "Decoy Grenades",
+            "description": "Show the grenade line-up crosshair for decoy grenades",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "type": "bool"
+        },
+        {
+            "name": "cl_predict_body_shot_fx",
+            "ingameName": "Predict Body Shot Effects",
+            "description": "Predict the body shot effects (blood and sound effects)",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Damage Prediction",
+            "type": "bool"
+        },
+        {
+            "name": "cl_predict_head_shot_fx",
+            "ingameName": "Predict Head Shot Effects",
+            "description": "Predict the head shot effects (blood, sparks and sound effects)",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Damage Prediction",
+            "type": "bool"
+        },
+        {
+            "name": "cl_predict_kill_ragdolls",
+            "ingameName": "Predict Kill Ragdolls",
+            "description": "Transforms the player model into a ragdoll if a kill is predicted, could get reverted if the prediction was wrong",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Damage Prediction",
+            "type": "bool"
+        },
+        {
+            "name": "snd_steamaudio_enable_perspective_correction",
+            "ingameName": "Perspective Correction",
+            "description": "*Yes:* Sound sources will be rendered accurately with respect to your field of view as you look at the PC screen. Sound emitters that are on the edge of your field of view will sound slightly in front of you. Sound emitters that are off-screen and directly to your side will sound fully panned to either L or R respectively. \\n *No:* Sound emitters at the edge of your field of view will sound strongly panned to either L or R respectively. Ideal for those who play very close to the screen, or use wearable screen, or players that prefer legacy sound engines. Can be positionally misleading at certain angles to the listener.",
+            "defaultValue": "1",
+            "category": "AUDIO",
+            "subcategory": "Audio",
+            "type": "bool"
+        },
+        {
+            "name": "snd_mute_losefocus",
+            "ingameName": "Play Audio When Game In Background",
+            "description": "Determines whether the game will play audio when you tabbed out",
+            "defaultValue": "0",
+            "category": "AUDIO",
+            "subcategory": "Audio",
+            "type": "bool"
+        },
+        {
+            "name": "voice_loopback",
+            "ingameName": "Loopback Voice",
+            "description": "Determines whether the game will play your own voice in the speakers",
+            "defaultValue": "0",
+            "category": "AUDIO",
+            "subcategory": "Voice",
+            "type": "bool"
+        },
+        {
+            "name": "voice_always_sample_mic",
+            "ingameName": "Streamlined Push To Talk",
+            "description": "Setups the mic when you open the game instead of the first time you press Push To Talk",
+            "defaultValue": "0",
+            "category": "AUDIO",
+            "subcategory": "Voice",
+            "type": "bool"
+        },
+        {
+            "name": "snd_mute_mvp_music_live_players",
+            "ingameName": "Mute MVP Music when players on both teams are alive",
+            "description": "Determines whether to mute the MVP music when some players on both teams are alive",
+            "defaultValue": "0",
+            "category": "AUDIO",
+            "subcategory": "Music",
+            "type": "bool"
+        },
+        {
+            "name": "m_pitch",
+            "ingameName": "Invert Mouse Pitch (Vertical Axis)",
+            "description": "Sets the mouse pitch (vertical axis) to -0.022 in the game",
+            "defaultValue": "0",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse settings",
+            "type": "bool"
+        },
+        {
+            "name": "m_yaw",
+            "ingameName": "Invert Mouse Yaw (Horizontal Axis)",
+            "description": "Sets the mouse yaw (horizontal axis) to -0.022 in the game",
+            "defaultValue": "0",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse settings",
+            "type": "bool"
+        },
+        {
+            "name": "cl_show_equipped_character_for_player_avatars false",
+            "ingameName": "Show Equipped Character for Player Avatars",
+            "description": "Determines whether to show the equipped character for player avatars in the HUD instead of Steam profile pricture",
+            "defaultValue": "0",
+            "category": "MISC",
+            "subcategory": "Hidden",
+            "type": "bool"
+        },
+        {
+            "name": "cl_invites_only_mainmenu",
+            "ingameName": "Get invites only in Main Menu",
+            "description": "If turned on, will ignore all invites when user is playing a match",
+            "defaultValue": "0",
+            "category": "MISC",
+            "subcategory": "Hidden",
+            "type": "bool"
+        },
+        {
+            "name": "rate",
+            "ingameName": "Max Acceptable Game Traffic Bandwith",
+            "description": "Allows to specify game traffic bandwidth that online game servers send to you during gameplay. Lower bandwidth rate setting can help avoid packet loss if your internet service provider or routers drop network packets. Insufficient bandwidth rate however can result in delayed network packets at times when game server sends updates about multiple other players over the network to your client. The values are: 98304\\n131072\\n196608\\n262144\\n327680\\n393216\\n524288\\n786432",
+            "defaultValue": "786432",
+            "category": "GAME",
+            "subcategory": "Game",
+            "enumValues": "98304/131072/196608/262144/327680/393216/524288/786432",
+            "enumNames": "Extremely restricted/Below 1.0 Mbps/Up to 1.5 Mbps/Up to 2 Mbps/Up to 2.5 Mbps/3 Mbps/4 Mbps/Unrestricted",
+            "type": "enum"
+        },
+        {
+            "name": "cl_net_buffer_ticks",
+            "ingameName": "Buffering to smooth over packet loss / Jitter",
+            "description": "Buffer snapshots from the server and commands from the client. This reduces the rate of missed ticks but increases your effective ping time",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Game",
+            "enumValues": "0/1/2",
+            "enumNames": "None/1 Tick/2 Ticks",
+            "type": "enum"
+        },
+        {
+            "name": "cl_hud_color",
+            "ingameName": "HUD Color",
+            "description": "Change the color of the HUD elements",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Hud",
+            "enumValues": "0/1/2/3/4/5/6/7/8/9/10/11/12",
+            "enumNames": "Team Color/Teammate Color/White/Bright White/Light Blue/Blue/Purple/Red/Orange/Yellow/Green/Aqua/Pink",
+            "type": "enum"
+        },
+        {
+            "name": "cl_teamid_overhead_mode",
+            "ingameName": "Show Team ID Through Walls",
+            "description": "Select the info that shows above the head of your teammates",
+            "defaultValue": "3",
+            "category": "GAME",
+            "subcategory": "Team",
+            "enumValues": "0/1/2/3",
+            "enumNames": "Off/Pips/Pips, Names, and Health/Pips, Names, Health, and Equipment",
+            "type": "enum"
+        },
+        {
+            "name": "cl_teammate_colors_show",
+            "ingameName": "Show Player Colors in Competitive",
+            "description": "Shows the color of your teammates in the mini-scoreboard, and radar",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Team",
+            "enumValues": "0/1/2",
+            "enumNames": "No/Show Colors/Colors and Letters",
+            "type": "enum"
+        },
+        {
+            "name": "lobby_default_privacy_bits2",
+            "ingameName": "Friends Lobby Default Permissions",
+            "description": "Default permissions for friends joining your lobby",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Team",
+            "enumValues": "0/1",
+            "enumNames": "Friends Need Invites/All Friends Can Join",
+            "type": "enum"
+        },
+        {
+            "name": "ui_setting_advertiseforhire_auto",
+            "ingameName": "Looking to Play when Counter-Strike Starts",
+            "description": "Set the looking to play status when Counter-Strike starts",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Team",
+            "enumValues": "0/1/2",
+            "enumNames": "Disabled/Remember Last State/Automatic",
+            "type": "enum"
+        },
+        {
+            "name": "cl_player_ping_mute",
+            "ingameName": "Player Pings",
+            "description": "Determine whether to show pings from teammates",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Communication",
+            "enumValues": "0/1/2",
+            "enumNames": "Display and Play Sound/Display Without Sound/Disabled",
+            "type": "enum"
+        },
+        {
+            "name": "cl_hide_avatar_images",
+            "ingameName": "Hide Avatar Images and Customized Items",
+            "description": "Hide avatar images and replace them with the default ones",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Communication",
+            "enumValues": "0/1/2",
+            "enumNames": "Show All/Hide All/Show Only Friends",
+            "type": "enum"
+        },
+        {
+            "name": "spec_usenumberkeys_nobinds",
+            "ingameName": "Spectator/Map Vote Number Selection Method",
+            "description": "Select the method for number key selection in spectator/map vote",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Spectator/Scoreboard",
+            "enumValues": "0/1",
+            "enumNames": "Use Weapon Slots/Use Number Keys",
+            "type": "enum"
+        },
+        {
+            "name": "eom_local_player_defeat_anim_enabled",
+            "ingameName": "End of Match Local Player Defeat Animation",
+            "description": "Enable the local player defeat animation at the end of the match",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Spectator/Scoreboard",
+            "enumValues": "0/1",
+            "enumNames": "Disabled/Enabled",
+            "type": "enum"
+        },
+        {
+            "name": "cl_silencer_mode",
+            "ingameName": "Detach Silencer on M4A1-S and USP-S",
+            "description": "Select the mode for detaching the silencer on M4A1-S and USP-S",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Item",
+            "enumValues": "0/1",
+            "enumNames": "Disabled/Secondary Fire",
+            "type": "enum"
+        },
+        {
+            "name": "viewmodel_presetpos",
+            "ingameName": "Viewmodel Position",
+            "description": "Select the viewmodel position preset",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Viewmodel",
+            "enumValues": "1/2",
+            "enumNames": "Desktop/Classic",
+            "type": "enum"
+        },
+        {
+            "name": "cl_prefer_lefthanded",
+            "ingameName": "Preferred Viewmodel Left/Right Handedness",
+            "description": "Select the preferred viewmodel handedness",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Item",
+            "enumValues": "0/1",
+            "enumNames": "Right/Left",
+            "type": "enum"
+        },
+        {
+            "name": "r_drawtracers_firstperson",
+            "ingameName": "First Person Tracers",
+            "description": "Enable or disable first person tracers",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Item",
+            "enumValues": "0/1",
+            "enumNames": "Disabled/Enabled",
+            "type": "enum"
+        },
+        {
+            "name": "cl_buywheel_nonumberpurchasing",
+            "ingameName": "Buy Menu Number Keys",
+            "description": "Choose whether to use number keys for purchasing in the buy menu",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Item",
+            "enumValues": "0/1",
+            "enumNames": "Number Keys Buy Items/Ignored, Handled by Game",
+            "type": "enum"
+        },
+        {
+            "name": "cl_buywheel_donate_key",
+            "ingameName": "Buy Menu Donation Key",
+            "description": "Select the key for donating a weapon in the buy menu",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Item",
+            "enumValues": "0/1/2",
+            "enumNames": "Left Control/Left Alt/Left Shift",
+            "type": "enum"
+        },
+        {
+            "name": "cl_hud_telemetry_frametime_show",
+            "ingameName": "Show frame time and FPS",
+            "description": "Show a graph of frame time and FPS in the HUD",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Telemetry",
+            "enumValues": "0/1/2",
+            "enumNames": "Never/If conditions are poor/Always",
+            "type": "enum"
+        },
+        {
+            "name": "cl_hud_telemetry_ping_show",
+            "ingameName": "Show ping",
+            "description": "Show a graph of ping in the HUD",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Telemetry",
+            "enumValues": "0/1/2",
+            "enumNames": "Never/If conditions are poor/Always",
+            "type": "enum"
+        },
+        {
+            "name": "cl_hud_telemetry_net_misdelivery_show",
+            "ingameName": "Show network problems (ticks missed due to loss/jitter)",
+            "description": "Show a graph of network problems in the HUD",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Telemetry",
+            "enumValues": "0/1/2",
+            "enumNames": "Never/If conditions are poor/Always",
+            "type": "enum"
+        },
+        {
+            "name": "cl_hud_telemetry_net_quality_graph_show",
+            "ingameName": "Show network jitter / misdelivery graph",
+            "description": "Show a graph of network jitter and misdelivery in the HUD",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Telemetry",
+            "enumValues": "0/1/2",
+            "enumNames": "Never/If conditions are poor/Always",
+            "type": "enum"
+        },
+        {
+            "name": "cl_hud_telemetry_net_detailed",
+            "ingameName": "Use the detailed network quality display",
+            "description": "Show detailed network quality information in the HUD",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Telemetry",
+            "enumValues": "0/1/2",
+            "enumNames": "Never/If conditions are poor/Always",
+            "type": "enum"
+        },
+        {
+            "name": "snd_headphone_eq_active",
+            "ingameName": "EQ Profile",
+            "description": "Selects the equalizer profile for headphones",
+            "defaultValue": "0",
+            "category": "AUDIO",
+            "subcategory": "Audio",
+            "enumValues": "0/1/2",
+            "enumNames": "Natural/Crisp/Smooth",
+            "type": "enum"
+        },
+        {
+            "name": "voice_vox",
+            "ingameName": "Voice/Microphone Mode",
+            "description": "Select the voice/microphone mode",
+            "defaultValue": "0",
+            "category": "AUDIO",
+            "subcategory": "Voice",
+            "enumValues": "0/0/1",
+            "enumNames": "Disabled/Push To Talk/Open Microphone",
+            "type": "enum"
+        },
+        {
+            "name": "option_duck_method",
+            "ingameName": "Duck (Crouch) Mode",
+            "description": "Select the method for ducking (crouching)",
+            "defaultValue": "0",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse settings",
+            "enumValues": "0/1",
+            "enumNames": "Hold/Toggle",
+            "type": "enum"
+        },
+        {
+            "name": "option_speed_method",
+            "ingameName": "Walk (Shift) Mode",
+            "description": "Select the method for walking (pressing Shift)",
+            "defaultValue": "0",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse ",
+            "enumValues": "0/1",
+            "enumNames": "Hold/Toggle",
+            "type": "enum"
+        },
+        {
+            "name": "cl_color",
+            "ingameName": "Team preferred color",
+            "description": "Select the team preferred color",
+            "defaultValue": "0",
+            "category": "MISC",
+            "subcategory": "Hidden",
+            "enumValues": "0/1/2/3/4",
+            "enumNames": "Blue/Green/Yellow/Orange/Pink",
+            "type": "enum"
+        },
+        {
+            "name": "cl_join_advertise",
+            "ingameName": "Advertise joinable game",
+            "description": "Advertise joinable game in progress to Steam friends, otherwise need a Steam invite",
+            "defaultValue": "1",
+            "category": "MISC",
+            "subcategory": "Hidden",
+            "enumValues": "0/1/2",
+            "enumNames": "None/Official Servers/All Servers",
+            "type": "enum"
+        },
+        {
+            "name": "hud_scaling",
+            "ingameName": "HUD Scale",
+            "description": "Scale the size of the HUD elements",
+            "defaultValue": "1.0",
+            "category": "GAME",
+            "subcategory": "Hud",
+            "min": "0.9",
+            "max": "1.10",
+            "type": "float"
+        },
+        {
+            "name": "cl_obs_interp_pos_rate",
+            "ingameName": "Smooth Spectator Camera Speed",
+            "description": "Adjust the speed of the camera transition between players",
+            "defaultValue": "0.27",
+            "category": "GAME",
+            "subcategory": "Spectator",
+            "min": "0.05",
+            "max": "0.4",
+            "type": "float"
+        },
+        {
+            "name": "cl_hud_radar_background_alpha",
+            "ingameName": "Radar HUD Background Opacity",
+            "description": "Set the opacity of the radar background",
+            "defaultValue": "0.63",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "min": "0.0",
+            "max": "1.0",
+            "type": "float"
+        },
+        {
+            "name": "cl_hud_radar_scale",
+            "ingameName": "Radar HUD Size",
+            "description": "Set the size of the radar in the HUD",
+            "defaultValue": "1.0",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "min": "0.8",
+            "max": "1.3",
+            "type": "float"
+        },
+        {
+            "name": "cl_radar_scale",
+            "ingameName": "Radar Map Zoom",
+            "description": "Set the zoom level of the radar",
+            "defaultValue": "0.7",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "min": "0.25",
+            "max": "1.0",
+            "type": "float"
+        },
+        {
+            "name": "cl_radar_scale_alternate",
+            "ingameName": "Radar Map Alternate Zoom",
+            "description": "Set the alternate zoom level of the radar",
+            "defaultValue": "0.7",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "min": "0.25",
+            "max": "1.0",
+            "type": "float"
+        },
+        {
+            "name": "cl_grenadecrosshairdelay_flash",
+            "ingameName": "Flashbang Line-Up Crosshair Delay",
+            "description": "Set the delay for the flashbang line-up crosshair",
+            "defaultValue": "2.0",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "min": "0.0",
+            "max": "5.0",
+            "type": "float"
+        },
+        {
+            "name": "cl_grenadecrosshairdelay_explosive",
+            "ingameName": "HE Grenade Line-Up Crosshair Delay",
+            "description": "Set the delay for the HE grenade line-up crosshair",
+            "defaultValue": "2.0",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "min": "0.0",
+            "max": "5.0",
+            "type": "float"
+        },
+        {
+            "name": "cl_grenadecrosshairdelay_fire",
+            "ingameName": "Molotov/Incendiary Grenade Line-Up Crosshair Delay",
+            "description": "Set the delay for the Molotov/incendiary grenade line-up crosshair",
+            "defaultValue": "2.0",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "min": "0.0",
+            "max": "5.0",
+            "type": "float"
+        },
+        {
+            "name": "cl_grenadecrosshairdelay_smoke",
+            "ingameName": "Smoke Grenade Line-Up Crosshair Delay",
+            "description": "Set the delay for the smoke grenade line-up crosshair",
+            "defaultValue": "2.0",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "min": "0.0",
+            "max": "5.0",
+            "type": "float"
+        },
+        {
+            "name": "cl_grenadecrosshairdelay_decoy",
+            "ingameName": "Decoy Grenade Line-Up Crosshair Delay",
+            "description": "Set the delay for the decoy grenade line-up crosshair",
+            "defaultValue": "2.0",
+            "category": "GAME",
+            "subcategory": "Grenade Line-Up Reticle",
+            "min": "0.0",
+            "max": "5.0",
+            "type": "float"
+        },
+        {
+            "name": "cl_hud_telemetry_frametime_poor",
+            "ingameName": "Frame time warning threshold",
+            "description": "Set the threshold for poor frame time conditions, write the minimum FPS value here",
+            "defaultValue": "14",
+            "category": "GAME",
+            "subcategory": "Telemetry",
+            "min": "1",
+            "max": "100",
+            "type": "float"
+        },
+        {
+            "name": "cl_hud_telemetry_net_misdelivery_poor",
+            "ingameName": "Network tick miss rate warning threshold",
+            "description": "Set the threshold for poor network conditions, write the maximum tick miss rate here",
+            "defaultValue": "0.1",
+            "category": "GAME",
+            "subcategory": "Telemetry",
+            "min": "0.0",
+            "max": "2.0",
+            "type": "float"
+        },
+        {
+            "name": "sensitivity",
+            "ingameName": "Mouse Sensitivity",
+            "description": "Set the mouse sensitivity for aiming",
+            "defaultValue": "2.5",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse settings",
+            "min": "0.01",
+            "max": "100.0",
+            "type": "float"
+        },
+        {
+            "name": "zoom_sensitivity_ratio",
+            "ingameName": "Zoom Sensitivity Multiplier",
+            "description": "Set the sensitivity multiplier for zoomed aiming",
+            "defaultValue": "1.0",
+            "category": "KBMOUSE",
+            "subcategory": "KB & Mouse settings",
+            "min": "0.01",
+            "max": "100.0",
+            "type": "float"
+        },
+        {
+            "name": "cl_teamid_overhead_fade_near_crosshair",
+            "ingameName": "Team ID Overhead Fade Near Crosshair",
+            "description": "Changes the opacity of your team mates names when your crosshair is near them\\nYou can use a decimal value between 0-1\\n0: The name's opacity doesn't change\\n1: The name's opacity gets almost transparent\\n I personally recommend 0.7-0.8",
+            "defaultValue": "0.5",
+            "category": "MISC",
+            "subcategory": "Hidden",
+            "min": "0",
+            "max": "1",
+            "type": "float"
+        },
+        {
+            "name": "viewmodel_offset_x",
+            "ingameName": "Viewmodel offset X-axis",
+            "description": "Changes the X-axis of the viewmodel",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Viewmodel",
+            "min": "-2",
+            "max": "2.5",
+            "type": "float"
+        },
+        {
+            "name": "viewmodel_offset_y",
+            "ingameName": "Viewmodel offset Y-axis",
+            "description": "Changes the Y-axis of the viewmodel",
+            "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Viewmodel",
+            "min": "-2",
+            "max": "2",
+            "type": "float"
+        },
+        {
+            "name": "viewmodel_offset_z",
+            "ingameName": "Viewmodel offset Z-axis",
+            "description": "Changes the Z-axis of the viewmodel",
+            "defaultValue": "-1",
+            "category": "GAME",
+            "subcategory": "Viewmodel",
+            "min": "-2",
+            "max": "2",
+            "type": "float"
+        },
+        {
+            "name": "mm_dedicated_search_maxping",
+            "ingameName": "Max Acceptable Ping for Matchmaking",
+            "description": "Allows you to specify max acceptable matchmaking ping when searching for a game on official matchmaking servers. If there are official servers satisfying your ping setting then official matchmaking will always put you in a match hosted on those servers. If there are no official servers near you satisfying your ping setting then official matchmaking will put you in a match hosted on the next nearest official server, latency to which may exceed your ping setting.",
+            "defaultValue": "50",
+            "category": "GAME",
+            "subcategory": "Game",
+            "min": "25",
+            "max": "350",
+            "type": "int"
+        },
+        {
+            "name": "ui_steam_overlay_notification_position_horz",
+            "ingameName": "Community Notification Horizontal Offset",
+            "description": "Sets the horizontal offset of the Steam Community notification in the HUD",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Hud",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "ui_steam_overlay_notification_position_vert",
+            "ingameName": "Community Notification Vertical Offset",
+            "description": "Sets the vertical offset of the Steam Community notification in the HUD",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Hud",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "volume",
+            "ingameName": "Master Volume",
+            "description": "Sets the master volume of the game",
+            "defaultValue": "100",
+            "category": "AUDIO",
+            "subcategory": "Audio",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_menumap_volume",
+            "ingameName": "Main Menu Ambience Volume",
+            "description": "Sets the volume of the main menu ambiance",
+            "defaultValue": "100",
+            "category": "AUDIO",
+            "subcategory": "Audio",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_spatialize_lerp",
+            "ingameName": "L/R Isolation",
+            "description": "*0% - Physically Accurate:* Physically modeled sound panning behavior most accurately reflecting the emitter position. \\n *100% - Isolated L/R:* Sound emitters that are directly to the side of the player will be hard panned with minimal blending into the opposite L/R channel. This provides a strong sense of left vs right but can be positionally misleading at certain angles to the listener. For players who prefer legacy sound panning behavior.",
+            "defaultValue": "0",
+            "category": "AUDIO",
+            "subcategory": "Audio",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_voipvolume",
+            "ingameName": "Other Player Voice Volume",
+            "description": "Sets the volume of other players' voice chat",
+            "defaultValue": "100",
+            "category": "AUDIO",
+            "subcategory": "Voice",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "voice_threshold",
+            "ingameName": "Microphone Trigger Threshold",
+            "description": "Sets the microphone trigger threshold for voice chat",
+            "defaultValue": "-120",
+            "category": "AUDIO",
+            "subcategory": "Voice",
+            "min": "-120",
+            "max": "0",
+            "type": "int"
+        },
+        {
+            "name": "snd_menumusic_volume",
+            "ingameName": "Main Menu Volume",
+            "description": "Sets the volume of the main menu music",
+            "defaultValue": "100",
+            "category": "AUDIO",
+            "subcategory": "Music",
+            "min": "0",
+            "max": "20",
+            "type": "int"
+        },
+        {
+            "name": "snd_roundstart_volume",
+            "ingameName": "Round Start Volume",
+            "description": "Sets the volume of the round start sound",
+            "defaultValue": "0",
+            "category": "AUDIO",
+            "subcategory": "Music",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_roundaction_volume",
+            "ingameName": "Round Action Volume",
+            "description": "Sets the volume of the round action sound",
+            "defaultValue": "0",
+            "category": "AUDIO",
+            "subcategory": "Music",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_roundend_volume",
+            "ingameName": "Round End Volume",
+            "description": "Sets the volume of the round end sound",
+            "defaultValue": "40",
+            "category": "AUDIO",
+            "subcategory": "Music",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_mvp_volume",
+            "ingameName": "MVP Volume",
+            "description": "Sets the volume of the MVP song",
+            "defaultValue": "40",
+            "category": "AUDIO",
+            "subcategory": "Music",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_mapobjective_volume",
+            "ingameName": "Bomb/Hostage Volume",
+            "description": "Sets the volume of the map objective sound",
+            "defaultValue": "20",
+            "category": "AUDIO",
+            "subcategory": "Music",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_tensecondwarning_volume",
+            "ingameName": "Ten Second Warning Volume",
+            "description": "Sets the volume of the 10 second warning sound",
+            "defaultValue": "20",
+            "category": "AUDIO",
+            "subcategory": "Music",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_deathcamera_volume",
+            "ingameName": "Death Camera Volume",
+            "description": "Sets the volume of the death camera sound",
+            "defaultValue": "40",
+            "category": "AUDIO",
+            "subcategory": "Music",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "viewmodel_fov",
+            "ingameName": "Viewmodel Field of View",
+            "description": "Sets the field of view for the viewmodel, most people use 68 (max)",
+            "defaultValue": "60",
+            "category": "GAME",
+            "subcategory": "Viewmodel",
+            "min": "54",
+            "max": "68",
+            "type": "int"
+        },
+        {
+            "name": "ui_steam_overlay_notification_position",
+            "ingameName": "Community Notification Location",
+            "description": "Sets the position of the Steam Community notification in the HUD",
+            "defaultValue": "bottomleft",
+            "category": "GAME",
+            "subcategory": "Hud",
+            "options": "topleft/bottomleft/bottomright/topright",
+            "optionsNames": "Top Left/Bottom Left/Bottom Right/Top Right",
+            "type": "string"
+        },
+        {
+            "name": "cl_scoreboard_mouse_enable_binding",
+            "ingameName": "Scoreboard Mouse Enable / End of Match Scoreboard Toggle",
+            "description": "Enables mouse interaction with the scoreboard",
+            "defaultValue": "+attack2",
+            "category": "GAME",
+            "subcategory": "Spectator/Scoreboard",
+            "options": "+attack2/+duck/+jump/drop/lastinv/radio/+use",
+            "optionsNames": "Secondary Fire/Duck/Jump/Drop Weapon/Last Weapon Used/Radio Message/Use",
+            "type": "string"
+        }
+    ]
+}

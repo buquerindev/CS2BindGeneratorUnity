@@ -1,0 +1,914 @@
+{
+    "binds": [
+        {
+            "name": "show_loadout_toggle",
+            "ingameName": "Toggle Inventory Display",
+            "description": "Toggles the option Always Show Inventory (cl_showloadout [bool])",
+            "category": "CONTROLS",
+            "subcategory": "Movement"
+        },
+        {
+            "name": "+forward",
+            "ingameName": "Move Forward",
+            "description": "Moves the player forward",
+            "category": "CONTROLS",
+            "subcategory": "Movement"
+        },
+        {
+            "name": "+back",
+            "ingameName": "Move Backward",
+            "description": "Moves the player backward",
+            "category": "CONTROLS",
+            "subcategory": "Movement"
+        },
+        {
+            "name": "+left",
+            "ingameName": "Move Left (strafe)",
+            "description": "Moves the player left",
+            "category": "CONTROLS",
+            "subcategory": "Movement"
+        },
+        {
+            "name": "+right",
+            "ingameName": "Move Right (strafe)",
+            "description": "Moves the player right",
+            "category": "CONTROLS",
+            "subcategory": "Movement"
+        },
+        {
+            "name": "+sprint",
+            "ingameName": "Walk",
+            "description": "Toggle walking speed",
+            "category": "CONTROLS",
+            "subcategory": "Movement"
+        },
+        {
+            "name": "+duck",
+            "ingameName": "Duck (Crouch)",
+            "description": "Toggle crouching",
+            "category": "CONTROLS",
+            "subcategory": "Movement"
+        },
+        {
+            "name": "+jump",
+            "ingameName": "Jump",
+            "description": "Makes the player jump",
+            "category": "CONTROLS",
+            "subcategory": "Movement"
+        },
+        {
+            "name": "+use",
+            "ingameName": "Use",
+            "description": "Interact with objects",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "+attack",
+            "ingameName": "Fire",
+            "description": "Primary weapon fire",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "+attack2",
+            "ingameName": "Secondary Fire",
+            "description": "Weapon Scope / Burst mode / Detach Silencer on M4A1-S and USP-S / Adjust grenade trajectory",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "+reload",
+            "ingameName": "Reload",
+            "description": "Reloads the current weapon",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "+quickinv",
+            "ingameName": "Radial Weapon Menu",
+            "description": "Open radial weapon menu, nobody uses this",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "invprev",
+            "ingameName": "Select Previous Weapon",
+            "description": "Scrolls to the previous weapon (you shouldn't use this with the mousewheel)",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "invnext",
+            "ingameName": "Select Next Weapon",
+            "description": "Scrolls to the next weapon (you shouldn't use this with the mousewheel)",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "lastinv",
+            "ingameName": "Last Weapon Used",
+            "description": "Switches to the last used weapon",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "drop",
+            "ingameName": "Drop Weapon",
+            "description": "Drops your current equipped item",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "+lookatweapon",
+            "ingameName": "Inspect Weapon",
+            "description": "Inspects weapon",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "switchhands",
+            "ingameName": "Switch Viewmodel Left/Right Hand",
+            "description": "Toggle your viewmodel from left to right",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "buymenu",
+            "ingameName": "Buy Menu",
+            "description": "Opens buy menu",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "autobuy",
+            "ingameName": "Autobuy",
+            "description": "Autobuys (don't use this please LOL)",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "rebuy",
+            "ingameName": "Rebuy",
+            "description": "Rebuys the things you bought last round",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot1",
+            "ingameName": "Primary Weapon",
+            "description": "Primary weapon",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot2",
+            "ingameName": "Secondary Weapon",
+            "description": "Secondary weapon",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot3",
+            "ingameName": "Melee Weapons",
+            "description": "Knife & Zeus",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot4",
+            "ingameName": "CycleGrenades",
+            "description": "You should not use this, you can cycle through grenades, but direct binds are faster",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot5",
+            "ingameName": "Explosives & Traps",
+            "description": "C4 and old Danger Zone stuff",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot6",
+            "ingameName": "HE Grenade",
+            "description": "HE Grenade",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot7",
+            "ingameName": "Flashbang",
+            "description": "Flashbang",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot8",
+            "ingameName": "Smoke Grenade",
+            "description": "Smoke Grenade",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot9",
+            "ingameName": "Decoy Grenade",
+            "description": "Decoy grenade",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot10",
+            "ingameName": "Molotov Cocktail/Incendiary Grenade",
+            "description": "Molotov/Incendiary grenade",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot11",
+            "ingameName": "Zeus x27",
+            "description": "Zeus x27, but you can cycle through melee weapons",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot12",
+            "ingameName": "Healthshot",
+            "description": "Healthshot for deathmatch mode",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "slot13",
+            "ingameName": "Utility Items",
+            "description": "This bind doesn't work, it was used for Danger Zone items",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "+spray_menu",
+            "ingameName": "Graffiti Menu",
+            "description": "Graffiti menu",
+            "category": "CONTROLS",
+            "subcategory": "Weapon"
+        },
+        {
+            "name": "+showscores",
+            "ingameName": "Scoreboard",
+            "description": "Opens scoreboard",
+            "category": "CONTROLS",
+            "subcategory": "UI"
+        },
+        {
+            "name": "+cl_show_team_equipment",
+            "ingameName": "Show Team Equipment",
+            "description": "Show the equipment over the head of your team mates, doesn't work if you already got \"Show Team ID Through Walls: Pips, Names, Health, and Equipment\"",
+            "category": "CONTROLS",
+            "subcategory": "UI"
+        },
+        {
+            "name": "toggleradarscale",
+            "ingameName": "Toggle Radar Zoom",
+            "description": "Toggle the radar zoom level, it's like toggle cl_radar_scale value1 value2",
+            "category": "CONTROLS",
+            "subcategory": "UI"
+        },
+        {
+            "name": "callvote",
+            "ingameName": "Call Vote",
+            "description": "Call a vote, not sure if it works right now",
+            "category": "CONTROLS",
+            "subcategory": "UI"
+        },
+        {
+            "name": "teammenu",
+            "ingameName": "Choose Team",
+            "description": "Open the team selection menu",
+            "category": "CONTROLS",
+            "subcategory": "UI"
+        },
+        {
+            "name": "toggleconsole",
+            "ingameName": "Toggle Console",
+            "description": "Open and close the console",
+            "category": "CONTROLS",
+            "subcategory": "UI"
+        },
+        {
+            "name": "player_ping",
+            "ingameName": "Player Ping",
+            "description": "Ping a location",
+            "category": "CONTROLS",
+            "subcategory": "Communication"
+        },
+        {
+            "name": "radio",
+            "ingameName": "Radio Message",
+            "description": "Send a radio message",
+            "category": "CONTROLS",
+            "subcategory": "Communication"
+        },
+        {
+            "name": "radio1",
+            "ingameName": "Command Radio Message",
+            "description": "Send a command radio message",
+            "category": "CONTROLS",
+            "subcategory": "Communication"
+        },
+        {
+            "name": "radio2",
+            "ingameName": "Standard Radio Message",
+            "description": "Send a standard radio message",
+            "category": "CONTROLS",
+            "subcategory": "Communication"
+        },
+        {
+            "name": "radio3",
+            "ingameName": "Report Radio Message",
+            "description": "Send a report radio message",
+            "category": "CONTROLS",
+            "subcategory": "Communication"
+        },
+        {
+            "name": "messagemode2",
+            "ingameName": "Team Message",
+            "description": "Send a team message",
+            "category": "CONTROLS",
+            "subcategory": "Communication"
+        },
+        {
+            "name": "messagemode",
+            "ingameName": "Chat Message",
+            "description": "Send a general message",
+            "category": "CONTROLS",
+            "subcategory": "Communication"
+        },
+        {
+            "name": "+voicerecord",
+            "ingameName": "Use Microphone",
+            "description": "Use microphone",
+            "category": "CONTROLS",
+            "subcategory": "Communication"
+        },
+        {
+            "name": "clutch_mode_toggle",
+            "ingameName": "Temporarily Disable Incoming Chat",
+            "description": "It's called Clutch Mode, you can mute any incoming message, works as a toggle",
+            "category": "CONTROLS",
+            "subcategory": "Communication"
+        },
+        {
+            "name": "+radialradio",
+            "ingameName": "Chat Wheel 1",
+            "description": "Chat wheel 1, no one uses this (1)",
+            "category": "CONTROLS",
+            "subcategory": "ChatWheel"
+        },
+        {
+            "name": "+radialradio2",
+            "ingameName": "Chat Wheel 2",
+            "description": "Chat wheel 2, no one uses this (2)",
+            "category": "CONTROLS",
+            "subcategory": "ChatWheel"
+        },
+        {
+            "name": "+radialradio3",
+            "ingameName": "Chat Wheel 3",
+            "description": "Chat wheel 3, no one uses this (3)",
+            "category": "CONTROLS",
+            "subcategory": "ChatWheel"
+        },
+        {
+            "name": "buy vest",
+            "ingameName": "Buy Kevlar",
+            "description": "Buys Kevlar armor",
+            "category": "BUY",
+            "subcategory": "Equipment"
+        },
+        {
+            "name": "buy vesthelm",
+            "ingameName": "Buy Kevlar + Helmet",
+            "description": "Buys Kevlar armor with a helmet",
+            "category": "BUY",
+            "subcategory": "Equipment"
+        },
+        {
+            "name": "buy defuser",
+            "ingameName": "Buy Defuse Kit",
+            "description": "Buys a defuse kit, only available for Counter-Terrorists",
+            "category": "BUY",
+            "subcategory": "Equipment"
+        },
+        {
+            "name": "buy taser",
+            "ingameName": "Buy Zeus-X27",
+            "description": "Buys a taser",
+            "category": "BUY",
+            "subcategory": "Equipment"
+        },
+        {
+            "name": "buy flashbang",
+            "ingameName": "Buy Flashbang",
+            "description": "Buys a flashbang grenade",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy hegrenade",
+            "ingameName": "Buy HE Grenade",
+            "description": "Buys a high explosive grenade",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy smokegrenade",
+            "ingameName": "Buy Smoke Grenade",
+            "description": "Buys a smoke grenade",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy molotov",
+            "ingameName": "Buy Molotov",
+            "description": "Buys a molotov (T side), recommended to bind same key as Buy Incendiary",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy incgrenade",
+            "ingameName": "Buy Incendiary",
+            "description": "Buys an incendiary (CT side), recommended to bind same key as Buy Molotov",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy decoy",
+            "ingameName": "Buy Decoy",
+            "description": "Buys a decoy grenade",
+            "category": "BUY",
+            "subcategory": "Grenades"
+        },
+        {
+            "name": "buy famas",
+            "ingameName": "Buy FAMAS",
+            "description": "Buys a FAMAS (CT only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy galilar",
+            "ingameName": "Buy Galil AR",
+            "description": "Buys a Galil AR (T only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy m4a1",
+            "ingameName": "Buy M4A4",
+            "description": "Buys an M4A4 (CT only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy m4a1_silencer",
+            "ingameName": "Buy M4A1-S",
+            "description": "Buys an M4A1-S (CT only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy ak47",
+            "ingameName": "Buy AK-47",
+            "description": "Buys an AK-47 (T only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy ssg08",
+            "ingameName": "Buy SSG08",
+            "description": "Buys an SSG08 sniper",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy aug",
+            "ingameName": "Buy AUG",
+            "description": "Buys an AUG (CT only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy sg556",
+            "ingameName": "Buy SG 553",
+            "description": "Buys an SG 553 (T only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy awp",
+            "ingameName": "Buy AWP",
+            "description": "Buys an AWP sniper rifle",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy scar20",
+            "ingameName": "Buy SCAR-20",
+            "description": "Buys a SCAR-20 auto sniper (CT only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy g3sg1",
+            "ingameName": "Buy G3SG1",
+            "description": "Buys a G3SG1 auto sniper (T only)",
+            "category": "BUY",
+            "subcategory": "Rifles"
+        },
+        {
+            "name": "buy mp9",
+            "ingameName": "Buy MP9",
+            "description": "Buys an MP9 (CT only)",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy mac10",
+            "ingameName": "Buy MAC-10",
+            "description": "Buys a MAC-10 (T only)",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy mp7",
+            "ingameName": "Buy MP7",
+            "description": "Buys an MP7",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy mp5",
+            "ingameName": "Buy MP5-SD",
+            "description": "Buys an MP5-SD",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy ump45",
+            "ingameName": "Buy UMP-45",
+            "description": "Buys a UMP-45",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy p90",
+            "ingameName": "Buy P90",
+            "description": "Buys a P90",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy bizon",
+            "ingameName": "Buy PP-Bizon",
+            "description": "Buys a PP-Bizon",
+            "category": "BUY",
+            "subcategory": "SMGs"
+        },
+        {
+            "name": "buy nova",
+            "ingameName": "Buy Nova",
+            "description": "Buys a Nova shotgun",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy xm1014",
+            "ingameName": "Buy XM1014",
+            "description": "Buys an XM1014 auto shotgun",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy mag7",
+            "ingameName": "Buy MAG-7",
+            "description": "Buys a MAG-7 (CT only)",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy sawedoff",
+            "ingameName": "Buy Sawed-Off",
+            "description": "Buys a Sawed-Off (T only)",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy m249",
+            "ingameName": "Buy M249",
+            "description": "Buys an M249 machine gun",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy negev",
+            "ingameName": "Buy Negev",
+            "description": "Buys a Negev machine gun",
+            "category": "BUY",
+            "subcategory": "Heavy"
+        },
+        {
+            "name": "buy usp_silencer",
+            "ingameName": "Buy USP-S",
+            "description": "Buys a USP-S pistol (CT default)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy hkp2000",
+            "ingameName": "Buy P2000",
+            "description": "Buys a P2000 pistol (CT default)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy glock",
+            "ingameName": "Buy Glock-18",
+            "description": "Buys a Glock-18 pistol (T default)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy elite",
+            "ingameName": "Buy Dual Berettas",
+            "description": "Buys Dual Berettas pistols",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy p250",
+            "ingameName": "Buy P250",
+            "description": "Buys a P250 pistol",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy fiveseven",
+            "ingameName": "Buy Five-SeveN",
+            "description": "Buys a Five-SeveN pistol (CT only)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy tec9",
+            "ingameName": "Buy Tec-9",
+            "description": "Buys a Tec-9 pistol (T only)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy cz75a",
+            "ingameName": "Buy CZ75-Auto",
+            "description": "Buys a CZ75-Auto pistol",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy deagle",
+            "ingameName": "Buy Desert Eagle",
+            "description": "Buys a Desert Eagle (Deagle)",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "buy revolver",
+            "ingameName": "Buy R8 Revolver",
+            "description": "Buys an R8 Revolver",
+            "category": "BUY",
+            "subcategory": "Pistols"
+        },
+        {
+            "name": "sellbackall",
+            "ingameName": "Sell All Equipment",
+            "description": "Sells all the bought items that are returnable",
+            "category": "HIDDEN",
+            "subcategory": "Action"
+        },
+        {
+            "name": "cs_quit_prompt",
+            "ingameName": "Quit Game",
+            "description": "Quit the game with a confirmation prompt",
+            "category": "HIDDEN",
+            "subcategory": "Action"
+        },
+        {
+            "name": "disconnect",
+            "ingameName": "Disconnect",
+            "description": "Disconnects from the current server",
+            "category": "HIDDEN",
+            "subcategory": "Action"
+        },
+        {
+            "name": "quit",
+            "ingameName": "Instantly Quit Game",
+            "description": "Quits the game without any confirmation",
+            "category": "HIDDEN",
+            "subcategory": "Action"
+        },
+        {
+            "name": "holdpos",
+            "ingameName": "Bot Hold Position",
+            "description": "It's the classic Z+4 bind (radio + 4), it makes the bots hold their position so they don't rush and die",
+            "category": "HIDDEN",
+            "subcategory": "Action"
+        },
+        {
+            "name": "cl_dm_buyrandomweapons",
+            "ingameName": "Deathmatch Random Weapons",
+            "description": "Enable/Disable getting random weapons in Deathmatch mode (Default is F3)",
+            "category": "HIDDEN",
+            "subcategory": "Action"
+        },
+        {
+            "name": "sv_rethrow_last_grenade",
+            "ingameName": "Re-throw Last Grenade",
+            "description": "Re-throws the last thrown grenade",
+            "category": "HIDDEN",
+            "subcategory": "sv_cheats"
+        },
+        {
+            "name": "noclip",
+            "ingameName": "Noclip",
+            "description": "Toggle no clipping mode, you can fly through walls",
+            "category": "HIDDEN",
+            "subcategory": "sv_cheats"
+        },
+        {
+            "name": "bot_add_t",
+            "ingameName": "Add T Bot",
+            "description": "Adds a bot to the Terrorist team",
+            "category": "HIDDEN",
+            "subcategory": "Bot"
+        },
+        {
+            "name": "bot_add_ct",
+            "ingameName": "Add CT Bot",
+            "description": "Adds a bot to the Counter-Terrorist team",
+            "category": "HIDDEN",
+            "subcategory": "Bot"
+        },
+        {
+            "name": "bot_place",
+            "ingameName": "Place Bot",
+            "description": "Places a bot at the crosshair position",
+            "category": "HIDDEN",
+            "subcategory": "Bot"
+        },
+        {
+            "name": "toggle bot_stop",
+            "ingameName": "Toggle bot stop",
+            "description": "Stops all bots from doing any action",
+            "category": "HIDDEN",
+            "subcategory": "Bot"
+        },
+        {
+            "name": "toggle bot_mimic",
+            "ingameName": "Toggle bot mimic",
+            "description": "Makes the bot mimic the player's movements",
+            "category": "HIDDEN",
+            "subcategory": "Bot"
+        },
+        {
+            "name": "toggle bot_crouch",
+            "ingameName": "Toggle bot crouch",
+            "description": "Makes the bot crouch",
+            "category": "HIDDEN",
+            "subcategory": "Bot"
+        },
+        {
+            "name": "yaw",
+            "ingameName": "Mouse Yaw",
+            "description": "Don't change this option",
+            "category": "HIDDEN",
+            "subcategory": "Hidden"
+        },
+        {
+            "name": "pitch",
+            "ingameName": "Mouse Pitch",
+            "description": "Don't change this option",
+            "category": "HIDDEN",
+            "subcategory": "Hidden"
+        },
+        {
+            "name": "cancelselect",
+            "ingameName": "Escape",
+            "description": "Don't change this option",
+            "category": "HIDDEN",
+            "subcategory": "Hidden"
+        },
+        {
+            "name": "cl_hud_color",
+            "ingameName": "Change HUD Color",
+            "description": "Press this key to alternate the HUD color\\n0:Team Color\\n1:Teammate Color\\n2:White\\n3:Bright White\\n4:Light Blue\\n5:Blue\\n6:Purple\\n7:Red\\n8:Orange\\n9:Yellow\\n10:Green\\n11:Aqua\\n12:Pink",
+            "category": "TOGGLES",
+            "subcategory": "HUD"
+        },
+        {
+            "name": "cl_radar_scale",
+            "ingameName": "Change Radar Scale",
+            "description": "It's the same as toggleradarscale but you could add more values",
+            "category": "TOGGLES",
+            "subcategory": "HUD"
+        },
+        {
+            "name": "cl_crosshaircolor",
+            "ingameName": "Change Crosshair Color",
+            "description": "Press this key to alternate the crosshair color\\n0:Red\\n1:Green\\n2:Yellow\\n3:Blue\\n4:Cyan\\n5:Custom RGB color from the crosshair_[r/g/b] command",
+            "category": "TOGGLES",
+            "subcategory": "HUD"
+        },
+        {
+            "name": "cl_crosshairsize",
+            "ingameName": "Change Crosshair Size",
+            "description": "Press this key to change the crosshair size (Some players prefer this instead of the new grenade reticle)",
+            "category": "TOGGLES",
+            "subcategory": "HUD"
+        },
+        {
+            "name": "host_timescale",
+            "ingameName": "Change Host Time Scale",
+            "description": "Use this while practicing, if you miss a smoke you can accelerate time, for example:\\n1 = Normal time\\n0.5 = Half time (slow motion)\\n5 = 5x normal time (A smoke would last 4 seconds)",
+            "category": "TOGGLES",
+            "subcategory": "misc"
+        },
+        {
+            "name": "r_fullscreen_gamma",
+            "ingameName": "Change brightness (gamma)",
+            "description": "Changes the brightness of the game, some of the values are: \\n1: 133% brightness\\n2: 100% brightness (default)\\n3: 66% brightness\\n4: 33% brightness",
+            "category": "TOGGLES",
+            "subcategory": "misc"
+        },
+        {
+            "name": "dm_togglerandomweapons",
+            "ingameName": "Toggle Random Weapons in Deathmatch",
+            "description": "Toggles the random weapons in Deathmatch mode, you can also use cl_dm_buyrandomweapons",
+            "category": "TOGGLES",
+            "subcategory": "misc"
+        },
+        {
+            "name": "say0",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say1",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say2",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say3",
+            "ingameName": "Say",
+            "description": "Send a message to the general chat",
+            "category": "SAY",
+            "subcategory": "General"
+        },
+        {
+            "name": "say_team0",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
+        },
+        {
+            "name": "say_team1",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
+        },
+        {
+            "name": "say_team2",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
+        },
+        {
+            "name": "say_team3",
+            "ingameName": "Say team",
+            "description": " Send a message to the team chat",
+            "category": "SAY",
+            "subcategory": "Team"
+        }
+    ]
+}

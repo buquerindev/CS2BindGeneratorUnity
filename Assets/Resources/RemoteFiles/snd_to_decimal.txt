@@ -1,0 +1,2 @@
+En este .txt van los comandos que por ejemplo son 50% = 0.5
+snd_spatialize_lerp

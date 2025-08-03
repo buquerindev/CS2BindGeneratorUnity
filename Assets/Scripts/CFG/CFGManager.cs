@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class CFGManager : MonoBehaviour
 {
-    private string cfg_commands = "https://buquerindev.github.io/CS2ConfigGenerator/appdata/practice/practice.txt";
+    private string cfg_commands = "practice.txt";
 
-    [SerializeField] private JSONLoader JSONLoader;
+    [SerializeField] private RemoteFileManager fileManager;
     [SerializeField] private GameObject practiceCommandPanelPrefab;
     [SerializeField] private Transform commandPanelsTransform;
 
@@ -17,7 +17,7 @@ public class CFGManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        JSONLoader.LoadFile(cfg_commands, (text) => {
+        fileManager.LoadFile(cfg_commands, (text) => {
             OnTXTReceived(text);
         });
     }
@@ -92,6 +92,11 @@ public class CFGManager : MonoBehaviour
             writer.WriteLine("bot_kick");
             writer.WriteLine("mp_warmup_end");
             writer.WriteLine("mp_restartgame 1"); 
+
+            foreach (PracticeCommand command in commands)
+            {
+                writer.WriteLine($"{command.commandName} {command.selectedValue}");
+            }
         }
     }
 

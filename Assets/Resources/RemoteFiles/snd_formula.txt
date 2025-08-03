@@ -1,0 +1,2 @@
+En este .txt se guardan los comandos que usan la formula (value(en porcentaje)/100)^2, por ejemplo 50% sería 0.25
+volume,snd_menumap_volume,snd_voipvolume,snd_menumusic_volume,snd_roundstart_volume,snd_roundaction_volume,snd_roundend_volume,snd_mvp_volume,snd_mapobjective_volume,snd_tensecondwarning_volume,snd_deathcamera_volume

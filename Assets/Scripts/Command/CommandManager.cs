@@ -17,14 +17,14 @@ public class CommandManager : MonoBehaviour
 {
     public static CommandManager Instance;
 
-    [SerializeField] private JSONLoader JSONLoader;
+    [SerializeField] private RemoteFileManager fileManager;
 
     private CommandList commandList = new CommandList();
     private List<CommandPanel> commandPanels = new List<CommandPanel>();
 
-    private readonly string jsonURL = "https://buquerindev.github.io/CS2ConfigGenerator/appdata/commands.json";
-    private readonly string snd_formula_txt = "https://buquerindev.github.io/CS2ConfigGenerator/appdata/snd_formula.txt";
-    private readonly string snd_to_decimal_txt = "https://buquerindev.github.io/CS2ConfigGenerator/appdata/snd_to_decimal.txt";
+    private readonly string jsonURL = "commands.json";
+    //private readonly string snd_formula_txt = "https://buquerindev.github.io/CS2ConfigGenerator/appdata/snd_formula.txt";
+    //private readonly string snd_to_decimal_txt = "https://buquerindev.github.io/CS2ConfigGenerator/appdata/snd_to_decimal.txt";
 
     public List<string> snd_formula_commands;
     public List<string> snd_to_decimal_commands;
@@ -92,12 +92,12 @@ public class CommandManager : MonoBehaviour
         scrollRect.content = currentContainer as RectTransform;
         InitializeContainerDictionary();
 
-        JSONLoader.LoadFile(snd_formula_txt, (text) => {
+        fileManager.LoadFile("snd_formula.txt", (text) => {
             SNDFormulaList(text);
             sndFormulaLoaded = true;
             TryLoadJSON();
         });
-        JSONLoader.LoadFile(snd_to_decimal_txt, (text) => {
+        fileManager.LoadFile("snd_to_decimal.txt", (text) => {
             SNDDecimalList(text);
             sndDecimalLoaded = true;
             TryLoadJSON();
@@ -461,7 +461,7 @@ public class CommandManager : MonoBehaviour
     {
         if (sndFormulaLoaded && sndDecimalLoaded)
         {
-            JSONLoader.LoadFile(jsonURL, (text) =>
+            fileManager.LoadFile(jsonURL, (text) =>
             {
                 Debug.Log("JSON de commands recibido, comenzando a instanciar paneles");
                 OnJSONReceived(text);
