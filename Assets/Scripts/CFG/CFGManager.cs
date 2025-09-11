@@ -1,9 +1,10 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SFB;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CFGManager : MonoBehaviour
 {
@@ -13,10 +14,42 @@ public class CFGManager : MonoBehaviour
     [SerializeField] private GameObject practiceCommandPanelPrefab;
     [SerializeField] private Transform commandPanelsTransform;
 
+    [SerializeField] private Transform practicePanelContainer;
+    [SerializeField] private Transform instaSmokesContainer;
+
     private List<PracticeCommand> commands = new List<PracticeCommand>();
+
+    [SerializeField] private Button practiceButton;
+    [SerializeField] private Button instaSmokesButton;
+    
+    private List<Button> menusButtons;
+    private Transform currentContainer;
+
+    private Color buttonDefaultColor;
+    private Color buttonSelectedColor;
+
+    private ColorBlock selectedCB;
+    private ColorBlock cb;
+
+    [SerializeField] private ScrollRect scrollRect;
+
+    private Dictionary<string, Transform> categoryContainers;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ColorUtility.TryParseHtmlString("#00000064", out buttonDefaultColor);
+        ColorUtility.TryParseHtmlString("#000000C8", out buttonSelectedColor);
+
+        menusButtons = new List<Button> {
+            practiceButton,
+            instaSmokesButton
+        };
+
+        currentContainer = practicePanelContainer;
+        scrollRect.content = currentContainer as RectTransform;
+        InitializeContainerDictionary();
+
         fileManager.LoadFile(cfg_commands, (text) => {
             OnTXTReceived(text);
         });
@@ -36,7 +69,7 @@ public class CFGManager : MonoBehaviour
             string trimmedLine = line.Trim();
             string[] parts = trimmedLine.Split('|');
             PracticeCommand command = new PracticeCommand();
-            Debug.Log("Procesando l�nea: " + parts[0]);
+            Debug.Log("Procesando línea: " + parts[0]);
             command.commandName = parts[0];
             command.ingameName = parts[1];
             command.type = parts[3];
@@ -110,5 +143,48 @@ public class CFGManager : MonoBehaviour
             return folderPath;
         }
         return null;
+    }
+
+    private void SwitchContainer(Transform newContainer, Button button)
+    {
+        foreach (Button btn in menusButtons)
+        {
+            cb = btn.colors;
+
+            cb.normalColor = buttonDefaultColor;
+            cb.highlightedColor = buttonDefaultColor;
+            cb.pressedColor = buttonDefaultColor;
+            cb.selectedColor = buttonDefaultColor;
+            cb.disabledColor = buttonDefaultColor;
+
+            btn.colors = cb;
+        }
+
+        // Ahora aplicar los colores "activos" al bot�n seleccionado
+        selectedCB = button.colors;
+
+        selectedCB.normalColor = buttonSelectedColor;
+        selectedCB.highlightedColor = buttonSelectedColor;
+        selectedCB.pressedColor = buttonSelectedColor;
+        selectedCB.selectedColor = buttonSelectedColor;
+        selectedCB.disabledColor = buttonSelectedColor;
+
+        button.colors = selectedCB;
+
+        currentContainer.gameObject.SetActive(false);
+        newContainer.gameObject.SetActive(true);
+
+        scrollRect.content = newContainer as RectTransform;
+        currentContainer = newContainer;
+    }
+
+    private void InitializeContainerDictionary()
+    {
+        categoryContainers = new Dictionary<string, Transform>
+            {
+                { "practice", practicePanelContainer },
+                //{ "instaSmokes", instaSmokesContainer }
+            };
+
     }
 }

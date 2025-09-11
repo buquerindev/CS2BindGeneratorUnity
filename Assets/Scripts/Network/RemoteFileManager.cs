@@ -15,8 +15,13 @@ public class RemoteFileManager : MonoBehaviour
     }
 
     public List<RemoteFile> filesToSync;
-    public string localPath = "Assets/Resources/RemoteFiles/";
+    public string localPath;
     public int maxRetries = 5;
+
+    private void Awake()
+    {
+        localPath = Path.Combine(Application.persistentDataPath, "RemoteFiles");
+    }
 
     public void LoadFile(string fileName, Action<string> onSuccess)
     {
