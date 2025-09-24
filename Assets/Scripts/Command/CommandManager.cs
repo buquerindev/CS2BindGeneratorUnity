@@ -328,7 +328,7 @@ public class CommandManager : MonoBehaviour
             return;
         }
 
-        filePath = Path.Combine(filePath, "config.cfg");
+        filePath = Path.Combine(filePath, "settings.cfg");
 
         // Get the biggest command to align the comments
         int maxLeftWidth = commandList.commands

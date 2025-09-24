@@ -37,6 +37,15 @@
             "type": "bool"
         },
         {
+            "name": "cl_force_spec_hud_color_to_team",
+            "ingameName": "Override Spectating HUD Color",
+            "description": "When spectating another player, the HUD color will match their team color in casual modes and their teammate color in competitive modes",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Hud",
+            "type": "bool"
+        },
+        {
             "name": "cl_teamid_overhead_colors_show",
             "ingameName": "Use Player Colors on Team ID",
             "description": "Use player colors on the name above teammates' heads",
@@ -129,7 +138,7 @@
         {
             "name": "cl_use_opens_buy_menu",
             "ingameName": "Open Buy Menu with Use Key",
-            "description": "Open the buy menu with the use key",
+            "description": "Open the buy menu --with the use key",
             "defaultValue": "0",
             "category": "GAME",
             "subcategory": "Item",
@@ -173,9 +182,18 @@
         },
         {
             "name": "cl_radar_square_with_scoreboard",
-            "ingameName": "Toggle Shape With Scoreboard",
+            "ingameName": "Toggle Square Shape With Scoreboard",
             "description": "Changes the shape of the radar to a square when the scoreboard is open",
             "defaultValue": "1",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
+        },
+        {
+            "name": "cl_radar_square_always",
+            "ingameName": "Force Square Shape",
+            "description": "If set, the radar will always be square",
+            "defaultValue": "0",
             "category": "GAME",
             "subcategory": "Radar/Tablet",
             "type": "bool"
@@ -184,6 +202,15 @@
             "name": "cl_radar_scale_dynamic",
             "ingameName": "Radar Is Zooming Dynamically",
             "description": "Changes the zoom level of the radar based on the map information",
+            "defaultValue": "0",
+            "category": "GAME",
+            "subcategory": "Radar/Tablet",
+            "type": "bool"
+        },
+        {
+            "name": "cl_hud_radar_blur_background",
+            "ingameName": "Radar HUD Map Blurs Background",
+            "description": "Blurs the background behind the radar layout",
             "defaultValue": "0",
             "category": "GAME",
             "subcategory": "Radar/Tablet",
@@ -1040,6 +1067,39 @@
             "defaultValue": "40",
             "category": "AUDIO",
             "subcategory": "Music",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_surf_volume_inair",
+            "ingameName": "Wind sound volume (surf)",
+            "description": "The volume of the wind when surfing",
+            "defaultValue": "70",
+            "category": "AUDIO",
+            "subcategory": "Surf",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_surf_volume_map",
+            "ingameName": "Ambient sound volume (surf)",
+            "description": "The volumme of the ambient sounds when surfing is enabled",
+            "defaultValue": "55",
+            "category": "AUDIO",
+            "subcategory": "Surf",
+            "min": "0",
+            "max": "100",
+            "type": "int"
+        },
+        {
+            "name": "snd_surf_volume_slide",
+            "ingameName": "Sliding sound volume (surf)",
+            "description": "The volume of sliding along surfaces when surfing",
+            "defaultValue": "70",
+            "category": "AUDIO",
+            "subcategory": "Surf",
             "min": "0",
             "max": "100",
             "type": "int"

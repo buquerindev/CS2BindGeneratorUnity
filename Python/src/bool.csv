@@ -3,6 +3,7 @@ install_dlc_workshoptools_cvar;Install Counter-Strike Workshop Tools;Install the
 con_enable;Enable developer console;Enables the developer console in the game;1;GAME;Game
 cl_teamcounter_playercount_instead_of_avatars;Large Player Count;"During the active portion of the round, replace player avatars with team player count in the mini-scoreboard.";0;GAME;Hud
 cl_weapon_selection_rarity_color;Glow Weapon with Rarity Color;Weapons glow with their rarity color in the HUD;0;GAME;Hud
+cl_force_spec_hud_color_to_team;Override Spectating HUD Color;When spectating another player, the HUD color will match their team color in casual modes and their teammate color in competitive modes;0;GAME;Hud
 cl_teamid_overhead_colors_show;Use Player Colors on Team ID;Use player colors on the name above teammates' heads;1;GAME;Team
 cl_mute_enemy_team;Mute Enemy Team;Mutes the enemy team (COMPROBAR EN QUE);0;GAME;Communication
 cl_mute_all_but_friends_and_party;Mute All But Friends;Mutes all players except friends and party members;0;GAME;Communication
@@ -13,13 +14,15 @@ cl_obs_interp_enable;Smooth Spectator Camera;Smooth the camera transition betwee
 cl_sniper_delay_unscope;Delay Sniper Rifle Un-Scope after Shot;Adds a delay after firing a shot before you can un-scope (only animation-wise and it's kinda awful);0;GAME;Item
 cl_sniper_auto_rezoom;Auto Re-Zoom Sniper Rifle After Shot;Automatically re-zoom the sniper rifle after firing a shot;1;GAME;Item
 cl_showloadout;Always Show Inventory;Determines whether the Primary, Secondary and Knife are always shown in the HUD, if they are hidden, they will show for a short time if you switch weapon;1;GAME;Item
-cl_use_opens_buy_menu;Open Buy Menu with Use Key;Open the buy menu with the use key;0;GAME;Item
+cl_use_opens_buy_menu;Open Buy Menu with Use Key;Open the buy menu --with the use key;0;GAME;Item
 cl_quickinventory_lastinv;Last Weapon on Radial Weapon Trap;This option is locked to true ingame, it currently doesn't work, and nobody uses the radial weapon menu;1;GAME;Item
 cl_radar_always_centered;Radar Centers The Player;Centers the radar on the player;1;GAME;Radar/Tablet
 cl_radar_rotate;Radar Is Rotating;Rotates the radar to match the player's view direction;1;GAME;Radar/Tablet
 cl_hud_radar_map_additive;Radar HUD Map Blends With Background;Blends the radar layout with the background;1;GAME;Radar/Tablet
-cl_radar_square_with_scoreboard;Toggle Shape With Scoreboard;Changes the shape of the radar to a square when the scoreboard is open;1;GAME;Radar/Tablet
+cl_radar_square_with_scoreboard;Toggle Square Shape With Scoreboard;Changes the shape of the radar to a square when the scoreboard is open;1;GAME;Radar/Tablet
+cl_radar_square_always;Force Square Shape;If set, the radar will always be square;0;GAME;Radar/Tablet
 cl_radar_scale_dynamic;Radar Is Zooming Dynamically;Changes the zoom level of the radar based on the map information;0;GAME;Radar/Tablet
+cl_hud_radar_blur_background;Radar HUD Map Blurs Background;Blurs the background behind the radar layout;0;GAME;Radar/Tablet
 cl_grenadecrosshair_keepusercrosshair;Keep Regular Crosshair;Keep the regular crosshair when holding grenades;1;GAME;Grenade Line-Up Reticle
 cl_grenadecrosshair_flash;Flashbangs;Show the grenade line-up crosshair for flashbangs;1;GAME;Grenade Line-Up Reticle
 cl_grenadecrosshair_explosive;HE Grenades;Show the grenade line-up crosshair for HE grenades;1;GAME;Grenade Line-Up Reticle

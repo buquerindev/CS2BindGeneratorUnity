@@ -15,4 +15,7 @@ snd_mvp_volume;MVP Volume;Sets the volume of the MVP song;40;AUDIO;Music;0;100
 snd_mapobjective_volume;Bomb/Hostage Volume;Sets the volume of the map objective sound;20;AUDIO;Music;0;100
 snd_tensecondwarning_volume;Ten Second Warning Volume;Sets the volume of the 10 second warning sound;20;AUDIO;Music;0;100
 snd_deathcamera_volume;Death Camera Volume;Sets the volume of the death camera sound;40;AUDIO;Music;0;100
+snd_surf_volume_inair;Wind sound volume (surf);The volume of the wind when surfing;70;AUDIO;Surf;0;100
+snd_surf_volume_map;Ambient sound volume (surf);The volumme of the ambient sounds when surfing is enabled;55;AUDIO;Surf;0;100
+snd_surf_volume_slide;Sliding sound volume (surf);The volume of sliding along surfaces when surfing;70;AUDIO;Surf;0;100
 viewmodel_fov;Viewmodel Field of View;Sets the field of view for the viewmodel, most people use 68 (max);60;GAME;Viewmodel;54;68
