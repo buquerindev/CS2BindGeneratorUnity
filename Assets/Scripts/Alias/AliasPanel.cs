@@ -11,11 +11,17 @@ public class AliasPanel : MonoBehaviour, ISelectHandler
     [SerializeField] private TMP_InputField originalCommandIF;
     [SerializeField] private TMP_InputField aliasCommandIF;
     [SerializeField] private Alias alias;
+    [SerializeField] private Button unbindButton;
 
     private void Start()
     {
         originalCommandIF.onEndEdit.AddListener(OnOriginalCommandChanged);
         aliasCommandIF.onEndEdit.AddListener(OnAliasCommandChanged);
+        unbindButton.onClick.AddListener(() =>
+        {
+            CommandManager.Instance.aliases.Remove(alias);
+            Destroy(gameObject);
+        });
         gameObject.AddComponent<Selectable>();
     }
 
@@ -29,6 +35,7 @@ public class AliasPanel : MonoBehaviour, ISelectHandler
 
         alias.originalCommand = newCommand;
         OnPanelSelected?.Invoke(alias);
+        AddToAliasList();
     }
 
     private void OnAliasCommandChanged(string newAlias)
@@ -41,6 +48,7 @@ public class AliasPanel : MonoBehaviour, ISelectHandler
 
         alias.aliasCommand = newAlias;
         OnPanelSelected?.Invoke(alias);
+        AddToAliasList();
     }
 
     public void Initialize(string originalCommand = "", string aliasCommand = "")
@@ -59,5 +67,16 @@ public class AliasPanel : MonoBehaviour, ISelectHandler
     public void OnSelect(BaseEventData baseEventData)
     {
         OnPanelSelected?.Invoke(alias);
+    }
+
+    private void AddToAliasList()
+    {
+        if (alias.IsWritten())
+        {
+            if (!CommandManager.Instance.aliases.Contains(alias))
+            {
+                CommandManager.Instance.aliases.Add(alias);
+            }
+        }
     }
 }

@@ -78,7 +78,7 @@ public class CommandManager : MonoBehaviour
 
     private void Start()
     {
-        ColorUtility.TryParseHtmlString("#00000064", out buttonDefaultColor);
+        ColorUtility.TryParseHtmlString("#00000096", out buttonDefaultColor);
         ColorUtility.TryParseHtmlString("#000000C8", out buttonSelectedColor);
 
         menusButtons = new List<Button> {
@@ -262,6 +262,14 @@ public class CommandManager : MonoBehaviour
 
     private void LoadAliases()
     {
+        Alias kill_entities = new Alias()
+        {
+            originalCommand = "ent_fire smokegrenade_projectile kill;ent_fire molotov_projectile kill;ent_fire inferno kill;ent_fire flashbang_projectile kill;ent_fire hegrenade_projectile kill;ent_fire decoy_projectile kill;stopsound;say Killed all utility entities!",
+            aliasCommand = "kill_entities"
+        };
+
+        aliases.Add(kill_entities);
+
         string filePath = Path.Combine(Application.persistentDataPath, "settings.txt");
         if (!File.Exists(filePath))
             return;
@@ -273,6 +281,7 @@ public class CommandManager : MonoBehaviour
             if (line.StartsWith("alias|"))
             {
                 string[] parts = line.Split('|');
+                if (parts[2] == "kill_entities") continue;
                 AliasPanel aliasPanel = Instantiate(aliasPanelPrefab, aliasPanelContainer).GetComponent<AliasPanel>();
                 aliasPanel.transform.SetSiblingIndex(aliasPanelContainer.childCount - 2);
                 aliasPanel.Initialize(parts[1], parts[2]);

@@ -18,7 +18,6 @@ public class BindInfoPanel : MonoBehaviour
     {
         if (!MenuManager.Instance.bindsMenuActive)
             return;
-        Debug.Log("Actualizando info");
         americanKey.text = selectedKey.GetKeyName();
         scancode.text = selectedKey.GetScanCode();
         actions.text = selectedKey.GetKeyActions();

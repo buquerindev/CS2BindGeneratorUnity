@@ -237,7 +237,7 @@ public class BindManager : MonoBehaviour
 
     private void Start()
     {
-        ColorUtility.TryParseHtmlString("#00000064", out buttonDefaultColor);
+        ColorUtility.TryParseHtmlString("#00000096", out buttonDefaultColor);
         ColorUtility.TryParseHtmlString("#000000C8", out buttonSelectedColor);
 
         menusButtons = new List<Button> {
