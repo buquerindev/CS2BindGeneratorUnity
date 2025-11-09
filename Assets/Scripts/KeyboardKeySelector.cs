@@ -10,13 +10,6 @@ public class KeyboardKeySelector : MonoBehaviour
     public static event KeyDownDelegate OnKeyPressed;
     public static event KeyDownDelegate OnKeyReleased;
 
-    private KeyControl pressedKey;
-    private KeyControl unreleasedKey;
-
-    private bool canSelect = false;
-
-    
-
     private void Update()
     {
 

@@ -19,3 +19,4 @@ snd_surf_volume_inair;Wind sound volume (surf);The volume of the wind when surfi
 snd_surf_volume_map;Ambient sound volume (surf);The volumme of the ambient sounds when surfing is enabled;55;AUDIO;Surf;0;100
 snd_surf_volume_slide;Sliding sound volume (surf);The volume of sliding along surfaces when surfing;70;AUDIO;Surf;0;100
 viewmodel_fov;Viewmodel Field of View;Sets the field of view for the viewmodel, most people use 68 (max);60;GAME;Viewmodel;54;68
+cl_crosshair_sniper_width;Sniper Crosshair Thickness;Sets the thickness of the sniper crosshair;1;GAME;Sniper Sights;1;6

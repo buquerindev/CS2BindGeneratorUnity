@@ -10,9 +10,11 @@ cl_mute_all_but_friends_and_party;Mute All But Friends;Mutes all players except 
 cl_allow_animated_avatars;Allow Animated Avatars;Allow animated avatars in the HUD;1;GAME;Communication
 cl_sanitize_player_names;Clean Player Names;Change name of players not in your friends list to something neutral;0;GAME;Communication
 cl_scoreboard_survivors_always_on;Survivors Always On;Nobody knows what this does (maybe dangerzone stuff);0;GAME;Spectator/Scoreboard
-cl_obs_interp_enable;Smooth Spectator Camera;Smooth the camera transition between players in spectator mode;1;GAME;Spectator
-cl_sniper_delay_unscope;Delay Sniper Rifle Un-Scope after Shot;Adds a delay after firing a shot before you can un-scope (only animation-wise and it's kinda awful);0;GAME;Item
-cl_sniper_auto_rezoom;Auto Re-Zoom Sniper Rifle After Shot;Automatically re-zoom the sniper rifle after firing a shot;1;GAME;Item
+cl_obs_interp_enable;Smooth Spectator Camera;Smooth the camera transition between players in spectator mode;1;GAME;Spectator/Scoreboard
+cl_sniper_delay_unscope;Delay Sniper Rifle Un-Scope after Shot;Adds a delay after firing a shot before you can un-scope (only animation-wise and it's kinda awful);0;GAME;Sniper Sights
+cl_sniper_show_inaccuracy;Show Scoped Sniper Rifle Innaccuracy;Shows the inaccuracy area when scoped with a sniper rifle;1;GAME;Sniper Sights
+cl_sniper_auto_rezoom;Auto Re-Zoom Sniper Rifle After Shot;Automatically re-zoom the sniper rifle after firing a shot;1;GAME;Sniper Sights
+cl_ironsight_usecrosshaircolor;Use Crosshair Color For Ironsight Dot;Use the same color for the ironsight dot as the crosshair;0;GAME;Sniper Sights
 cl_showloadout;Always Show Inventory;Determines whether the Primary, Secondary and Knife are always shown in the HUD, if they are hidden, they will show for a short time if you switch weapon;1;GAME;Item
 cl_use_opens_buy_menu;Open Buy Menu with Use Key;Open the buy menu --with the use key;0;GAME;Item
 cl_quickinventory_lastinv;Last Weapon on Radial Weapon Trap;This option is locked to true ingame, it currently doesn't work, and nobody uses the radial weapon menu;1;GAME;Item
