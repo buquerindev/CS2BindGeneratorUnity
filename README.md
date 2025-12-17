@@ -6,8 +6,7 @@ The main advantage is that it uses [SDL Scancodes](https://wiki.libsdl.org/SDL2/
 Visit the website for full explanation: https://buquerindev.github.io/CS2ConfigGenerator/
 
 # DOWNLOAD
-Download the latest build here: 
-Compiled from commit: 
+Download the latest [Release](https://github.com/buquerindev/CS2BindGeneratorUnity/releases/tag/Release)
 
 ## Contact
 For any bugs or suggestions, contact me on twitter @buquerindev
