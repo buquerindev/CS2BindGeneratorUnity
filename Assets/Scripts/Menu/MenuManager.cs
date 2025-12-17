@@ -12,11 +12,13 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button closeMenuButton;
     [SerializeField] private Button switchKeyboard;
     [SerializeField] private Button quitButton;
+    [SerializeField] private Button quitButton2;
 
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject bindsMenu;
     [SerializeField] private GameObject practiceMenu;
+    [SerializeField] private GameObject updateMenu;
 
     [SerializeField] private GameObject keyboardISO;
     [SerializeField] private GameObject keyboardANSI;
@@ -26,6 +28,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Transform cameraZoom;
 
     [SerializeField] private Toggle unbindallToggle;
+
+    [SerializeField] private AudioClip appOutdated;
+    [SerializeField] private RemoteFileManager remoteFileManager;
+    private string currentVersion = "1.0.0";
+    private string latestVersion;
 
     public bool addUnbindall = false;
     public bool isANSI = false;
@@ -43,6 +50,12 @@ public class MenuManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        remoteFileManager.LoadFile("version.txt", (txt) =>
+        {
+            latestVersion = txt.Trim();
+            Debug.Log("Latest version loaded: " + latestVersion);
+        });
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,6 +68,7 @@ public class MenuManager : MonoBehaviour
         closeMenuButton.onClick.AddListener(CloseMenu);
         switchKeyboard.onClick.AddListener(ToggleKeyboard);
         quitButton.onClick.AddListener(Application.Quit);
+        quitButton2.onClick.AddListener(Application.Quit);
         unbindallToggle.onValueChanged.AddListener(OnToggleChanged);
         //cameraMover.MoveCameraTo(cameraDefault,1);
     }
@@ -68,12 +82,16 @@ public class MenuManager : MonoBehaviour
     void OpenSettingsMenu()
     {
         CloseMainMenu();
+        if (OpenUpdateMenu())
+            return;
         settingsMenu.SetActive(true);
     }
 
     void OpenBindsMenuButton()
     {
         CloseMainMenu();
+        if (OpenUpdateMenu())
+            return;
         bindsMenuActive = true;
         bindsMenu.SetActive(true);
         cameraMover.MoveCameraTo(cameraZoom,2);
@@ -89,6 +107,18 @@ public class MenuManager : MonoBehaviour
     {
         mainMenu.SetActive(true);
         closeMenuButton.gameObject.SetActive(false);
+    }
+
+    bool OpenUpdateMenu()
+    {
+        if (currentVersion != latestVersion)
+        {
+            updateMenu.SetActive(true);
+            SoundManager.Instance.PlaySFX(appOutdated);
+            closeMenuButton.gameObject.SetActive(false);
+            return true;
+        }
+        return false;
     }
 
     void CloseMainMenu()
