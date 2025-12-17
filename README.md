@@ -1,12 +1,13 @@
 # CS2 Config Generator
-This application allows you to save your settings and binds into a .cfg file, it also includes common settings/binds that are not included in the game but are used by professional players
+This application allows you to save your settings and binds into a 2 .cfg files, it also includes common settings/binds that are not included in the game but are used by professional players
 
-![Main menu](CloudFiles/mainmenu.jpg)
+The main advantage is that it uses [SDL Scancodes](https://wiki.libsdl.org/SDL2/SDL_Scancode) (which CS2 already does in the background) so there is compatibility with any keyboard layout
 
-![Binds menu](CloudFiles/binds.jpg)
+Visit the website for full explanation: https://buquerindev.github.io/CS2ConfigGenerator/
 
-## To Do:
+# DOWNLOAD
+Download the latest build here: 
+Compiled from commit: 
 
-- Enable developer console
-- More information and details about some commands (telemetry ms, radio menus...)
-- r_gamma
+## Contact
+For any bugs or suggestions, contact me on twitter @buquerindev
